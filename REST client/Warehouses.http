@@ -5,3 +5,138 @@
 GET {{host}}/api/v1/warehouses
 API_KEY: {{api_key}}
 
+### Get specific warehouse
+GET {{host}}/api/v1/warehouses/1
+API_KEY: {{api_key}}
+
+### Get specific warehouse locations
+GET {{host}}/api/v1/warehouses/1/locations
+API_KEY: {{api_key}}
+
+### Get locations BROKEN!!!!!! Duurt Lang
+GET {{host}}/api/v1/locations            
+API_KEY: {{api_key}}
+
+### Get specific location 
+GET {{host}}/api/v1/locations/2        
+API_KEY: {{api_key}}
+
+### Get all transfers BROKEN!!!!!! Duurt Lang
+GET {{host}}/api/v1/transfers       
+API_KEY: {{api_key}}
+
+### Get specific transfer
+GET {{host}}/api/v1/transfers/1     
+API_KEY: {{api_key}}
+
+### Get items from specific transfer
+GET {{host}}/api/v1/transfers/1/items  
+API_KEY: {{api_key}}
+
+### Get all items BEETJE BROKEN DUURT LANG  
+GET {{host}}/api/v1/items 
+API_KEY: {{api_key}}
+
+### Get specific item BROKEN!!!!! RETURNED "NULL" 
+GET {{host}}/api/v1/items/40
+API_KEY: {{api_key}}
+
+### Get specific item BROKEN!!!!! RETURNED "[ ]" 
+GET {{host}}/api/v1/items/9/inventory
+API_KEY: {{api_key}}
+
+### Get specific item BROKEN!!!!! RETURNED Alles 0 
+GET {{host}}/api/v1/items/9/inventory/totals
+API_KEY: {{api_key}}
+
+### Get all Item_lines
+GET {{host}}/api/v1/item_lines
+API_KEY: {{api_key}}
+
+### Get specific Item_lines
+GET {{host}}/api/v1/item_lines/96
+API_KEY: {{api_key}}
+
+### Get items in specific Item_lines
+GET {{host}}/api/v1/item_lines/96/items
+API_KEY: {{api_key}}
+
+### Get all item groups
+GET {{host}}/api/v1/item_groups
+API_KEY: {{api_key}}
+
+### Get specific item group
+GET {{host}}/api/v1/item_groups/1/items
+API_KEY: {{api_key}}
+
+### Get all item types
+GET {{host}}/api/v1/item_types
+API_KEY: {{api_key}}
+
+### Get specific item type
+GET {{host}}/api/v1/item_types/2
+API_KEY: {{api_key}}
+
+### Get all items of specific item type
+GET {{host}}/api/v1/item_types/2/items
+API_KEY: {{api_key}}
+
+### Get all inventories BROKEN !!!!! TRAAG
+GET {{host}}/api/v1/inventories
+API_KEY: {{api_key}}
+
+### Get specific inventorie
+GET {{host}}/api/v1/inventories/1
+API_KEY: {{api_key}}
+
+### Get all suppliers
+GET {{host}}/api/v1/suppliers
+API_KEY: {{api_key}}
+
+### Get specific supplier
+GET {{host}}/api/v1/suppliers/2
+API_KEY: {{api_key}}
+
+### Get all orders
+GET {{host}}/api/v1/orders
+API_KEY: {{api_key}}
+
+### Get specific order
+GET {{host}}/api/v1/orders/1
+API_KEY: {{api_key}}
+
+### Get items of specific order
+GET {{host}}/api/v1/orders/1/items
+API_KEY: {{api_key}}
+
+### Get all clients BEETJE BROKEN TRAAG
+GET {{host}}/api/v1/clients
+API_KEY: {{api_key}}
+
+### Get specific client
+GET {{host}}/api/v1/clients/1
+API_KEY: {{api_key}}
+
+### Get orders of specific client
+GET {{host}}/api/v1/clients/5/orders
+API_KEY: {{api_key}}
+
+### Get all shipments BEETJE BROKEN TRAAG
+GET {{host}}/api/v1/shipments
+API_KEY: {{api_key}}
+
+### Get specific shipment
+GET {{host}}/api/v1/shipments/21
+API_KEY: {{api_key}}
+
+### Get orders from specific shipment BROKEN LAAT NIKS ZIEN
+GET {{host}}/api/v1/shipments/4/orders
+API_KEY: {{api_key}}
+
+### Get items from specific shipment
+GET {{host}}/api/v1/shipments/4/items
+API_KEY: {{api_key}}
+
+### Add a new warehouse
+POST {{host}}/api/v1/warehouses
+API_KEY: {{api_key}}
