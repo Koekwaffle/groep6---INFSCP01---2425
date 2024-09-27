@@ -137,6 +137,23 @@ API_KEY: {{api_key}}
 GET {{host}}/api/v1/shipments/4/items
 API_KEY: {{api_key}}
 
-### Add a new warehouse
+### Add a new warehouse BROKEN
 POST {{host}}/api/v1/warehouses
-API_KEY: {{api_key}}
+Content-Type: application/json
+Authorization: Bearer {{api_key}}
+
+{
+    "id": 1,
+    "code": "YQZZNL56",
+    "name": "Heemskerk cargo hub",
+    "address": "Karlijndreef 281",
+    "zip": "4002 AS",
+    "city": "Heemskerk",
+    "province": "Friesland",
+    "country": "NL",
+    "contact": {
+      "name": "Fem Keijzer",
+      "phone": "(078) 0013363",
+      "email": "blamore@example.net"
+    },
+}
