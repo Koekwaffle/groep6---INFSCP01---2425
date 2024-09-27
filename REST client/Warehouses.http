@@ -1,0 +1,7 @@
+@host = http://localhost:3000
+@api_key = a1b2c3d4e5
+
+### Get Warehouses
+GET {{host}}/api/v1/warehouses
+API_KEY: {{api_key}}
+
