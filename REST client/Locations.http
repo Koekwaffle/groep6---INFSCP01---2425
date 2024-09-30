@@ -1,0 +1,10 @@
+@host = http://localhost:3000
+@api_key = a1b2c3d4e5
+
+### Get locations BROKEN!!!!!! Duurt Lang
+GET {{host}}/api/v1/locations            
+API_KEY: {{api_key}}
+
+### Get specific location 
+GET {{host}}/api/v1/locations/2        
+API_KEY: {{api_key}}

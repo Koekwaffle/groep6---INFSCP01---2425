@@ -475,19 +475,32 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
 
     def do_POST(self):
-        api_key = self.headers.get("API_KEY")
-        user = auth_provider.get_user(api_key)
-        if user == None:
+        authorization_header = self.headers.get("Authorization")
+        if authorization_header:
+            api_key = authorization_header.split(" ")[1]
+            user = auth_provider.get_user(api_key)
+            if user == None:
+                self.send_response(401)
+                self.end_headers()
+            else:
+                try:
+                    path = self.path.split("/")
+                    if len(path) > 3 and path[1] == "api" and path[2] == "v1":
+                        if path[3:] is not None and len(path[3:]) > 0:
+                            self.handle_post_version_1(path[3:], user)
+                        else:
+                            self.send_response(400)
+                            self.end_headers()
+                    else:
+                        self.send_response(404)
+                        self.end_headers()
+                except Exception as e:
+                    print(f"Error: {e}")
+                    self.send_response(500)
+                    self.end_headers()
+        else:
             self.send_response(401)
             self.end_headers()
-        else:
-            try:
-                path = self.path.split("/")
-                if len(path) > 3 and path[1] == "api" and path[2] == "v1":
-                    self.handle_post_version_1(path[3:], user)
-            except Exception:
-                self.send_response(500)
-                self.end_headers()
 
     def handle_put_version_1(self, path, user):
         if not auth_provider.has_access(user, path, "put"):

@@ -16,3 +16,4 @@ api/processors/__pycache__/notification_processor.cpython-311.pyc
 api/providers/__pycache__/auth_provider.cpython-311.pyc
 api/providers/__pycache__/data_provider.cpython-311.pyc
 api/models/__pycache__/item_groups.cpython-311.pyc
+*.pyc
