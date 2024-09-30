@@ -6,4 +6,5 @@ GET {{host}}/api/v1/suppliers
 API_KEY: {{api_key}}
 
 ### Get specific supplier
-G
+GET {{host}}/api/v1/suppliers/2
+API_KEY: {{api_key}}

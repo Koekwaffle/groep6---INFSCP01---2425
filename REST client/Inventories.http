@@ -8,3 +8,23 @@ API_KEY: {{api_key}}
 ### Get specific inventorie
 GET {{host}}/api/v1/inventories/1
 API_KEY: {{api_key}}
+
+### Create new inventory
+POST {{host}}/api/v1/inventories
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+  "item_id": "P000002",
+  "description": "New inventory item",
+  "item_reference": "new-ref",
+  "locations": [
+    12345,
+    67890
+  ],
+  "total_on_hand": 100,
+  "total_expected": 0,
+  "total_ordered": 20,
+  "total_allocated": 10,
+  "total_available": 90
+}

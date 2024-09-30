@@ -586,13 +586,12 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.end_headers()
         elif path[0] == "item_groups":
-            item_group_id = int(path[1])
             content_length = int(self.headers["Content-Length"])
             post_data = self.rfile.read(content_length)
-            updated_item_group = json.loads(post_data.decode())
-            data_provider.fetch_item_group_pool().update_item_group(item_group_id, updated_item_group)
+            new_item_group = json.loads(post_data.decode())
+            data_provider.fetch_item_group_pool().add_item_group(new_item_group)
             data_provider.fetch_item_group_pool().save()
-            self.send_response(200)
+            self.send_response(201)
             self.end_headers()
         elif path[0] == "item_types":
             item_type_id = int(path[1])

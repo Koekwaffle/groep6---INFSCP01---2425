@@ -12,3 +12,13 @@ API_KEY: {{api_key}}
 ### Get items in specific Item_lines
 GET {{host}}/api/v1/item_lines/96/items
 API_KEY: {{api_key}}
+
+### Create new Item_line
+POST {{host}}/api/v1/item_lines
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+  "name": "New Item Line",
+  "description": "This is a new item line"
+}
