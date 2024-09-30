@@ -16,3 +16,16 @@ API_KEY: {{api_key}}
 ### Get specific item BROKEN!!!!! RETURNED Alles 0 
 GET {{host}}/api/v1/items/9/inventory/totals
 API_KEY: {{api_key}}
+
+### Put new info in Items BROKEN returned HTTP/1.0 404 Not Found
+PUT http://localhost:3000/api/v1/items/40
+API_KEY: a1b2c3d4e5
+Content-Type: application/json
+
+{
+  "name": "Updated Item Name",
+  "item_type_id": 2,
+  "description": "Updated description of the item",
+  "price": 100.00,
+  "quantity": 50
+}
