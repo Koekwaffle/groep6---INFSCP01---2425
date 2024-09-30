@@ -12,3 +12,21 @@ API_KEY: {{api_key}}
 ### Get orders of specific client
 GET {{host}}/api/v1/clients/5/orders
 API_KEY: {{api_key}}
+
+### put new information in clients
+PUT {{host}}/api/v1/clients/1
+Content-Type: application/json
+API_KEY: {{api_key}}
+
+{
+    "id": 1,
+    "name": "Updated Client Name",
+    "address": "789 Updated Street",
+    "city": "Updated City",
+    "zip_code": "99999",
+    "province": "Updated Province",
+    "country": "United States",
+    "contact_name": "Updated Contact Name",
+    "contact_phone": "555-999-8888",
+    "contact_email": "updated.contact@example.com"
+}

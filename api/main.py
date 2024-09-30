@@ -704,17 +704,40 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_PUT(self):
         api_key = self.headers.get("API_KEY")
         user = auth_provider.get_user(api_key)
-        if user == None:
+        
+        if user is None:
             self.send_response(401)
             self.end_headers()
-        else:
-            try:
-                path = self.path.split("/")
-                if len(path) > 3 and path[1] == "api" and path[2] == "v1":
-                    self.handle_put_version_1(path[3:], user)
-            except Exception:
-                self.send_response(500)
+            return
+### aaaa
+        try:
+            path = self.path.strip('/').split('/')
+            if len(path) == 3 and path[0] == "api" and path[1] == "v1" and path[2] == "clients":
+                client_id = int(path[3])
+                content_length = int(self.headers['Content-Length'])
+                put_data = self.rfile.read(content_length)
+                updated_client = json.loads(put_data)
+
+                # Fetch clients pool and update client
+                clients_pool = data_provider.fetch_client_pool()
+                clients_pool.update_client(client_id, updated_client)
+                clients_pool.save()
+
+                self.send_response(200)
                 self.end_headers()
+                self.wfile.write(b'Client updated successfully')
+            else:
+                # Path does not match /api/v1/clients/<id>
+                self.send_response(404)
+                self.end_headers()
+        except ValueError:
+            self.send_response(400)
+            self.end_headers()
+            self.wfile.write(b'Invalid client ID or request data')
+        except Exception as e:
+            print(f"Error in PUT request: {e}")
+            self.send_response(500)
+            self.end_headers()
 
     def handle_delete_version_1(self, path, user):
         if not auth_provider.has_access(user, path, "delete"):
