@@ -702,41 +702,64 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
 
     def do_PUT(self):
-        api_key = self.headers.get("API_KEY")
-        user = auth_provider.get_user(api_key)
+        # Log request for debugging purposes
+        print(f"Received PUT request for {self.path}")
         
-        if user is None:
+        # Retrieve the Authorization header
+        authorization_header = self.headers.get("Authorization")
+        
+        # Check if Authorization header exists
+        if authorization_header:
+            try:
+                # Split the Authorization header to extract the API key
+                if "Bearer " in authorization_header:
+                    api_key = authorization_header.split(" ")[1]
+                else:
+                    # If the Authorization format is wrong, return 400 Bad Request
+                    print("Invalid Authorization format")
+                    self.send_response(400)
+                    self.end_headers()
+                    return
+                
+                # Get the user based on the API key
+                user = auth_provider.get_user(api_key)
+                
+                # If the user is not found, return 401 Unauthorized
+                if user is None:
+                    print("Unauthorized: Invalid API Key")
+                    self.send_response(401)
+                    self.end_headers()
+                    return
+                
+                # Split and parse the path
+                path = self.path.split("/")
+                print(f"Parsed path: {path}")
+                
+                # Ensure the path is long enough and starts with /api/v1/
+                if len(path) > 3 and path[1] == "api" and path[2] == "v1":
+                    # Further handle the path and validate the resource
+                    if path[3:] and len(path[3:]) > 0:
+                        print(f"Handling PUT for {path[3:]}")
+                        self.handle_put_version_1(path[3:], user)  # Assuming this function handles the PUT request logic
+                    else:
+                        print("Invalid path or resource")
+                        self.send_response(400)  # Bad Request for invalid path/resource
+                        self.end_headers()
+                else:
+                    print("Resource not found")
+                    self.send_response(404)  # Not Found if path structure is wrong
+                    self.end_headers()
+            
+            # Catch and log any unforeseen exceptions
+            except Exception as e:
+                print(f"Error in PUT request: {e}")
+                self.send_response(500)  # Internal Server Error
+                self.end_headers()
+        
+        # If Authorization header is missing, return 401 Unauthorized
+        else:
+            print("Missing Authorization header")
             self.send_response(401)
-            self.end_headers()
-            return
-### aaaa
-        try:
-            path = self.path.strip('/').split('/')
-            if len(path) == 3 and path[0] == "api" and path[1] == "v1" and path[2] == "clients":
-                client_id = int(path[3])
-                content_length = int(self.headers['Content-Length'])
-                put_data = self.rfile.read(content_length)
-                updated_client = json.loads(put_data)
-
-                # Fetch clients pool and update client
-                clients_pool = data_provider.fetch_client_pool()
-                clients_pool.update_client(client_id, updated_client)
-                clients_pool.save()
-
-                self.send_response(200)
-                self.end_headers()
-                self.wfile.write(b'Client updated successfully')
-            else:
-                # Path does not match /api/v1/clients/<id>
-                self.send_response(404)
-                self.end_headers()
-        except ValueError:
-            self.send_response(400)
-            self.end_headers()
-            self.wfile.write(b'Invalid client ID or request data')
-        except Exception as e:
-            print(f"Error in PUT request: {e}")
-            self.send_response(500)
             self.end_headers()
 
     def handle_delete_version_1(self, path, user):
