@@ -22,3 +22,13 @@ Content-Type: application/json
   "name": "Updated Item Type Name",
   "description": "Updated description of the item type"
 }
+
+### Create new Item_type BROKEN
+POST {{host}}/api/v1/item_types
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "name": "Tablet",
+    "description": "",
+}

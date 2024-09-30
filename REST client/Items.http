@@ -29,3 +29,27 @@ Content-Type: application/json
   "price": 100.00,
   "quantity": 50
 }
+
+### Create new Item
+POST {{host}}/api/v1/items
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "uid": "P000001",
+    "code": "sjQ23408K",
+    "description": "Face-to-face clear-thinking complexity",
+    "short_description": "must",
+    "upc_code": "6523540947122",
+    "model_number": "63-OFFTq0T",
+    "commodity_code": "oTo304",
+    "item_line": 11,
+    "item_group": 73,
+    "item_type": 14,
+    "unit_purchase_quantity": 47,
+    "unit_order_quantity": 13,
+    "pack_order_quantity": 11,
+    "supplier_id": 34,
+    "supplier_code": "SUP423",
+    "supplier_part_number": "E-86805-uTM"
+}

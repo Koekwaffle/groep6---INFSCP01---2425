@@ -31,3 +31,21 @@ Authorization: Bearer {{api_key}}
   "contact_email": "updated.contact@example.com",
   "updated_at": "2024-09-30T14:21:34.248255Z"
 }
+
+### Post new client
+POST {{host}}/api/v1/clients
+Content-Type: application/json
+Authorization: Bearer {{api_key}}
+
+{
+    "id":  1,
+    "name": "Nieuwe Klant",
+    "address": "1234 Nieuwe Straat",
+    "city": "Amsterdam",
+    "zip_code": "1234AB",
+    "province": "Noord-Holland",
+    "country": "Nederland",
+    "contact_name": "Jan Janssen",
+    "contact_phone": "06-12345678",
+    "contact_email": "nieuwe.klant@example.com"
+}

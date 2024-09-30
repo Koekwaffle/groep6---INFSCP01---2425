@@ -28,3 +28,20 @@ Authorization: Bearer {{api_key}}
     { "item_id": "P007435", 
     "amount": 23 } ] 
 }
+
+### Create new Transfer BROKEN!!!!! DUURT LANG EN WERKT NIET
+POST {{host}}/api/v1/transfers
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+  "reference": "TR00001",
+  "transfer_to": 9229,
+  "transfer_status": "Completed",
+  "items": [
+    {
+      "item_id": "P007435",
+      "amount": 23
+    }
+  ]
+}
