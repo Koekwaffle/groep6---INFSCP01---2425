@@ -701,73 +701,20 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
-def do_PUT(self):
-    # Get the API key from the headers
-    api_key = self.headers.get("API_KEY")
-
-    # Validate the API key using auth_provider
-    user = auth_provider.get_user(api_key)
-    if user is None:
-        # Respond with 401 Unauthorized if the API key is invalid or missing
-        self.send_response(401)
-        self.end_headers()
-        return
-
-    try:
-        # Split the request path to determine the resource being accessed
-        path = self.path.split("/")
-        
-        # Ensure the path follows the pattern /api/v1/resource
-        if len(path) > 3 and path[1] == "api" and path[2] == "v1":
-            resource = path[3]
-            
-            # Handle updates to the "clients" resource
-            if resource == "clients" and len(path) == 5:
-                client_id = int(path[4])  # Extract client ID from the URL
-
-                # Read the PUT request data
-                content_length = int(self.headers["Content-Length"])
-                put_data = self.rfile.read(content_length)
-                updated_client = json.loads(put_data.decode('utf-8'))
-
-                # Update the client data via data_provider
-                client_pool = data_provider.fetch_client_pool()
-                existing_client = client_pool.get_client(client_id)
-
-                if existing_client:
-                    # Update the client and save the changes
-                    client_pool.update_client(client_id, updated_client)
-                    client_pool.save()
-
-                    # Respond with 200 OK and success message
-                    self.send_response(200)
-                    self.end_headers()
-                    self.wfile.write(b"Client updated successfully")
-                else:
-                    # Respond with 404 Not Found if the client doesn't exist
-                    self.send_response(404)
-                    self.end_headers()
-                    self.wfile.write(b"Client not found")
-            else:
-                # Handle other resource types or invalid paths
-                self.send_response(404)
-                self.end_headers()
-                self.wfile.write(b"Resource not found or invalid path")
-        else:
-            # Respond with 400 Bad Request if the path is incorrect
-            self.send_response(400)
+    def do_PUT(self):
+        api_key = self.headers.get("API_KEY")
+        user = auth_provider.get_user(api_key)
+        if user == None:
+            self.send_response(401)
             self.end_headers()
-            self.wfile.write(b"Invalid API version or path format")
-    except ValueError:
-        # Handle invalid client ID or other ValueErrors
-        self.send_response(400)
-        self.end_headers()
-        self.wfile.write(b"Invalid client ID format")
-    except Exception as e:
-        # General error handling for server-side issues
-        self.send_response(500)
-        self.end_headers()
-        self.wfile.write(b"Internal server error")
+        else:
+            try:
+                path = self.path.split("/")
+                if len(path) > 3 and path[1] == "api" and path[2] == "v1":
+                    self.handle_put_version_1(path[3:], user)
+            except Exception:
+                self.send_response(500)
+                self.end_headers()
 
     def handle_delete_version_1(self, path, user):
         if not auth_provider.has_access(user, path, "delete"):

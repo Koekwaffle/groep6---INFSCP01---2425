@@ -12,21 +12,3 @@ API_KEY: {{api_key}}
 ### Get orders of specific client
 GET {{host}}/api/v1/clients/5/orders
 API_KEY: {{api_key}}
-
-### Put new info in clients id 1
-PUT http://localhost:3000/api/v1/clients/1
-Content-Type: application/json
-API_KEY: {{api_key}}
-
-{
-    "id": 1,
-    "name": "Dekker hout",
-    "address": "6969 Yeet Skeet Apt. 222",
-    "city": "Rotterdam",
-    "zip_code": "99999",
-    "province": "Holland",
-    "country": "Netherlands",
-    "contact_name": "Ronan Hardjo",
-    "contact_phone": "555-999-8888",
-    "contact_email": "updated.contact@example.com"
-}
