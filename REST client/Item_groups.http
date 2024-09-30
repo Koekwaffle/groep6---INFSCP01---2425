@@ -9,7 +9,7 @@ API_KEY: {{api_key}}
 GET {{host}}/api/v1/item_groups/1/items
 API_KEY: {{api_key}}
 
-### Put new information in item_groups id 1
+### Put new information in item_groups id 1 BROKEN
 ###The id remains 0 since we are updating the "Electronics" group
 ### The name and description are updated
 ### The created_at remains unchanged, while updated_at is set to the current time to reflect when the update was made.

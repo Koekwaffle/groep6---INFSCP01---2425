@@ -13,10 +13,10 @@ API_KEY: {{api_key}}
 GET {{host}}/api/v1/clients/5/orders
 API_KEY: {{api_key}}
 
-### put new information in clients
+### put new information in clients BROKEN
 PUT http://localhost:3000/api/v1/item_lines/96
 Content-Type: application/json
-Authorization: Bearer 1b2c3d4e5
+API_KEY: {{api_key}}
 
 {
     "id": 96,
