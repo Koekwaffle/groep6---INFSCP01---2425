@@ -12,3 +12,14 @@ API_KEY: {{api_key}}
 ### Get all items of specific item type
 GET {{host}}/api/v1/item_types/2/items
 API_KEY: {{api_key}}
+
+
+### Create new Item_type BROKEN
+POST {{host}}/api/v1/item_types
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "name": "Tablet",
+    "description": "",
+}

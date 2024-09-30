@@ -8,3 +8,14 @@ API_KEY: {{api_key}}
 ### Get specific location 
 GET {{host}}/api/v1/locations/2        
 API_KEY: {{api_key}}
+
+### Create new Location
+POST {{host}}/api/v1/locations
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+  "warehouse_id": 1,
+  "code": "A.1.1",
+  "name": "Row: A, Rack: 1, Shelf: 1"
+}

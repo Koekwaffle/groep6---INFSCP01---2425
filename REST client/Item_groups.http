@@ -9,7 +9,7 @@ API_KEY: {{api_key}}
 GET {{host}}/api/v1/item_groups/1/items
 API_KEY: {{api_key}}
 
-### Create new item group
+### Create new item group BROKEN
 POST {{host}}/api/v1/item_groups
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
