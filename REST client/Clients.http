@@ -14,14 +14,19 @@ GET {{host}}/api/v1/clients/5/orders
 API_KEY: {{api_key}}
 
 ### put new information in clients BROKEN
-PUT http://localhost:3000/api/v1/item_lines/96
+PUT http://localhost:3000/api/v1/clients/1
 Content-Type: application/json
-API_KEY: {{api_key}}
+Authorization: Bearer {{api_key}}
 
 {
-    "id": 96,
-    "name": "Updated Item Line Name",
-    "description": "Updated description for item line",
-    "created_at": "2010-01-01 12:00:00",
-    "updated_at": "2024-09-30 13:00:00"
+  "id": 1,
+  "name": "John Doe Corporation",
+  "address": "123 Dummy Street",
+  "city": "Faketown",
+  "zip_code": "12345",
+  "province": "Imaginary Province",
+  "country": "Nowhere Land",
+  "contact_name": "Jane Doe",
+  "contact_phone": "555-123-4567",
+  "contact_email": "jane.doe@dummycorp.com",
 }

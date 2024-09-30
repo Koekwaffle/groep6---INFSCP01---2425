@@ -12,3 +12,19 @@ API_KEY: {{api_key}}
 ### Get items from specific transfer
 GET {{host}}/api/v1/transfers/1/items  
 API_KEY: {{api_key}}
+
+### Put Transfer
+PUT {{host}}/api/v1/transfers/1
+Content-Type: application/json
+Authorization: Bearer {{api_key}}
+
+{ "id": 1, 
+"reference": "TR00001", 
+"transfer_from": null, 
+"transfer_to": 9229, 
+"transfer_status": "Completed", 
+"created_at": "2000-03-11T13:11:14Z", 
+"items": [ 
+    { "item_id": "P007435", 
+    "amount": 23 } ] 
+}

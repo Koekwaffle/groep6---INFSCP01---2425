@@ -33,3 +33,24 @@ Authorization: Bearer {{api_key}}
       "email": "blamore@example.net"
     }
 }
+
+### Update a warehouse
+PUT {{host}}/api/v1/warehouses/1
+Content-Type: application/json
+Authorization: Bearer {{api_key}}
+
+{
+    "id": 1,
+    "code": "YQZZNL56",
+    "name": "Heemskerk cargo hub",
+    "address": "Karlijndreef 281",
+    "zip": "4002 AS",
+    "city": "Heemskerk",
+    "province": "Friesland",
+    "country": "NL",
+    "contact": {
+        "name": "Fem Keijzer",
+        "phone": "(078) 0013363",
+        "email": "blamore@example.net"
+    }
+}
