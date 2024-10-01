@@ -1,0 +1,3 @@
+class Generic_functions:
+
+
