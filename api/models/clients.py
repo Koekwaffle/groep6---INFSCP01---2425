@@ -4,7 +4,7 @@ from models.base import Base
 
 CLIENTS = []
 
-
+#smbvkabvbvhbak
 class Clients(Base):
     def __init__(self, root_path, is_debug=False):
         self.data_path = root_path + "clients.json"
