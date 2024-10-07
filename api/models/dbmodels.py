@@ -2,8 +2,12 @@ import sqlite3
 import sys
 import os
 
-# Add the path where dbconn.py is located (just the directory, not the file)
-sys.path.append(r'C:\Users\ronan\Documents\GitHub\groep6---INFSCP01---2425\data')
+# Adjust the path to find dbconn.py in the correct location (two levels up to the project root)
+data_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'data')
+sys.path.append(data_path)
+
+# Print to check if the path is correct
+print(f"Looking for dbconn in: {data_path}")
 
 # Now you can import get_db_connection from dbconn
 from dbconn import get_db_connection
