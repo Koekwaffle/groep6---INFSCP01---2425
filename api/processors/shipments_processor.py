@@ -1,4 +1,4 @@
-from processors.generic_functions import Generic_functions
+from api.processors.generic_functions import Generic_functions
 from providers import data_provider
 
 class Shipments_processor(Generic_functions):
@@ -37,3 +37,9 @@ class Shipments_processor(Generic_functions):
                     data_provider.fetch_inventory_pool().update_inventory(max_inventory["id"], max_inventory)
         shipment["items"] = items
         self.update_shipment(shipment_id, shipment)
+
+    def get_items_in_shipment(self, shipment_id):
+        for x in self.data:
+            if x["id"] == shipment_id:
+                return x["items"]
+        return None

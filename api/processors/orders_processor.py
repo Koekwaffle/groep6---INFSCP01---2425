@@ -1,4 +1,4 @@
-from processors.generic_functions import Generic_functions
+from api.processors.generic_functions import Generic_functions
 from providers import data_provider
 
 class Orders_processor(Generic_functions):
@@ -37,7 +37,8 @@ class Orders_processor(Generic_functions):
                 min_inventory["total_expected"] = y["total_on_hand"] + y["total_ordered"]
                 data_provider.fetch_inventory_pool().update_inventory(min_inventory["id"], min_inventory)
         order["items"] = items
-        self.update_order(order_id, order)
+        self.update_order(order_id, order) 
+
 
     def update_orders_in_shipment(self, shipment_id, orders):
         packed_orders = self.get_orders_in_shipment(shipment_id)
@@ -51,4 +52,24 @@ class Orders_processor(Generic_functions):
             order = self.get_order(x)
             order["shipment_id"] = shipment_id
             order["order_status"] = "Packed"
-            self.update_order(x, order)
+            self.update_order(x,order)
+
+    def get_items_in_order(self, order_id):
+        for x in self.data:
+            if x["id"] == order_id:
+                return x["items"]
+        return None
+
+    def get_orders_in_shipment(self, shipment_id):
+        result = []
+        for x in self.data:
+            if x["shipment_id"] == shipment_id:
+                result.append(x["id"])
+        return result
+
+    def get_orders_for_client(self, client_id):
+        result = []
+        for x in self.data:
+            if x["ship_to"] == client_id or x["bill_to"] == client_id:
+                result.append(x)
+        return result

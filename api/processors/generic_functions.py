@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 DATA = []
 
@@ -8,10 +9,13 @@ class Generic_functions():
         self.data_path = root_path + own_path
         self.load(is_debug)
     
+    def get_timestamp(self):
+        return datetime.utcnow().isoformat() + "Z"
+    
     def get_data(self):
         return self.data
     
-    def get_data_by_id(self, data_id):
+    def get_data(self, data_id):
         for x in self.data:
             if x["id"] == data_id:
                 return x
