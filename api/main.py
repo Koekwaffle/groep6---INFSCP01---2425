@@ -26,7 +26,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(warehouses).encode("utf-8"))
                 case 2:
                     warehouse_id = int(path[1])
-                    warehouse = data_provider.fetch_warehouse_pool().get_data(warehouse_id)
+                    warehouse = data_provider.fetch_warehouse_pool().get_data_by_ID(warehouse_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -56,7 +56,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(locations).encode("utf-8"))
                 case 2:
                     location_id = int(path[1])
-                    location = data_provider.fetch_location_pool().get_data(location_id)
+                    location = data_provider.fetch_location_pool().get_data_by_ID(location_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -75,7 +75,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(transfers).encode("utf-8"))
                 case 2:
                     transfer_id = int(path[1])
-                    transfer = data_provider.fetch_transfer_pool().get_data(transfer_id)
+                    transfer = data_provider.fetch_transfer_pool().get_data_by_ID(transfer_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -105,7 +105,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(items).encode("utf-8"))
                 case 2:
                     item_id = path[1]
-                    item = data_provider.fetch_item_pool().get_data(item_id)
+                    item = data_provider.fetch_item_pool().get_data_by_ID(item_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -148,7 +148,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(item_lines).encode("utf-8"))
                 case 2:
                     item_line_id = int(path[1])
-                    item_line = data_provider.fetch_item_line_pool().get_data(item_line_id)
+                    item_line = data_provider.fetch_item_line_pool().get_data_by_ID(item_line_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -178,7 +178,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(item_groups).encode("utf-8"))
                 case 2:
                     item_group_id = int(path[1])
-                    item_group = data_provider.fetch_item_group_pool().get_data(item_group_id)
+                    item_group = data_provider.fetch_item_group_pool().get_data_by_ID(item_group_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -208,7 +208,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(item_types).encode("utf-8"))
                 case 2:
                     item_type_id = int(path[1])
-                    item_type = data_provider.fetch_item_type_pool().get_data(item_type_id)
+                    item_type = data_provider.fetch_item_type_pool().get_data_by_ID(item_type_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -238,7 +238,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(inventories).encode("utf-8"))
                 case 2:
                     inventory_id = int(path[1])
-                    inventory = data_provider.fetch_inventory_pool().get_data(inventory_id)
+                    inventory = data_provider.fetch_inventory_pool().get_data_by_ID(inventory_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -257,7 +257,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(suppliers).encode("utf-8"))
                 case 2:
                     supplier_id = int(path[1])
-                    supplier = data_provider.fetch_supplier_pool().get_data(supplier_id)
+                    supplier = data_provider.fetch_supplier_pool().get_data_by_ID(supplier_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -287,7 +287,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(orders).encode("utf-8"))
                 case 2:
                     order_id = int(path[1])
-                    order = data_provider.fetch_order_pool().get_data(order_id)
+                    order = data_provider.fetch_order_pool().get_data_by_ID(order_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -317,7 +317,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(clients).encode("utf-8"))
                 case 2:
                     client_id = int(path[1])
-                    client = data_provider.fetch_client_pool().get_data(client_id)
+                    client = data_provider.fetch_client_pool().get_data_by_ID(client_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
@@ -347,7 +347,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(shipments).encode("utf-8"))
                 case 2:
                     shipment_id = int(path[1])
-                    shipment = data_provider.fetch_shipment_pool().get_data(shipment_id)
+                    shipment = data_provider.fetch_shipment_pool().get_data_by_ID(shipment_id)
                     self.send_response(200)
                     self.send_header("Content-type", "application/json")
                     self.end_headers()

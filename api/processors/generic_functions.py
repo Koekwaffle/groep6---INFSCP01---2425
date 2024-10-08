@@ -15,7 +15,7 @@ class Generic_functions():
     def get_data(self):
         return self.data
     
-    def get_data(self, data_id):
+    def get_data_by_ID(self, data_id):
         for x in self.data:
             if x["id"] == data_id:
                 return x
