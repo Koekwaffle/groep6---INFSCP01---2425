@@ -1,0 +1,52 @@
+@host = http://localhost:3000
+@api_key = a1b2c3d4e5
+
+### Get all item groups
+GET {{host}}/api/v1/item_groups
+API_KEY: {{api_key}}
+
+### Get specific item group
+GET {{host}}/api/v1/item_groups/1/items
+API_KEY: {{api_key}}
+
+### Put new information in item_groups id 1 BROKEN
+###The id remains 0 since we are updating the "Electronics" group
+### The name and description are updated
+### The created_at remains unchanged, while updated_at is set to the current time to reflect when the update was made.
+PUT http://localhost:3000/api/v1/item_groups/0
+Content-Type: application/json
+API_KEY: a1b2c3d4e5
+
+{
+    "id": 0,
+    "name": "Updated Electronics",
+    "description": "Updated description for the electronics group",
+    "created_at": "1998-05-15 19:52:53",
+    "updated_at": "2024-09-30 12:50:00"
+}
+
+### Create new item group BROKEN
+POST {{host}}/api/v1/item_groups
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "uid": "P000084",
+    "code": "xQk78654R",
+    "description": "Open-architected tertiary contingency",
+    "short_description": "throughout",
+    "upc_code": "6240362357099",
+    "model_number": "81-buCQA7M",
+    "commodity_code": "hV-9935",
+    "item_line": 67,
+    "item_group": 1,
+    "item_type": 17,
+    "unit_purchase_quantity": 18,
+    "unit_order_quantity": 17,
+    "pack_order_quantity": 13,
+    "supplier_id": 27,
+    "supplier_code": "SUP545",
+    "supplier_part_number": "f-768-s2A",
+    "created_at": "1995-09-07 07:15:07",
+    "updated_at": "1996-09-16 17:31:21"
+}

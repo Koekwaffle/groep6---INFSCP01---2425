@@ -1,0 +1,51 @@
+@host = http://localhost:3000
+@api_key = a1b2c3d4e5
+
+### Get all clients BEETJE BROKEN TRAAG
+GET {{host}}/api/v1/clients
+API_KEY: {{api_key}}
+
+### Get specific client
+GET {{host}}/api/v1/clients/1
+API_KEY: {{api_key}}
+
+### Get orders of specific client
+GET {{host}}/api/v1/clients/5/orders
+API_KEY: {{api_key}}
+
+### put new information in clients
+PUT http://localhost:3000/api/v1/clients/1
+Content-Type: application/json
+Authorization: Bearer {{api_key}}
+
+{
+  "id": 1,
+  "name": "Updated Client Name",
+  "address": "789 Updated Street",
+  "city": "Updated City",
+  "zip_code": "99999",
+  "province": "Updated Province",
+  "country": "United States",
+  "contact_name": "Updated Contact Name",
+  "contact_phone": "555-999-8888",
+  "contact_email": "updated.contact@example.com",
+  "updated_at": "2024-09-30T14:21:34.248255Z"
+}
+
+### Post new client
+POST {{host}}/api/v1/clients
+Content-Type: application/json
+Authorization: Bearer {{api_key}}
+
+{
+    "id":  1,
+    "name": "Nieuwe Klant",
+    "address": "1234 Nieuwe Straat",
+    "city": "Amsterdam",
+    "zip_code": "1234AB",
+    "province": "Noord-Holland",
+    "country": "Nederland",
+    "contact_name": "Jan Janssen",
+    "contact_phone": "06-12345678",
+    "contact_email": "nieuwe.klant@example.com"
+}

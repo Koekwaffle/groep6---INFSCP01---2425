@@ -1,0 +1,50 @@
+@host = http://localhost:3000
+@api_key = a1b2c3d4e5
+
+### Get all suppliers
+GET {{host}}/api/v1/suppliers
+API_KEY: {{api_key}}
+
+### Get specific supplier
+GET {{host}}/api/v1/suppliers/2
+API_KEY: {{api_key}}
+
+### Update a supplier
+PUT {{host}}/api/v1/suppliers/2
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+  "id": 2,
+  "code": "SUP0002",
+  "name": "Holden-Quinn",
+  "address": "576 Christopher Roads",
+  "address_extra": "Suite 072",
+  "city": "Amberbury",
+  "zip_code": "16105",
+  "province": "Illinois",
+  "country": "Saint Martin",
+  "contact_name": "Kathleen Vincent",
+  "phonenumber": "001-733-291-8848x3542",
+  "reference": "H-SUP0002"
+}
+
+### Create new Supplier
+POST {{host}}/api/v1/suppliers
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+  "id": 2,
+  "code": "SUP0002",
+  "name": "Holden-Quinn",
+  "address": "576 Christopher Roads",
+  "address_extra": "Suite 072",
+  "city": "Amberbury",
+  "zip_code": "16105",
+  "province": "Illinois",
+  "country": "Saint Martin",
+  "contact_name": "Kathleen Vincent",
+  "phonenumber": "001-733-291-8848x3542",
+  "reference": "H-SUP0002"
+}

@@ -475,19 +475,32 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
 
     def do_POST(self):
-        api_key = self.headers.get("API_KEY")
-        user = auth_provider.get_user(api_key)
-        if user == None:
+        authorization_header = self.headers.get("Authorization")
+        if authorization_header:
+            api_key = authorization_header.split(" ")[1]
+            user = auth_provider.get_user(api_key)
+            if user == None:
+                self.send_response(401)
+                self.end_headers()
+            else:
+                try:
+                    path = self.path.split("/")
+                    if len(path) > 3 and path[1] == "api" and path[2] == "v1":
+                        if path[3:] is not None and len(path[3:]) > 0:
+                            self.handle_post_version_1(path[3:], user)
+                        else:
+                            self.send_response(400)
+                            self.end_headers()
+                    else:
+                        self.send_response(404)
+                        self.end_headers()
+                except Exception as e:
+                    print(f"Error: {e}")
+                    self.send_response(500)
+                    self.end_headers()
+        else:
             self.send_response(401)
             self.end_headers()
-        else:
-            try:
-                path = self.path.split("/")
-                if len(path) > 3 and path[1] == "api" and path[2] == "v1":
-                    self.handle_post_version_1(path[3:], user)
-            except Exception:
-                self.send_response(500)
-                self.end_headers()
 
     def handle_put_version_1(self, path, user):
         if not auth_provider.has_access(user, path, "put"):
@@ -573,13 +586,12 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.end_headers()
         elif path[0] == "item_groups":
-            item_group_id = int(path[1])
             content_length = int(self.headers["Content-Length"])
             post_data = self.rfile.read(content_length)
-            updated_item_group = json.loads(post_data.decode())
-            data_provider.fetch_item_group_pool().update_item_group(item_group_id, updated_item_group)
+            new_item_group = json.loads(post_data.decode())
+            data_provider.fetch_item_group_pool().add_item_group(new_item_group)
             data_provider.fetch_item_group_pool().save()
-            self.send_response(200)
+            self.send_response(201)
             self.end_headers()
         elif path[0] == "item_types":
             item_type_id = int(path[1])
@@ -689,19 +701,65 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
 
     def do_PUT(self):
-        api_key = self.headers.get("API_KEY")
-        user = auth_provider.get_user(api_key)
-        if user == None:
+        # Log request for debugging purposes
+        print(f"Received PUT request for {self.path}")
+        
+        # Retrieve the Authorization header
+        authorization_header = self.headers.get("Authorization")
+        
+        # Check if Authorization header exists
+        if authorization_header:
+            try:
+                # Split the Authorization header to extract the API key
+                if "Bearer " in authorization_header:
+                    api_key = authorization_header.split(" ")[1]
+                else:
+                    # If the Authorization format is wrong, return 400 Bad Request
+                    print("Invalid Authorization format")
+                    self.send_response(400)
+                    self.end_headers()
+                    return
+                
+                # Get the user based on the API key
+                user = auth_provider.get_user(api_key)
+                
+                # If the user is not found, return 401 Unauthorized
+                if user is None:
+                    print("Unauthorized: Invalid API Key")
+                    self.send_response(401)
+                    self.end_headers()
+                    return
+                
+                # Split and parse the path
+                path = self.path.split("/")
+                print(f"Parsed path: {path}")
+                
+                # Ensure the path is long enough and starts with /api/v1/
+                if len(path) > 3 and path[1] == "api" and path[2] == "v1":
+                    # Further handle the path and validate the resource
+                    if path[3:] and len(path[3:]) > 0:
+                        print(f"Handling PUT for {path[3:]}")
+                        self.handle_put_version_1(path[3:], user)  # Assuming this function handles the PUT request logic
+                    else:
+                        print("Invalid path or resource")
+                        self.send_response(400)  # Bad Request for invalid path/resource
+                        self.end_headers()
+                else:
+                    print("Resource not found")
+                    self.send_response(404)  # Not Found if path structure is wrong
+                    self.end_headers()
+            
+            # Catch and log any unforeseen exceptions
+            except Exception as e:
+                print(f"Error in PUT request: {e}")
+                self.send_response(500)  # Internal Server Error
+                self.end_headers()
+        
+        # If Authorization header is missing, return 401 Unauthorized
+        else:
+            print("Missing Authorization header")
             self.send_response(401)
             self.end_headers()
-        else:
-            try:
-                path = self.path.split("/")
-                if len(path) > 3 and path[1] == "api" and path[2] == "v1":
-                    self.handle_put_version_1(path[3:], user)
-            except Exception:
-                self.send_response(500)
-                self.end_headers()
 
     def handle_delete_version_1(self, path, user):
         if not auth_provider.has_access(user, path, "delete"):
@@ -808,3 +866,4 @@ if __name__ == "__main__":
         notification_processor.start()
         print(f"Serving on port {PORT}...")
         httpd.serve_forever()
+#asfdghksgdhagd

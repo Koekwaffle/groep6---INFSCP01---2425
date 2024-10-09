@@ -1,0 +1,34 @@
+@host = http://localhost:3000
+@api_key = a1b2c3d4e5
+
+### Get all item types
+GET {{host}}/api/v1/item_types
+API_KEY: {{api_key}}
+
+### Get specific item type
+GET {{host}}/api/v1/item_types/2
+API_KEY: {{api_key}}
+
+### Get all items of specific item type
+GET {{host}}/api/v1/item_types/2/items
+API_KEY: {{api_key}}
+
+### Put new info in item_types BROKEN returned HTTP/1.0 404 Not Found
+PUT http://localhost:3000/api/v1/item_types/2
+API_KEY: a1b2c3d4e5
+Content-Type: application/json
+
+{
+  "name": "Updated Item Type Name",
+  "description": "Updated description of the item type"
+}
+
+### Create new Item_type BROKEN
+POST {{host}}/api/v1/item_types
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "name": "Tablet",
+    "description": "",
+}

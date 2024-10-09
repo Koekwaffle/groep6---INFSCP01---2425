@@ -5,7 +5,7 @@ from models.base import Base
 # List that stores clients if the 'is_debug' flag is set to True
 CLIENTS = []
 
-
+#smbvkabvbvhbak
 class Clients(Base):
     def __init__(self, root_path, is_debug=False):
         # Set the path to the clients.json file based on the provided root_path
