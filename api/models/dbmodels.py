@@ -16,7 +16,7 @@ def create_clients_table():
     conn = get_db_connection()
     cursor = conn.cursor()
     
-    # Create the clients table
+    # Create the clients table if it doesn't exist
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS clients (
         id INTEGER PRIMARY KEY,
@@ -29,12 +29,40 @@ def create_clients_table():
         contact_name TEXT,
         contact_phone TEXT,
         contact_email TEXT,
+        created_at TEXT,  -- Added created_at column
         updated_at TEXT
     );
     ''')
     
     conn.commit()
     conn.close()
+
+# Function to alter the clients table and add the created_at column if it doesn't already exist
+def add_created_at_to_clients():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    # Check if the column already exists before attempting to add it
+    cursor.execute("PRAGMA table_info(clients)")
+    columns = [column[1] for column in cursor.fetchall()]
+    
+    if 'created_at' not in columns:
+        # Add the created_at column
+        cursor.execute('''
+        ALTER TABLE clients
+        ADD COLUMN created_at TEXT;
+        ''')
+        print("Added 'created_at' column to 'clients' table.")
+    else:
+        print("'created_at' column already exists in 'clients' table.")
+    
+    conn.commit()
+    conn.close()
+
+# Execute the functions
+if __name__ == '__main__':
+    create_clients_table()
+    add_created_at_to_clients()
 
 
 def create_inventories_table():
