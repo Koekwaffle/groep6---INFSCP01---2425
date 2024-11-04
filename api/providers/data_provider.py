@@ -15,6 +15,8 @@ DEBUG = False
 
 ROOT_PATH = "./data/"
 
+# Paths: "./Test data/"    |    "./data/"
+
 _warehouses = None
 _locations = None
 _transfers = None
