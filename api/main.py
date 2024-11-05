@@ -7,6 +7,11 @@ from providers import data_provider
 
 from processors import notification_processor
 
+data = data_provider.fetch_by_table_and_column("orders", "warehouse_id", 47)
+for i in data:
+    print(i)
+    print()
+
 #push
 class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
 
