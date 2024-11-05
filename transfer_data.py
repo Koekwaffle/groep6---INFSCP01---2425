@@ -10,36 +10,30 @@ cursor = conn.cursor()
 cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
 print("Existing tables:", cursor.fetchall())
 
-# Function to insert data into clients table
-def insert_client(client):
+# Function to insert data into locations table
+def insert_location(location):
     query = '''
-    INSERT INTO clients 
-    (id, name, address, city, zip_code, province, country, contact_name, contact_phone, contact_email, created_at, updated_at) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO locations 
+    (id, warehouse_id, code, name, created_at, updated_at) 
+    VALUES (?, ?, ?, ?, ?, ?)
     '''
     data = (
-        client['id'], 
-        client['name'], 
-        client['address'], 
-        client['city'], 
-        client['zip_code'], 
-        client['province'], 
-        client['country'], 
-        client['contact_name'], 
-        client['contact_phone'], 
-        client['contact_email'], 
-        client.get('created_at'), 
-        client.get('updated_at')
+        location['id'], 
+        location['warehouse_id'], 
+        location['code'], 
+        location['name'], 
+        location['created_at'], 
+        location['updated_at']
     )
     cursor.execute(query, data)
 
-# Load the clients JSON data
-with open('C:\\Users\\ronan\\Documents\\GitHub\\groep6---INFSCP01---2425\\data\\clients.json', 'r') as file:
-    clients = json.load(file)
+# Load the locations JSON data
+with open('C:\\Users\\ronan\\Documents\\GitHub\\groep6---INFSCP01---2425\\data\\locations.json', 'r') as file:
+    locations = json.load(file)
 
-# Insert each client into the clients table
-for client in clients:
-    insert_client(client)
+# Insert each location into the locations table
+for location in locations:
+    insert_location(location)
 
 # Commit the transaction and close the connection
 conn.commit()
