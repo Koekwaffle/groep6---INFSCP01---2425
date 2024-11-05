@@ -2,7 +2,7 @@ import threading
 
 NOTIFICATION_UPDATE_INTERVAL_SEC = 30
 
-_queue = ["Kurva pingwin"]
+_queue = ["System running"]
 
 def push(notification):
     global _queue
