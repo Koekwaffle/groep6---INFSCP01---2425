@@ -1,4 +1,4 @@
-from api.processors.generic_functions import Generic_functions
+from processors.generic_functions import Generic_functions
 
 class Items_processor(Generic_functions):
     def get_items_for_item_line(self, item_line_id):
