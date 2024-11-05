@@ -6,5 +6,5 @@ def init(table_name):
     cur = con.cursor()
     cur.execute("SELECT * FROM " + table_name)
     data = cur.fetchall()
-    # print(data)
+    print(data)
     return data
