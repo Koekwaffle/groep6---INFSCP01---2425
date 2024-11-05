@@ -1,4 +1,4 @@
-from api.processors.generic_functions import Generic_functions
+from processors.generic_functions import Generic_functions
 from providers import data_provider
 
 class Orders_processor(Generic_functions):

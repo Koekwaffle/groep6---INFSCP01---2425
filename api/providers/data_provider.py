@@ -1,19 +1,18 @@
 import sys
-sys.path.append('C:\\Users\\thomj\\OneDrive\\Documenten\\GitHub\\groep6---INFSCP01---2425')
 
 
-from api.processors.warehouses_processor import Warehouses_processor
-from api.processors.locations_processor import Locations_processor
-from api.processors.transfers_processor import Transfers_processor
-from api.processors.items_processor import Items_processor
-from api.processors.item_lines_processor import Item_lines_processor
-from api.processors.item_groups_processor import Item_groups_processor
-from api.processors.item_types_processor import Item_types_processor
-from api.processors.inventories_processor import Inventories_processor
-from api.processors.suppliers_processor import Suppliers_processor
-from api.processors.orders_processor import Orders_processor
-from api.processors.clients_processor import Clients_processor
-from api.processors.shipments_processor import Shipments_processor
+from processors.warehouses_processor import Warehouses_processor
+from processors.locations_processor import Locations_processor
+from processors.transfers_processor import Transfers_processor
+from processors.items_processor import Items_processor
+from processors.item_lines_processor import Item_lines_processor
+from processors.item_groups_processor import Item_groups_processor
+from processors.item_types_processor import Item_types_processor
+from processors.inventories_processor import Inventories_processor
+from processors.suppliers_processor import Suppliers_processor
+from processors.orders_processor import Orders_processor
+from processors.clients_processor import Clients_processor
+from processors.shipments_processor import Shipments_processor
 
 
 DEBUG = False
