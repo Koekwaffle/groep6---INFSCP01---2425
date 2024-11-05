@@ -1,6 +1,6 @@
 import sys
 sys.path.append('C:\\Users\\thomj\\OneDrive\\Documenten\\GitHub\\groep6---INFSCP01---2425')
-
+import sqlite3
 
 from api.processors.warehouses_processor import Warehouses_processor
 from api.processors.locations_processor import Locations_processor
@@ -19,6 +19,8 @@ from api.processors.shipments_processor import Shipments_processor
 DEBUG = False
 
 ROOT_PATH = "./data/"
+con = sqlite3.connect(ROOT_PATH + 'database.db')
+cur = con.cursor()
 
 # Paths: "./Test data/"    |    "./data/"
 
@@ -116,7 +118,10 @@ def fetch_order_pool():
 
 
 def fetch_client_pool():
-    return _clients
+    cur.execute("SELECT * FROM clients")
+    clients = cur.fetchall()
+    print(clients)
+    return clients
 
 
 def fetch_shipment_pool():
