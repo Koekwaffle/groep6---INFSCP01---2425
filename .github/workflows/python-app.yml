@@ -5,7 +5,7 @@ name: Python application
 
 on:
   push:
-    branches: [ "New-main" ]
+    branches: [ "main" ]
 
 jobs:
   build:
