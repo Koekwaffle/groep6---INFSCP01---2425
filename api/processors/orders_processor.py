@@ -15,7 +15,7 @@ class Orders_processor(Generic_functions):
             if not found:
                 inventories = data_provider.fetch_inventory_pool().get_inventories_for_item(x["item_id"])
                 min_ordered = 1_000_000_000_000_000_000
-                min_inventory
+                min_inventory = 1_000_000_000_000_000_000
                 for z in inventories:
                     if z["total_allocated"] > min_ordered:
                         min_ordered = z["total_allocated"]
@@ -28,7 +28,7 @@ class Orders_processor(Generic_functions):
                 if x["item_id"] == y["item_id"]:
                     inventories = data_provider.fetch_inventory_pool().get_inventories_for_item(x["item_id"])
                     min_ordered = 1_000_000_000_000_000_000
-                    min_inventory
+                    min_inventory = 1_000_000_000_000_000_000
                     for z in inventories:
                         if z["total_allocated"] < min_ordered:
                             min_ordered = z["total_allocated"]
