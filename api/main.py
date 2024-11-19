@@ -862,7 +862,6 @@ if __name__ == "__main__":
     PORT = 3000
     with socketserver.TCPServer(("", PORT), ApiRequestHandler) as httpd:
         auth_provider.init()
-        data_provider.init()
         notification_processor.start()
         print(f"Serving on port {PORT}...")
         httpd.serve_forever()
