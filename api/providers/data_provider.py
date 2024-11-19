@@ -1,19 +1,15 @@
-import sys
-
-
-from processors.warehouses_processor import Warehouses_processor
-from processors.locations_processor import Locations_processor
-from processors.transfers_processor import Transfers_processor
-from processors.items_processor import Items_processor
-from processors.item_lines_processor import Item_lines_processor
-from processors.item_groups_processor import Item_groups_processor
-from processors.item_types_processor import Item_types_processor
-from processors.inventories_processor import Inventories_processor
-from processors.suppliers_processor import Suppliers_processor
-from processors.orders_processor import Orders_processor
-from processors.clients_processor import Clients_processor
-from processors.shipments_processor import Shipments_processor
-
+from models.warehouses import Warehouses
+from models.locations import Locations
+from models.transfers import Transfers
+from models.items import Items
+from models.item_lines import ItemLines
+from models.item_groups import ItemGroups
+from models.item_types import ItemTypes
+from models.inventories import Inventories
+from models.suppliers import Suppliers
+from models.orders import Orders
+from models.clients import Clients
+from models.shipments import Shipments
 
 DEBUG = False
 
@@ -37,41 +33,29 @@ _clients = None
 
 def init():
     global _warehouses
-    _warehouses = Warehouses_processor(ROOT_PATH, "warehouses.json", DEBUG)
-    
+    _warehouses = Warehouses(ROOT_PATH, DEBUG)
     global _locations
-    _locations = Locations_processor(ROOT_PATH, "locations.json", DEBUG)
-    
+    _locations = Locations(ROOT_PATH, DEBUG)
     global _transfers
-    _transfers = Transfers_processor(ROOT_PATH, "transfers.json", DEBUG)
-    
+    _transfers = Transfers(ROOT_PATH, DEBUG)
     global _items
-    _items = Items_processor(ROOT_PATH, "items.json", DEBUG)
-    
+    _items = Items(ROOT_PATH, DEBUG)
     global _item_lines
-    _item_lines = Item_lines_processor(ROOT_PATH, "item_lines.json", DEBUG)
-    
+    _item_lines = ItemLines(ROOT_PATH, DEBUG)
     global _item_groups
-    _item_groups = Item_groups_processor(ROOT_PATH, "item_groups.json", DEBUG)
-    
+    _item_groups = ItemGroups(ROOT_PATH, DEBUG)
     global _item_types
-    _item_types = Item_types_processor(ROOT_PATH, "item_types.json", DEBUG)
-    
+    _item_types = ItemTypes(ROOT_PATH, DEBUG)
     global _inventories
-    _inventories = Inventories_processor(ROOT_PATH, "inventories.json", DEBUG)
-    
+    _inventories = Inventories(ROOT_PATH, DEBUG)
     global _suppliers
-    _suppliers = Suppliers_processor(ROOT_PATH, "suppliers.json", DEBUG)
-    
+    _suppliers = Suppliers(ROOT_PATH, DEBUG)
     global _orders
-    _orders = Orders_processor(ROOT_PATH, "orders.json", DEBUG)
-    
+    _orders = Orders(ROOT_PATH, DEBUG)
     global _clients
-    _clients = Clients_processor(ROOT_PATH, "clients.json", DEBUG)
-    
+    _clients = Clients(ROOT_PATH, DEBUG)
     global _shipments
-    _shipments = Shipments_processor(ROOT_PATH, "shipments.json", DEBUG)
-
+    _shipments = Shipments(ROOT_PATH, DEBUG)
 
 
 def fetch_warehouse_pool():
