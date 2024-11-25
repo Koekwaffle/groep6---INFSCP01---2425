@@ -1,50 +1,51 @@
-import json
-
 from models.base import Base
 
-ITEM_TYPES = []
-
-
 class ItemTypes(Base):
-    def __init__(self, root_path, is_debug=False):
-        self.data_path = root_path + "item_types.json"
-        self.load(is_debug)
+    def __init__(self):
+        super().__init__()
 
     def get_item_types(self):
-        return self.data
+        """Retrieve all item types."""
+        query = "SELECT * FROM item_types"
+        return self.fetch_all(query)
 
-    def get_item_type(self, item_type_id):
-        for x in self.data:
-            if x["id"] == item_type_id:
-                return x
-        return None
+    def get_item_type(self, type_id):
+        """Retrieve a single item type by ID."""
+        query = "SELECT * FROM item_types WHERE id = ?"
+        return self.fetch_one(query, (type_id,))
 
     def add_item_type(self, item_type):
-        item_type["created_at"] = self.get_timestamp()
-        item_type["updated_at"] = self.get_timestamp()
-        self.data.append(item_type)
+        """Add a new item type."""
+        query = """
+        INSERT INTO item_types (name, description, created_at, updated_at)
+        VALUES (?, ?, ?, ?)
+        """
+        timestamp = self.get_timestamp()
+        params = (
+            item_type['name'],
+            item_type['description'],
+            timestamp,
+            timestamp
+        )
+        self.execute_query(query, params)
 
-    def update_item_type(self, item_type_id, item_type):
-        item_type["updated_at"] = self.get_timestamp()
-        for i in range(len(self.data)):
-            if self.data[i]["id"] == item_type_id:
-                self.data[i] = item_type
-                break
+    def update_item_type(self, type_id, item_type):
+        """Update an existing item type."""
+        query = """
+        UPDATE item_types
+        SET name = ?, description = ?, updated_at = ?
+        WHERE id = ?
+        """
+        params = (
+            item_type['name'],
+            item_type['description'],
+            self.get_timestamp(),
+            type_id
+        )
+        self.execute_query(query, params)
 
-    def remove_item_type(self, item_type_id):
-        for x in self.data:
-            if x["id"] == item_type_id:
-                self.data.remove(x)
+    def remove_item_type(self, type_id):
+        """Remove an item type by ID."""
+        query = "DELETE FROM item_types WHERE id = ?"
+        self.execute_query(query, (type_id,))
 
-    def load(self, is_debug):
-        if is_debug:
-            self.data = ITEM_TYPES
-        else:
-            f = open(self.data_path, "r")
-            self.data = json.load(f)
-            f.close()
-
-    def save(self):
-        f = open(self.data_path, "w")
-        json.dump(self.data, f)
-        f.close()

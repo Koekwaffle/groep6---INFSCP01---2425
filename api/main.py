@@ -1,47 +1,75 @@
 import socketserver
 import http.server
 import json
-from data.dbconn import get_db_connection
+from models.warehouses import Warehouses
+from models.locations import Locations
+from models.transfers import Transfers
+from models.items import Items
+from models.inventories import Inventories
+from models.suppliers import Suppliers
+from models.orders import Orders
+from models.clients import Clients
+from models.shipments import Shipments
 
 class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
+    def send_json_response(self, data, status=200):
+        """Send a JSON response."""
+        self.send_response(status)
+        self.send_header("Content-type", "application/json")
+        self.end_headers()
+        self.wfile.write(json.dumps(data).encode("utf-8"))
 
     def handle_get_version_1(self, path):
         try:
-            conn = get_db_connection()
-            cursor = conn.cursor()
-
             if path[0] == "warehouses":
-                if len(path) == 1:
-                    cursor.execute("SELECT * FROM warehouses")
-                    warehouses = cursor.fetchall()
-                    self.send_response(200)
-                    self.send_header("Content-type", "application/json")
-                    self.end_headers()
-                    self.wfile.write(json.dumps(warehouses).encode("utf-8"))
-                elif len(path) == 2:
-                    warehouse_id = int(path[1])
-                    cursor.execute("SELECT * FROM warehouses WHERE id = ?", (warehouse_id,))
-                    warehouse = cursor.fetchone()
-                    if warehouse:
-                        self.send_response(200)
-                        self.send_header("Content-type", "application/json")
-                        self.end_headers()
-                        self.wfile.write(json.dumps(warehouse).encode("utf-8"))
-                    else:
-                        self.send_response(404)
-                        self.end_headers()
-                else:
-                    self.send_response(404)
-                    self.end_headers()
+                self.handle_warehouses(path[1:])
+            elif path[0] == "locations":
+                self.handle_locations(path[1:])
+            elif path[0] == "transfers":
+                self.handle_transfers(path[1:])
+            elif path[0] == "items":
+                self.handle_items(path[1:])
+            elif path[0] == "inventories":
+                self.handle_inventories(path[1:])
+            elif path[0] == "suppliers":
+                self.handle_suppliers(path[1:])
+            elif path[0] == "orders":
+                self.handle_orders(path[1:])
+            elif path[0] == "clients":
+                self.handle_clients(path[1:])
+            elif path[0] == "shipments":
+                self.handle_shipments(path[1:])
             else:
                 self.send_response(404)
                 self.end_headers()
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"Error handling GET request: {e}")
             self.send_response(500)
             self.end_headers()
-        finally:
-            conn.close()
+
+    def handle_warehouses(self, path):
+        model = Warehouses()
+        if not path:
+            warehouses = model.get_warehouses()
+            self.send_json_response(warehouses)
+        elif len(path) == 1:
+            warehouse_id = int(path[0])
+            warehouse = model.get_warehouse(warehouse_id)
+            if warehouse:
+                self.send_json_response(warehouse)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        elif len(path) == 2 and path[1] == "locations":
+            location_model = Locations()
+            warehouse_id = int(path[0])
+            locations = location_model.get_locations_in_warehouse(warehouse_id)
+            self.send_json_response(locations)
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    # Similar handlers for locations, transfers, items, inventories, suppliers, orders, clients, shipments.
 
     def do_GET(self):
         try:
