@@ -1,15 +1,22 @@
+import sys
+import os
+
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 import socketserver
 import http.server
 import json
-from models.warehouses import Warehouses
-from models.locations import Locations
-from models.transfers import Transfers
-from models.items import Items
-from models.inventories import Inventories
-from models.suppliers import Suppliers
-from models.orders import Orders
-from models.clients import Clients
-from models.shipments import Shipments
+from api.models.warehouses import Warehouses
+from api.models.locations import Locations
+from api.models.transfers import Transfers
+from api.models.items import Items
+from api.models.inventories import Inventories
+from api.models.suppliers import Suppliers
+from api.models.orders import Orders
+from api.models.clients import Clients
+from api.models.shipments import Shipments
 
 class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
     def send_json_response(self, data, status=200):
@@ -69,7 +76,148 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
-    # Similar handlers for locations, transfers, items, inventories, suppliers, orders, clients, shipments.
+    def handle_locations(self, path):
+        model = Locations()
+        if not path:
+            locations = model.get_locations()
+            self.send_json_response(locations)
+        elif len(path) == 1:
+            location_id = int(path[0])
+            location = model.get_location(location_id)
+            if location:
+                self.send_json_response(location)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def handle_transfers(self, path):
+        model = Transfers()
+        if not path:
+            transfers = model.get_transfers()
+            self.send_json_response(transfers)
+        elif len(path) == 1:
+            transfer_id = int(path[0])
+            transfer = model.get_transfer(transfer_id)
+            if transfer:
+                self.send_json_response(transfer)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def handle_items(self, path):
+        model = Items()
+        if not path:
+            items = model.get_items()
+            self.send_json_response(items)
+        elif len(path) == 1:
+            item_id = int(path[0])
+            item = model.get_item(item_id)
+            if item:
+                self.send_json_response(item)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def handle_inventories(self, path):
+        model = Inventories()
+        if not path:
+            inventories = model.get_inventories()
+            self.send_json_response(inventories)
+        elif len(path) == 1:
+            inventory_id = int(path[0])
+            inventory = model.get_inventory(inventory_id)
+            if inventory:
+                self.send_json_response(inventory)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def handle_suppliers(self, path):
+        model = Suppliers()
+        if not path:
+            suppliers = model.get_suppliers()
+            self.send_json_response(suppliers)
+        elif len(path) == 1:
+            supplier_id = int(path[0])
+            supplier = model.get_supplier(supplier_id)
+            if supplier:
+                self.send_json_response(supplier)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def handle_clients(self, path):
+        model = Clients()
+        if not path:
+            clients = model.get_clients()
+            self.send_json_response(clients)
+        elif len(path) == 1:
+            client_id = int(path[0])
+            client = model.get_client(client_id)
+            if client:
+                self.send_json_response(client)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def handle_shipments(self, path):
+        model = Shipments()
+        if not path:
+            shipments = model.get_shipments()
+            self.send_json_response(shipments)
+        elif len(path) == 1:
+            shipment_id = int(path[0])
+            shipment = model.get_shipment(shipment_id)
+            if shipment:
+                self.send_json_response(shipment)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def handle_orders(self, path):
+        model = Orders()
+        try:
+            if not path:
+                # Handle "Get all orders"
+                orders = model.get_orders()
+                self.send_json_response(orders)
+            elif len(path) == 1:
+                # Handle "Get a specific order"
+                order_id = int(path[0])
+                order = model.get_order(order_id)
+                if order:
+                    self.send_json_response(order)
+                else:
+                    self.send_response(404)
+                    self.end_headers()
+            else:
+                self.send_response(404)
+                self.end_headers()
+        except Exception as e:
+            print(f"Error in handle_orders: {e}")
+            self.send_response(500)
+            self.end_headers()
 
     def do_GET(self):
         try:
