@@ -155,22 +155,8 @@ def test_create_item_group():
 #   Bij welk scenario hoort dit? Deze test past in het scenario waarin een gebruiker een nieuwe itemgroep wil toevoegen aan het systeem
     data = {
         "id":  999,
-        "uid": "P000084",
-        "code": "xQk78654R",
+        "name": "Funny",
         "description": "Open-architected tertiary contingency",
-        "short_description": "throughout",
-        "upc_code": "6240362357099",
-        "model_number": "81-buCQA7M",
-        "commodity_code": "hV-9935",
-        "item_line": 67,
-        "item_group": 1,
-        "item_type": 17,
-        "unit_purchase_quantity": 18,
-        "unit_order_quantity": 17,
-        "pack_order_quantity": 13,
-        "supplier_id": 27,
-        "supplier_code": "SUP545",
-        "supplier_part_number": "f-768-s2A",
         "created_at": "1995-09-07 07:15:07",
         "updated_at": "1996-09-16 17:31:21"
     }
@@ -218,7 +204,9 @@ def test_create_item_line():
     data = {
         "id":  999,
         "name": "New Item Line",
-        "description": "This is a new item line"
+        "description": "This is a new item line",
+        "created_at": "1995-09-07 07:15:07",
+        "updated_at": "1996-09-16 17:31:21"
     }
     response = requests.post(f"{BASE_URL}/api/v1/item_lines", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
     assert response.status_code == 201
@@ -273,7 +261,9 @@ def test_create_item_type():
     data = {
         "id":  999,
         "name": "Tablet",
-        "description": ""
+        "description": "don't know",
+        "created_at": "1995-09-07 07:15:07",
+        "updated_at": "1996-09-16 17:31:21"
     }
     response = requests.post(f"{BASE_URL}/api/v1/item_types", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
     assert response.status_code == 201
@@ -498,11 +488,7 @@ def test_update_supplier():
     response = requests.put(f"{BASE_URL}/api/v1/suppliers/2", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
     assert response.status_code == 200
 
-def test_supplier_workflow():
-    test_create_supplier()
-    test_get_all_suppliers()
-    test_get_specific_supplier()
-    test_update_supplier()
+
 
 ###############################
 ### Transfers endpoint tests
@@ -640,7 +626,3 @@ def test_update_warehouse():
     }
     response = requests.put(f"{BASE_URL}/api/v1/warehouses/1", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
     assert response.status_code == 200
-
-
-
-
