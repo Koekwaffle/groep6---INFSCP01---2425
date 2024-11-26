@@ -50,7 +50,7 @@ class Shipments(Base):
             if not found:
                 inventories = data_provider.fetch_inventory_pool().get_inventories_for_item(x["item_id"])
                 max_ordered = -1
-                max_inventory = -1
+                max_inventory
                 for z in inventories:
                     if z["total_ordered"] > max_ordered:
                         max_ordered = z["total_ordered"]
@@ -63,7 +63,7 @@ class Shipments(Base):
                 if x["item_id"] == y["item_id"]:
                     inventories = data_provider.fetch_inventory_pool().get_inventories_for_item(x["item_id"])
                     max_ordered = -1
-                    max_inventory = -1
+                    max_inventory
                     for z in inventories:
                         if z["total_ordered"] > max_ordered:
                             max_ordered = z["total_ordered"]
