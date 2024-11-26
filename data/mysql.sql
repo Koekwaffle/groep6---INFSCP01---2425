@@ -105,5 +105,3 @@
 --     FOREIGN KEY (inventory_id) REFERENCES inventories(id),
 --     FOREIGN KEY (location_id) REFERENCES locations(id)
 -- );
-
--- SELECT name, sql FROM sqlite_master WHERE type='table';
