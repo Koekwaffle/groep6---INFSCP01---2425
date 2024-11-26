@@ -379,6 +379,10 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         api_key = self.headers.get("API_KEY")
+        if self.path == "/api/v1":
+            self.send_response(200)
+            self.end_headers()
+            return
         user = auth_provider.get_user(api_key)
         if user == None:
             self.send_response(401)
