@@ -1,55 +1,57 @@
+import json
+
 from models.base import Base
 
+TRANSFERS = []
+
+
 class Transfers(Base):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, root_path, is_debug=False):
+        self.data_path = root_path + "transfers.json"
+        self.load(is_debug)
 
     def get_transfers(self):
-        """Retrieve all transfers."""
-        query = "SELECT * FROM transfers"
-        return self.fetch_all(query)
+        return self.data
 
     def get_transfer(self, transfer_id):
-        """Retrieve a single transfer by ID."""
-        query = "SELECT * FROM transfers WHERE id = ?"
-        return self.fetch_one(query, (transfer_id,))
+        for x in self.data:
+            if x["id"] == transfer_id:
+                return x
+        return None
 
     def get_items_in_transfer(self, transfer_id):
-        """Retrieve all items in a specific transfer."""
-        query = "SELECT * FROM transfer_items WHERE transfer_id = ?"
-        return self.fetch_all(query, (transfer_id,))
+        for x in self.data:
+            if x["id"] == transfer_id:
+                return x["items"]
+        return None
 
     def add_transfer(self, transfer):
-        """Add a new transfer."""
-        query = """
-        INSERT INTO transfers (name, transfer_status, created_at, updated_at)
-        VALUES (?, ?, ?, ?)
-        """
-        timestamp = self.get_timestamp()
-        params = (
-            transfer['name'],
-            "Scheduled",
-            timestamp,
-            timestamp
-        )
-        self.execute_query(query, params)
+        transfer["transfer_status"] = "Scheduled"
+        transfer["created_at"] = self.get_timestamp()
+        transfer["updated_at"] = self.get_timestamp()
+        self.data.append(transfer)
 
     def update_transfer(self, transfer_id, transfer):
-        """Update an existing transfer."""
-        query = """
-        UPDATE transfers
-        SET name = ?, transfer_status = ?, updated_at = ?
-        WHERE id = ?
-        """
-        params = (
-            transfer['name'],
-            transfer['transfer_status'],
-            self.get_timestamp(),
-            transfer_id
-        )
-        self.execute_query(query, params)
+        transfer["updated_at"] = self.get_timestamp()
+        for i in range(len(self.data)):
+            if self.data[i]["id"] == transfer_id:
+                self.data[i] = transfer
+                break
 
     def remove_transfer(self, transfer_id):
-        """Remove a transfer by ID."""
-        query = "DELETE FROM transfers WHERE id = ?"
-        self.execute_query(query, (transfer_id,))
+        for x in self.data:
+            if x["id"] == transfer_id:
+                self.data.remove(x)
+
+    def load(self, is_debug):
+        if is_debug:
+            self.data = TRANSFERS
+        else:
+            f = open(self.data_path, "r")
+            self.data = json.load(f)
+            f.close()
+
+    def save(self):
+        f = open(self.data_path, "w")
+        json.dump(self.data, f)
+        f.close()

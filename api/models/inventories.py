@@ -1,78 +1,72 @@
+import json
+
 from models.base import Base
 
+INVENTORIES = []
+
+
 class Inventories(Base):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, root_path, is_debug=False):
+        self.data_path = root_path + "inventories.json"
+        self.load(is_debug)
 
     def get_inventories(self):
-        """Retrieve all inventories."""
-        query = "SELECT * FROM inventories"
-        return self.fetch_all(query)
+        return self.data
 
     def get_inventory(self, inventory_id):
-        """Retrieve a single inventory by ID."""
-        query = "SELECT * FROM inventories WHERE id = ?"
-        return self.fetch_one(query, (inventory_id,))
+        for x in self.data:
+            if x["id"] == inventory_id:
+                return x
+        return None
 
     def get_inventories_for_item(self, item_id):
-        """Retrieve all inventories for a specific item ID."""
-        query = "SELECT * FROM inventories WHERE item_id = ?"
-        return self.fetch_all(query, (item_id,))
+        result = []
+        for x in self.data:
+            if x["item_id"] == item_id:
+                result.append(x)
+        return result
 
     def get_inventory_totals_for_item(self, item_id):
-        """Calculate totals for a specific item ID."""
-        query = """
-        SELECT 
-            SUM(total_expected) as total_expected,
-            SUM(total_ordered) as total_ordered,
-            SUM(total_allocated) as total_allocated,
-            SUM(total_available) as total_available
-        FROM inventories
-        WHERE item_id = ?
-        """
-        return self.fetch_one(query, (item_id,))
+        result = {
+            "total_expected": 0,
+            "total_ordered": 0,
+            "total_allocated": 0,
+            "total_available": 0
+        }
+        for x in self.data:
+            if x["item_id"] == item_id:
+                result["total_expected"] += x["total_expected"]
+                result["total_ordered"] += x["total_ordered"]
+                result["total_allocated"] += x["total_allocated"]
+                result["total_available"] += x["total_available"]
+        return result
 
     def add_inventory(self, inventory):
-        """Add a new inventory record."""
-        query = """
-        INSERT INTO inventories (item_id, location_id, total_expected, total_ordered, total_allocated, total_available, created_at, updated_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """
-        timestamp = self.get_timestamp()
-        params = (
-            inventory['item_id'],
-            inventory['location_id'],
-            inventory['total_expected'],
-            inventory['total_ordered'],
-            inventory['total_allocated'],
-            inventory['total_available'],
-            timestamp,
-            timestamp
-        )
-        self.execute_query(query, params)
+        inventory["created_at"] = self.get_timestamp()
+        inventory["updated_at"] = self.get_timestamp()
+        self.data.append(inventory)
 
     def update_inventory(self, inventory_id, inventory):
-        """Update an existing inventory record."""
-        query = """
-        UPDATE inventories
-        SET item_id = ?, location_id = ?, total_expected = ?, total_ordered = ?,
-            total_allocated = ?, total_available = ?, updated_at = ?
-        WHERE id = ?
-        """
-        params = (
-            inventory['item_id'],
-            inventory['location_id'],
-            inventory['total_expected'],
-            inventory['total_ordered'],
-            inventory['total_allocated'],
-            inventory['total_available'],
-            self.get_timestamp(),
-            inventory_id
-        )
-        self.execute_query(query, params)
+        inventory["updated_at"] = self.get_timestamp()
+        for i in range(len(self.data)):
+            if self.data[i]["id"] == inventory_id:
+                self.data[i] = inventory
+                break
 
     def remove_inventory(self, inventory_id):
-        """Remove an inventory record by ID."""
-        query = "DELETE FROM inventories WHERE id = ?"
-        self.execute_query(query, (inventory_id,))
+        for x in self.data:
+            if x["id"] == inventory_id:
+                self.data.remove(x)
 
+    def load(self, is_debug):
+        if is_debug:
+            self.data = INVENTORIES
+        else:
+            f = open(self.data_path, "r")
+            self.data = json.load(f)
+            f.close()
+
+    def save(self):
+        f = open(self.data_path, "w")
+        json.dump(self.data, f)
+        f.close()
