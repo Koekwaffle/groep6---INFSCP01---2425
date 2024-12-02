@@ -1,10 +1,9 @@
 import requests
-import json
 
 # Documentation: https://docs.python-requests.org
 
 # TODO: replace with test server url
-BASE_URL = "http://localhost:3000"
+BASE_URL = "http://145.24.223.218:3000"
 API_KEY = "a1b2c3d4e5"
 
 # 1. What's the first test we should write?
@@ -626,5 +625,3 @@ def test_update_warehouse():
     }
     response = requests.put(f"{BASE_URL}/api/v1/warehouses/1", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
     assert response.status_code == 200
-
-# hallo

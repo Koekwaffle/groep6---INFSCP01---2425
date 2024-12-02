@@ -34,7 +34,7 @@ jobs:
     - name: Install Pytest
       run: pip install pytest
     - name: Run endpoint tests
-      run: pytest endpoints_test.py --junitxml=results.xml
+      run: pytest endpoints_tests.py --junitxml=results.xml
 
   upload:
     runs-on: ubuntu-latest
