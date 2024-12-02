@@ -1,6 +1,12 @@
-from processors.generic_functions import Generic_functions
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
 
-class Items_processor(Generic_functions):
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
+
+from processors.generic_functions import GenericFunctionsSQLite
+
+class Items_processor(GenericFunctionsSQLite):
     def get_items_for_item_line(self, item_line_id):
         result = []
         for x in self.data:
