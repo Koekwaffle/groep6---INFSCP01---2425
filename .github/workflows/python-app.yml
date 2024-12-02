@@ -35,13 +35,15 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     # Step 4: Run the specific test file
     - name: Run endpoint tests
       run: pytest endpoints_test.py --junitxml=results.xml
-      
+
   upload:
     runs-on: ubuntu-latest
+    needs: test
     steps:
     # Step 5: Upload test results as artifacts
     - name: Upload test results
