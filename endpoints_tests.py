@@ -1,5 +1,5 @@
 import requests
-
+import pytest
 # Documentation: https://docs.python-requests.org
 
 # TODO: replace with test server url
