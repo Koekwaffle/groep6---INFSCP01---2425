@@ -626,3 +626,5 @@ def test_update_warehouse():
     }
     response = requests.put(f"{BASE_URL}/api/v1/warehouses/1", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
     assert response.status_code == 200
+
+# hallo
