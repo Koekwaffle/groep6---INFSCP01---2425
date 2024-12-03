@@ -1,7 +1,7 @@
 import json
 
-from models.base import Base
-from providers import data_provider
+from api.models.base import Base
+from api.providers import data_provider
 
 ORDERS = []
 

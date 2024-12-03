@@ -14,9 +14,9 @@ from django.urls import path
 
 from api.models.clients import Clients
 from api.models.inventories import Inventories
-from api.models.item_groups import Item_Groups
-from api.models.item_lines import Item_Lines
-from api.models.item_types import Item_Types
+from api.models.item_groups import ItemGroups
+from api.models.item_lines import ItemLines
+from api.models.item_types import ItemTypes
 from api.models.items import Items
 from api.models.locations import Locations
 from api.models.orders import Orders
@@ -96,14 +96,14 @@ class LocationView(GenericView):
 
 
 class ItemTypeView(GenericView):
-    model = Item_Types
-    model_instance = Item_Types
+    model = ItemTypes
+    model_instance = ItemTypes
     serializer_class = ItemTypeSerializer
 
 
 class ItemGroupView(GenericView):
-    model = Item_Groups
-    model_instance = Item_Groups
+    model = ItemGroups
+    model_instance = ItemGroups
     serializer_class = ItemGroupSerializer
 
 

@@ -1,6 +1,6 @@
 import json
 
-from models.base import Base
+from api.models.base import Base
 
 ITEM_GROUPS = []
 
