@@ -30,7 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps: 
-    # Step 4: Run the specific test file
     - name: Install Pytest
       run: pip install pytest
     - name: Run endpoint tests
@@ -40,7 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-    # Step 5: Upload test results as artifacts
     - name: Upload test results
       uses: actions/upload-artifact@v3
       with:
