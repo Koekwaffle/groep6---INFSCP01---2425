@@ -1,10 +1,10 @@
-from models.base import Base
+from api.models.base import Base
 
 class Shipments(Base):
     def __init__(self):
         super().__init__()
 
-    def get_shipments(self):
+    def gets(self):
         """Retrieve all shipments."""
         query = "SELECT * FROM shipments"
         return self.fetch_all(query)

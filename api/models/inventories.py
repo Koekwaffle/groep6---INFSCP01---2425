@@ -1,10 +1,10 @@
-from models.base import Base
+from api.models.base import Base
 
 class Inventories(Base):
     def __init__(self):
         super().__init__()
 
-    def get_inventories(self):
+    def gets(self):
         """Retrieve all inventories."""
         query = "SELECT * FROM inventories"
         return self.fetch_all(query)

@@ -1,10 +1,10 @@
-from models.base import Base
+from api.models.base import Base
 
 class Locations(Base):
     def __init__(self):
         super().__init__()
 
-    def get_locations(self):
+    def gets(self):
         """Retrieve all locations."""
         query = "SELECT * FROM locations"
         return self.fetch_all(query)

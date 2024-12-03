@@ -1,10 +1,10 @@
-from models.base import Base
+from api.models.base import Base
 
 class Items(Base):
     def __init__(self):
         super().__init__()
 
-    def get_items(self):
+    def gets(self):
         """Retrieve all items."""
         query = "SELECT * FROM items"
         return self.fetch_all(query)

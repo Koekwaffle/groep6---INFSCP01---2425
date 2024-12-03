@@ -1,10 +1,10 @@
-from models.base import Base
+from api.models.base import Base
 
 class Clients(Base):
     def __init__(self):
         super().__init__()
 
-    def get_clients(self):
+    def gets(self):
         """Retrieve all clients."""
         query = "SELECT * FROM clients"
         return self.fetch_all(query)

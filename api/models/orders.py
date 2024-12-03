@@ -1,10 +1,10 @@
-from models.base import Base
+from api.models.base import Base
 
 class Orders(Base):
     def __init__(self):
         super().__init__()
 
-    def get_orders(self):
+    def gets(self):
         """Retrieve all orders."""
         query = "SELECT * FROM orders"
         return self.fetch_all(query)

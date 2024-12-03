@@ -1,10 +1,10 @@
-from models.base import Base
+from api.models.base import Base
 
 class ItemGroups(Base):
     def __init__(self):
         super().__init__()
 
-    def get_item_groups(self):
+    def gets(self):
         """Retrieve all item groups."""
         query = "SELECT * FROM item_groups"
         return self.fetch_all(query)

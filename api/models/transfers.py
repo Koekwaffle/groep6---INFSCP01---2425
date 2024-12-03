@@ -1,10 +1,10 @@
-from models.base import Base
+from api.models.base import Base
 
 class Transfers(Base):
     def __init__(self):
         super().__init__()
 
-    def get_transfers(self):
+    def gets(self):
         """Retrieve all transfers."""
         query = "SELECT * FROM transfers"
         return self.fetch_all(query)
