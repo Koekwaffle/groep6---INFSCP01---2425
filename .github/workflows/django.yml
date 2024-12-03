@@ -27,18 +27,13 @@ jobs:
         pip install -r requirements.txt
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  
     needs: build
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Pytest
-        run: pip install pytest
-
-      - name: Run Endpoint Tests
-        working-directory: ./groep6---INFSCP01---2425
-        run: pytest endpoints_tests.py --junitxml=results.xml
-
+    steps: 
+    - name: Install Pytest
+      run: pip install pytest
+    - name: Run endpoint tests
+      run: pytest endpoints_tests.py --junitxml=results.xml
 
   upload:
     runs-on: ubuntu-latest
