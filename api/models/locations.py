@@ -1,57 +1,55 @@
-import json
-
-from api.models.base import Base
-
-LOCATIONS = []
-
+from models.base import Base
 
 class Locations(Base):
-    def __init__(self, root_path, is_debug=False):
-        self.data_path = root_path + "locations.json"
-        self.load(is_debug)
+    def __init__(self):
+        super().__init__()
 
     def get_locations(self):
-        return self.data
+        """Retrieve all locations."""
+        query = "SELECT * FROM locations"
+        return self.fetch_all(query)
 
     def get_location(self, location_id):
-        for x in self.data:
-            if x["id"] == location_id:
-                return x
-        return None
+        """Retrieve a single location by ID."""
+        query = "SELECT * FROM locations WHERE id = ?"
+        return self.fetch_one(query, (location_id,))
 
     def get_locations_in_warehouse(self, warehouse_id):
-        result = []
-        for x in self.data:
-            if x["warehouse_id"] == warehouse_id:
-                result.append(x)
-        return result
+        """Retrieve all locations in a specific warehouse."""
+        query = "SELECT * FROM locations WHERE warehouse_id = ?"
+        return self.fetch_all(query, (warehouse_id,))
 
     def add_location(self, location):
-        location["created_at"] = self.get_timestamp()
-        location["updated_at"] = self.get_timestamp()
-        self.data.append(location)
+        """Add a new location."""
+        query = """
+        INSERT INTO locations (name, warehouse_id, created_at, updated_at)
+        VALUES (?, ?, ?, ?)
+        """
+        timestamp = self.get_timestamp()
+        params = (
+            location['name'],
+            location['warehouse_id'],
+            timestamp,
+            timestamp
+        )
+        self.execute_query(query, params)
 
     def update_location(self, location_id, location):
-        location["updated_at"] = self.get_timestamp()
-        for i in range(len(self.data)):
-            if self.data[i]["id"] == location_id:
-                self.data[i] = location
-                break
+        """Update an existing location."""
+        query = """
+        UPDATE locations
+        SET name = ?, warehouse_id = ?, updated_at = ?
+        WHERE id = ?
+        """
+        params = (
+            location['name'],
+            location['warehouse_id'],
+            self.get_timestamp(),
+            location_id
+        )
+        self.execute_query(query, params)
 
     def remove_location(self, location_id):
-        for x in self.data:
-            if x["id"] == location_id:
-                self.data.remove(x)
-
-    def load(self, is_debug):
-        if is_debug:
-            self.data = LOCATIONS
-        else:
-            f = open(self.data_path, "r")
-            self.data = json.load(f)
-            f.close()
-
-    def save(self):
-        f = open(self.data_path, "w")
-        json.dump(self.data, f)
-        f.close()
+        """Remove a location by ID."""
+        query = "DELETE FROM locations WHERE id = ?"
+        self.execute_query(query, (location_id,))

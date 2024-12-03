@@ -1,7 +1,13 @@
-from processors.generic_functions import Generic_functions
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
+
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
+
+from processors.generic_functions import GenericFunctionsSQLite
 from providers import data_provider
 
-class Shipments_processor(Generic_functions):
+class Shipments_processor(GenericFunctionsSQLite):
     def update_items_in_shipment(self, shipment_id, items):
         shipment = self.get_shipment(shipment_id)
         current = shipment["items"]

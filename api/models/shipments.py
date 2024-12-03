@@ -1,93 +1,53 @@
-import json
-
-from api.models.base import Base
-from api.providers import data_provider
-
-SHIPMENTS = []
-
+from models.base import Base
 
 class Shipments(Base):
-    def __init__(self, root_path, is_debug=False):
-        self.data_path = root_path + "shipments.json"
-        self.load(is_debug)
+    def __init__(self):
+        super().__init__()
 
     def get_shipments(self):
-        return self.data
+        """Retrieve all shipments."""
+        query = "SELECT * FROM shipments"
+        return self.fetch_all(query)
 
     def get_shipment(self, shipment_id):
-        for x in self.data:
-            if x["id"] == shipment_id:
-                return x
-        return None
+        """Retrieve a single shipment by ID."""
+        query = "SELECT * FROM shipments WHERE id = ?"
+        return self.fetch_one(query, (shipment_id,))
 
     def get_items_in_shipment(self, shipment_id):
-        for x in self.data:
-            if x["id"] == shipment_id:
-                return x["items"]
-        return None
+        """Retrieve all items in a specific shipment."""
+        query = "SELECT * FROM shipment_items WHERE shipment_id = ?"
+        return self.fetch_all(query, (shipment_id,))
 
     def add_shipment(self, shipment):
-        shipment["created_at"] = self.get_timestamp()
-        shipment["updated_at"] = self.get_timestamp()
-        self.data.append(shipment)
+        """Add a new shipment."""
+        query = """
+        INSERT INTO shipments (name, created_at, updated_at)
+        VALUES (?, ?, ?)
+        """
+        timestamp = self.get_timestamp()
+        params = (
+            shipment['name'],
+            timestamp,
+            timestamp
+        )
+        self.execute_query(query, params)
 
     def update_shipment(self, shipment_id, shipment):
-        shipment["updated_at"] = self.get_timestamp()
-        for i in range(len(self.data)):
-            if self.data[i]["id"] == shipment_id:
-                self.data[i] = shipment
-                break
-
-    def update_items_in_shipment(self, shipment_id, items):
-        shipment = self.get_shipment(shipment_id)
-        current = shipment["items"]
-        for x in current:
-            found = False
-            for y in items:
-                if x["item_id"] == y["item_id"]:
-                    found = True
-                    break
-            if not found:
-                inventories = data_provider.fetch_inventory_pool().get_inventories_for_item(x["item_id"])
-                max_ordered = -1
-                max_inventory
-                for z in inventories:
-                    if z["total_ordered"] > max_ordered:
-                        max_ordered = z["total_ordered"]
-                        max_inventory = z
-                max_inventory["total_ordered"] -= x["amount"]
-                max_inventory["total_expected"] = y["total_on_hand"] + y["total_ordered"]
-                data_provider.fetch_inventory_pool().update_inventory(max_inventory["id"], max_inventory)
-        for x in current:
-            for y in items:
-                if x["item_id"] == y["item_id"]:
-                    inventories = data_provider.fetch_inventory_pool().get_inventories_for_item(x["item_id"])
-                    max_ordered = -1
-                    max_inventory
-                    for z in inventories:
-                        if z["total_ordered"] > max_ordered:
-                            max_ordered = z["total_ordered"]
-                            max_inventory = z
-                    max_inventory["total_ordered"] += y["amount"] - x["amount"]
-                    max_inventory["total_expected"] = y["total_on_hand"] + y["total_ordered"]
-                    data_provider.fetch_inventory_pool().update_inventory(max_inventory["id"], max_inventory)
-        shipment["items"] = items
-        self.update_shipment(shipment_id, shipment)
+        """Update an existing shipment."""
+        query = """
+        UPDATE shipments
+        SET name = ?, updated_at = ?
+        WHERE id = ?
+        """
+        params = (
+            shipment['name'],
+            self.get_timestamp(),
+            shipment_id
+        )
+        self.execute_query(query, params)
 
     def remove_shipment(self, shipment_id):
-        for x in self.data:
-            if x["id"] == shipment_id:
-                self.data.remove(x)
-
-    def load(self, is_debug):
-        if is_debug:
-            self.data = SHIPMENTS
-        else:
-            f = open(self.data_path, "r")
-            self.data = json.load(f)
-            f.close()
-
-    def save(self):
-        f = open(self.data_path, "w")
-        json.dump(self.data, f)
-        f.close()
+        """Remove a shipment by ID."""
+        query = "DELETE FROM shipments WHERE id = ?"
+        self.execute_query(query, (shipment_id,))

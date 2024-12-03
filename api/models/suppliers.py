@@ -1,50 +1,52 @@
-import json
-
-from api.models.base import Base
-
-SUPPLIERS = []
-
+from models.base import Base
 
 class Suppliers(Base):
-    def __init__(self, root_path, is_debug=False):
-        self.data_path = root_path + "suppliers.json"
-        self.load(is_debug)
+    def __init__(self):
+        super().__init__()
 
     def get_suppliers(self):
-        return self.data
+        """Retrieve all suppliers."""
+        query = "SELECT * FROM suppliers"
+        return self.fetch_all(query)
 
     def get_supplier(self, supplier_id):
-        for x in self.data:
-            if x["id"] == supplier_id:
-                return x
-        return None
+        """Retrieve a single supplier by ID."""
+        query = "SELECT * FROM suppliers WHERE id = ?"
+        return self.fetch_one(query, (supplier_id,))
 
     def add_supplier(self, supplier):
-        supplier["created_at"] = self.get_timestamp()
-        supplier["updated_at"] = self.get_timestamp()
-        self.data.append(supplier)
+        """Add a new supplier."""
+        query = """
+        INSERT INTO suppliers (name, address, contact, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?)
+        """
+        timestamp = self.get_timestamp()
+        params = (
+            supplier['name'],
+            supplier['address'],
+            supplier['contact'],
+            timestamp,
+            timestamp
+        )
+        self.execute_query(query, params)
 
     def update_supplier(self, supplier_id, supplier):
-        supplier["updated_at"] = self.get_timestamp()
-        for i in range(len(self.data)):
-            if self.data[i]["id"] == supplier_id:
-                self.data[i] = supplier
-                break
+        """Update an existing supplier."""
+        query = """
+        UPDATE suppliers
+        SET name = ?, address = ?, contact = ?, updated_at = ?
+        WHERE id = ?
+        """
+        params = (
+            supplier['name'],
+            supplier['address'],
+            supplier['contact'],
+            self.get_timestamp(),
+            supplier_id
+        )
+        self.execute_query(query, params)
 
     def remove_supplier(self, supplier_id):
-        for x in self.data:
-            if x["id"] == supplier_id:
-                self.data.remove(x)
-
-    def load(self, is_debug):
-        if is_debug:
-            self.data = SUPPLIERS
-        else:
-            f = open(self.data_path, "r")
-            self.data = json.load(f)
-            f.close()
-
-    def save(self):
-        f = open(self.data_path, "w")
-        json.dump(self.data, f)
-        f.close()
+        """Remove a supplier by ID."""
+        query = "DELETE FROM suppliers WHERE id = ?"
+        self.execute_query(query, (supplier_id,))
