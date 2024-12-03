@@ -50,7 +50,7 @@ jobs:
         pip install pytest
 
     - name: Run endpoint tests
-      run: pytest endpoints_test.py --junitxml=results.xml
+      run: pytest endpoints_tests.py --junitxml=results.xml
 
     - name: Upload test results
       uses: actions/upload-artifact@v3
