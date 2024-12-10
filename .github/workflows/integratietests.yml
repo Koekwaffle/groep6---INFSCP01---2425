@@ -1,0 +1,20 @@
+name: Integratietests
+
+on:
+  push:
+    branches:
+      - main  # of de branch waar je op wilt triggeren
+
+jobs:
+  test:
+    runs-on: self-hosted  # Dit geeft aan dat je de self-hosted runner wilt gebruiken
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Voer integratietests uit
+        run: |
+          # Voeg hier de commando's toe om je tests uit te voeren
+          npm install
+          npm test
