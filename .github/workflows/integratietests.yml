@@ -2,8 +2,7 @@ name: Integratietests
 
 on:
   push:
-    branches:
-      - main  # of de branch waar je op wilt triggeren
+    branches: [ "New-main" ]
 
 jobs:
   test:
