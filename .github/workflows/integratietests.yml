@@ -16,6 +16,11 @@ jobs:
         with:
           python-version: 3.13
 
+      - name: Install SDL
+        run: |
+          sudo apt-get update
+          sudo apt-get install libsdl1.2-dev
+
       - name: Cache pip
         uses: actions/cache@v4
         with:
