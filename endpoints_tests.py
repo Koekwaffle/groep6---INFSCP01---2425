@@ -1,10 +1,9 @@
 import requests
-import json
-
+import pytest
 # Documentation: https://docs.python-requests.org
 
 # TODO: replace with test server url
-BASE_URL = "http://localhost:3000"
+BASE_URL = "http://145.24.223.218:3000"
 API_KEY = "a1b2c3d4e5"
 
 # 1. What's the first test we should write?
