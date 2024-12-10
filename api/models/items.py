@@ -1,78 +1,76 @@
-import json
-
-from models.base import Base
-
-ITEMS = []
-
+from api.models.base import Base
 
 class Items(Base):
-    def __init__(self, root_path, is_debug=False):
-        self.data_path = root_path + "items.json"
-        self.load(is_debug)
+    def __init__(self):
+        super().__init__()
 
-    def get_items(self):
-        return self.data
+    def gets(self):
+        """Retrieve all items."""
+        query = "SELECT * FROM items"
+        return self.fetch_all(query)
 
     def get_item(self, item_id):
-        for x in self.data:
-            if x["uid"] == item_id:
-                return x
-        return None
+        """Retrieve a single item by ID."""
+        query = "SELECT * FROM items WHERE uid = ?"
+        return self.fetch_one(query, (item_id,))
 
     def get_items_for_item_line(self, item_line_id):
-        result = []
-        for x in self.data:
-            if x["item_line"] == item_line_id:
-                result.append(x)
-        return result
+        """Retrieve all items for a specific item line ID."""
+        query = "SELECT * FROM items WHERE item_line = ?"
+        return self.fetch_all(query, (item_line_id,))
 
     def get_items_for_item_group(self, item_group_id):
-        result = []
-        for x in self.data:
-            if x["item_group"] == item_group_id:
-                result.append(x)
-        return result
+        """Retrieve all items for a specific item group ID."""
+        query = "SELECT * FROM items WHERE item_group = ?"
+        return self.fetch_all(query, (item_group_id,))
 
     def get_items_for_item_type(self, item_type_id):
-        result = []
-        for x in self.data:
-            if x["item_type"] == item_type_id:
-                result.append(x)
-        return result
+        """Retrieve all items for a specific item type ID."""
+        query = "SELECT * FROM items WHERE item_type = ?"
+        return self.fetch_all(query, (item_type_id,))
 
     def get_items_for_supplier(self, supplier_id):
-        result = []
-        for x in self.data:
-            if x["supplier_id"] == supplier_id:
-                result.append(x)
-        return result
+        """Retrieve all items for a specific supplier ID."""
+        query = "SELECT * FROM items WHERE supplier_id = ?"
+        return self.fetch_all(query, (supplier_id,))
 
     def add_item(self, item):
-        item["created_at"] = self.get_timestamp()
-        item["updated_at"] = self.get_timestamp()
-        self.data.append(item)
+        """Add a new item."""
+        query = """
+        INSERT INTO items (name, item_line, item_group, item_type, supplier_id, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        """
+        timestamp = self.get_timestamp()
+        params = (
+            item['name'],
+            item['item_line'],
+            item['item_group'],
+            item['item_type'],
+            item['supplier_id'],
+            timestamp,
+            timestamp
+        )
+        self.execute_query(query, params)
 
     def update_item(self, item_id, item):
-        item["updated_at"] = self.get_timestamp()
-        for i in range(len(self.data)):
-            if self.data[i]["uid"] == item_id:
-                self.data[i] = item
-                break
+        """Update an existing item."""
+        query = """
+        UPDATE items
+        SET name = ?, item_line = ?, item_group = ?, item_type = ?, supplier_id = ?, updated_at = ?
+        WHERE uid = ?
+        """
+        params = (
+            item['name'],
+            item['item_line'],
+            item['item_group'],
+            item['item_type'],
+            item['supplier_id'],
+            self.get_timestamp(),
+            item_id
+        )
+        self.execute_query(query, params)
 
     def remove_item(self, item_id):
-        for x in self.data:
-            if x["uid"] == item_id:
-                self.data.remove(x)
-
-    def load(self, is_debug):
-        if is_debug:
-            self.data = ITEMS
-        else:
-            f = open(self.data_path, "r")
-            self.data = json.load(f)
-            f.close()
-
-    def save(self):
-        f = open(self.data_path, "w")
-        json.dump(self.data, f)
-        f.close()
+        """Remove an item by ID."""
+        query = "DELETE FROM items WHERE uid = ?"
+        self.execute_query(query, (item_id,))

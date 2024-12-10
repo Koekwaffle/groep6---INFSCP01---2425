@@ -1,7 +1,13 @@
-from processors.generic_functions import Generic_functions
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
+
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
+
+from processors.generic_functions import GenericFunctionsSQLite
 
 
-class Inventories_processor(Generic_functions):
+class Inventories_processor(GenericFunctionsSQLite):
 
     def get_inventory_totals_for_item(self, item_id):
         result = {

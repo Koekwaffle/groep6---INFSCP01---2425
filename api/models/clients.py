@@ -1,50 +1,65 @@
-import json
+from api.models.base import Base
 
-from models.base import Base
-
-CLIENTS = []
-
-#smbvkabvbvhbak
 class Clients(Base):
-    def __init__(self, root_path, is_debug=False):
-        self.data_path = root_path + "clients.json"
-        self.load(is_debug)
+    def __init__(self):
+        super().__init__()
 
-    def get_clients(self):
-        return self.data
+    def gets(self):
+        """Retrieve all clients."""
+        query = "SELECT * FROM clients"
+        return self.fetch_all(query)
 
     def get_client(self, client_id):
-        for x in self.data:
-            if x["id"] == client_id:
-                return x
-        return None
+        """Retrieve a single client by ID."""
+        query = "SELECT * FROM clients WHERE id = ?"
+        return self.fetch_one(query, (client_id,))
 
     def add_client(self, client):
-        client["created_at"] = self.get_timestamp()
-        client["updated_at"] = self.get_timestamp()
-        self.data.append(client)
+        """Add a new client."""
+        query = """
+        INSERT INTO clients (name, address, city, zip_code, province, country, contact_name, contact_phone, contact_email, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """
+        timestamp = self.get_timestamp()
+        params = (
+            client['name'],
+            client['address'],
+            client['city'],
+            client['zip_code'],
+            client['province'],
+            client['country'],
+            client['contact_name'],
+            client['contact_phone'],
+            client['contact_email'],
+            timestamp,
+            timestamp
+        )
+        self.execute_query(query, params)
 
     def update_client(self, client_id, client):
-        client["updated_at"] = self.get_timestamp()
-        for i in range(len(self.data)):
-            if self.data[i]["id"] == client_id:
-                self.data[i] = client
-                break
+        """Update an existing client."""
+        query = """
+        UPDATE clients
+        SET name = ?, address = ?, city = ?, zip_code = ?, province = ?, country = ?,
+            contact_name = ?, contact_phone = ?, contact_email = ?, updated_at = ?
+        WHERE id = ?
+        """
+        params = (
+            client['name'],
+            client['address'],
+            client['city'],
+            client['zip_code'],
+            client['province'],
+            client['country'],
+            client['contact_name'],
+            client['contact_phone'],
+            client['contact_email'],
+            self.get_timestamp(),
+            client_id
+        )
+        self.execute_query(query, params)
 
     def remove_client(self, client_id):
-        for x in self.data:
-            if x["id"] == client_id:
-                self.data.remove(x)
-
-    def load(self, is_debug):
-        if is_debug:
-            self.data = CLIENTS
-        else:
-            f = open(self.data_path, "r")
-            self.data = json.load(f)
-            f.close()
-
-    def save(self):
-        f = open(self.data_path, "w")
-        json.dump(self.data, f)
-        f.close()
+        """Remove a client by ID."""
+        query = "DELETE FROM clients WHERE id = ?"
+        self.execute_query(query, (client_id,))

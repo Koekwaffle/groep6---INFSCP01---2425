@@ -1,7 +1,13 @@
-from processors.generic_functions import Generic_functions
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
+
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
+
+from processors.generic_functions import GenericFunctionsSQLite
 from providers import data_provider
 
-class Orders_processor(Generic_functions):
+class Orders_processor(GenericFunctionsSQLite):
 
     def update_items_in_order(self, order_id, items):
         order = self.get_order(order_id)
