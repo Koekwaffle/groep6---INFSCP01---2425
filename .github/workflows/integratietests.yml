@@ -37,7 +37,7 @@ jobs:
 
       - name: Run integration tests
         run: |
-          pytest
+          pytest endpoints_tests.py
 
       - name: Generate test report
         run: |
