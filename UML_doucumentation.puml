@@ -1,0 +1,89 @@
+@startuml name
+skinparam linetype ortho
+
+package "API Endpoints" {
+    class Clients {
+        + GET /api/v1/clients
+        + POST /api/v1/clients
+        + GET /api/v1/clients/{id}
+        + PUT /api/v1/clients/{id}
+        + DELETE /api/v1/clients/{id}
+    }
+
+    class Inventories {
+        + GET /api/v1/inventories
+        + POST /api/v1/inventories
+        + GET /api/v1/inventories/{id}
+        + PUT /api/v1/inventories/{id}
+    }
+
+    class Items {
+        + GET /api/v1/items
+        + POST /api/v1/items
+        + GET /api/v1/items/{id}
+        + PUT /api/v1/items/{id}
+        + GET /api/v1/items/{id}/inventory
+        + GET /api/v1/items/{id}/inventory/totals
+    }
+
+    class Locations {
+        + GET /api/v1/locations
+        + POST /api/v1/locations
+        + GET /api/v1/locations/{id}
+        + PUT /api/v1/locations/{id}
+    }
+
+    class Warehouses {
+        + GET /api/v1/warehouses
+        + POST /api/v1/warehouses
+        + GET /api/v1/warehouses/{id}
+        + PUT /api/v1/warehouses/{id}
+        + GET /api/v1/warehouses/{id}/locations
+    }
+}
+
+package "Entities" {
+    class Client {
+        + id : INTEGER
+        + name : TEXT
+        + address : TEXT
+        + city : TEXT
+        + zip_code : TEXT
+        + country : TEXT
+    }
+
+    class Inventory {
+        + id : INTEGER
+        + item_id : TEXT
+        + description : TEXT
+        + location_id : INTEGER
+        + total_on_hand : INTEGER
+    }
+
+    class Item {
+        + id : INTEGER
+        + description : TEXT
+        + item_line : INTEGER
+        + item_group : INTEGER
+        + item_type : INTEGER
+    }
+
+    class Location {
+        + id : INTEGER
+        + warehouse_id : INTEGER
+        + code : TEXT
+    }
+
+    class Warehouse {
+        + id : INTEGER
+        + code : TEXT
+        + address : TEXT
+    }
+}
+
+Client "1" --> "*" Inventory : "has"
+Inventory "1" --> "*" Item : "contains"
+Item "1" --> "*" Location : "stored in"
+Location "1" --> "1" Warehouse : "belongs to"
+
+@enduml
