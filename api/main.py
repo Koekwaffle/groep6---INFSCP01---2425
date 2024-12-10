@@ -863,7 +863,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    PORT = 3000
+    PORT = 80
     with socketserver.TCPServer(("", PORT), ApiRequestHandler) as httpd:
         auth_provider.init()
         notification_processor.start()
