@@ -27,4 +27,6 @@ urlpatterns = [
     path('transfers/<int:client_id>/', TransferView.as_view(), name='transfer-detail'),
     path('warehouses/', WarehouseView.as_view(), name='warehouses-list'),
     path('warehouses/<int:client_id>/', WarehouseView.as_view(), name='warehouse-detail'),
+    path('transfers/<int:transfer_id>/commit/', TransferView.as_view(), name='transfer-commit'),
+    path('shipments/<int:shipment_id>/commit/', ShipmentView.as_view(), name='shipment-commit'),
 ]
