@@ -42,7 +42,7 @@ jobs:
 
       - name: Run integration tests
         run: |
-          pytest CargoHubApp\tests.py
+          pytest CargoHubApp/tests.py
 
       - name: Generate test report
         run: |
