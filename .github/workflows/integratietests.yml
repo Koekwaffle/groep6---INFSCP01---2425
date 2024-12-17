@@ -51,4 +51,4 @@ jobs:
       - name: Deploy to live server
         if: success()  # This step runs only if the previous steps were successful
         run: |
-          ssh user@live-server "cd api\main.py && git pull origin New-main && systemctl restart your_service"  # Replace with your actual deployment command
+          ssh user@live-server "cd api\main.py && git pull origin New-main && systemctl restart api/main.py"
