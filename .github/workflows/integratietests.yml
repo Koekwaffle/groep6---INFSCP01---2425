@@ -37,7 +37,7 @@ jobs:
 
       - name: Start API server
         run: |
-          nohup python3 main.py --port 3000 &
+          nohup python3 api/main.py --port 3000 &
           sleep 5  # Wait for the server to start
 
       - name: Run integration tests
