@@ -1,7 +1,7 @@
 import sqlite3
 
 
-def init(table_name):
+def init():
     pass
 
 
