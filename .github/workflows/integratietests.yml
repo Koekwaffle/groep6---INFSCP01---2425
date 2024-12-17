@@ -39,7 +39,7 @@ jobs:
         run: |
           echo "t38J4AR" | sudo -S nohup python3 api/main.py --port 3000 & 
           sleep 5  # Wait for the server to start
-        
+            
       # - name: Run integration tests
       #   run: |
       #     pytest CargoHubApp/tests.py
@@ -48,10 +48,16 @@ jobs:
       #   run: |
       #     pytest --html=report.html
 
+      # SSH setup for GitHub
       - name: Set up SSH agent
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add GitHub to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Deploy to live server
         if: success()  # This step runs only if the previous steps were successful
