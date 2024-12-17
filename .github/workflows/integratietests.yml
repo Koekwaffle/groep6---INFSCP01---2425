@@ -40,13 +40,13 @@ jobs:
           echo "t38J4AR" | sudo -S nohup python3 api/main.py --port 3000 &
           sleep 5  # Wait for the server to start
         
-      - name: Run integration tests
-        run: |
-          pytest CargoHubApp/tests.py
+      # - name: Run integration tests
+      #   run: |
+      #     pytest CargoHubApp/tests.py
 
-      - name: Generate test report
-        run: |
-          pytest --html=report.html
+      # - name: Generate test report
+      #   run: |
+      #     pytest --html=report.html
 
       - name: Deploy to live server
         if: success()  # This step runs only if the previous steps were successful

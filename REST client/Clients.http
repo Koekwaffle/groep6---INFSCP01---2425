@@ -1,4 +1,4 @@
-@host = http://localhost:3000
+@host = http://localhost:8080
 @api_key = a1b2c3d4e5
 
 ### Get all clients BEETJE BROKEN TRAAG
