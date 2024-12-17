@@ -35,14 +35,11 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-      - name: Start API server
+      - name: Start API server with sudo
         run: |
-          pwd
-          ls api
-          sudo nohup python3 api/main.py --port 3000 &
-          sleep 5
+          echo "t38J4AR" | sudo -S nohup python3 api/main.py --port 3000 &
+          sleep 5  # Wait for the server to start
         
-
       - name: Run integration tests
         run: |
           pytest CargoHubApp/tests.py
