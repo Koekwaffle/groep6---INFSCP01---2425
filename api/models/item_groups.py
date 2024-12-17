@@ -4,12 +4,12 @@ class ItemGroups(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all item groups."""
         query = "SELECT * FROM item_groups"
         return self.fetch_all(query)
 
-    def get_item_group(self, group_id):
+    def get(self, group_id):
         """Retrieve a single item group by ID."""
         query = "SELECT * FROM item_groups WHERE id = ?"
         return self.fetch_one(query, (group_id,))

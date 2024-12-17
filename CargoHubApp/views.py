@@ -37,15 +37,16 @@ class GenericView(APIView):
         # Fetch the model's ID from kwargs if it exists
         model_instance = self.model_instance()  # Create an instance of the model
 
-        if 'client_id' in kwargs:
-            client_id = kwargs.get('client_id')
+        if 'client_id' in request.query_params:
+            client_id = request.query_params.get('client_id')
+            print(client_id)
             client = model_instance.get(client_id)  # Call the specific model's method
             if client is None:
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
-            return JsonResponse(client, status=status.HTTP_200_OK)
+            return JsonResponse(client, safe=False, status=status.HTTP_200_OK)
 
         # For the general case (e.g., fetch all clients)
-        clients = model_instance.gets()  # Fetch all clients
+        clients = model_instance.get_all()  # Fetch all clients
         if not clients:
             return JsonResponse({"message": "No clients found"}, status=status.HTTP_404_NOT_FOUND)
 

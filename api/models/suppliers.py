@@ -4,12 +4,12 @@ class Suppliers(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all suppliers."""
         query = "SELECT * FROM suppliers"
         return self.fetch_all(query)
 
-    def get_supplier(self, supplier_id):
+    def get(self, supplier_id):
         """Retrieve a single supplier by ID."""
         query = "SELECT * FROM suppliers WHERE id = ?"
         return self.fetch_one(query, (supplier_id,))

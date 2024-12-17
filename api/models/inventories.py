@@ -4,12 +4,12 @@ class Inventories(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all inventories."""
         query = "SELECT * FROM inventories"
         return self.fetch_all(query)
 
-    def get_inventory(self, inventory_id):
+    def get(self, inventory_id):
         """Retrieve a single inventory by ID."""
         query = "SELECT * FROM inventories WHERE id = ?"
         return self.fetch_one(query, (inventory_id,))

@@ -4,12 +4,12 @@ class Transfers(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all transfers."""
         query = "SELECT * FROM transfers"
         return self.fetch_all(query)
 
-    def get_transfer(self, transfer_id):
+    def get(self, transfer_id):
         """Retrieve a single transfer by ID."""
         query = "SELECT * FROM transfers WHERE id = ?"
         return self.fetch_one(query, (transfer_id,))

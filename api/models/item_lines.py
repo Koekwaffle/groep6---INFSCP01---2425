@@ -4,12 +4,12 @@ class ItemLines(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all item lines."""
         query = "SELECT * FROM item_lines"
         return self.fetch_all(query)
 
-    def get_item_line(self, line_id):
+    def get(self, line_id):
         """Retrieve a single item line by ID."""
         query = "SELECT * FROM item_lines WHERE id = ?"
         return self.fetch_one(query, (line_id,))

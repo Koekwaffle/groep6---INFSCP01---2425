@@ -4,12 +4,12 @@ class Clients(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all clients."""
         query = "SELECT * FROM clients"
         return self.fetch_all(query)
 
-    def get_client(self, client_id):
+    def get(self, client_id):
         """Retrieve a single client by ID."""
         query = "SELECT * FROM clients WHERE id = ?"
         return self.fetch_one(query, (client_id,))
