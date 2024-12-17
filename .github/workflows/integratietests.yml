@@ -39,7 +39,7 @@ jobs:
         run: |
           pwd
           ls api
-          nohup python3 api/main.py --port 3000 &
+          sudo nohup python3 api/main.py --port 3000 &
           sleep 5
         
 
