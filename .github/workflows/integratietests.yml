@@ -63,5 +63,5 @@ jobs:
       - name: Deploy to live server
         if: success()  # This step runs only if the previous steps were successful
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu-1074963@145.24.223.218 "cd groep6_cargohub/groep6---INFSCP01---2425 && git pull origin New-main && systemctl restart main.py"
+          ssh -o StrictHostKeyChecking=no ubuntu-1074963@145.24.223.218 "cd groep6_cargohub/groep6---INFSCP01---2425 && git pull origin New-main && sudo systemctl restart main.py"
 
