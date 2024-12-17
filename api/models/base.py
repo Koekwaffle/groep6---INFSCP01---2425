@@ -29,7 +29,7 @@ class Base:
     def fetch_one(self, query, params=()):
         """Fetch one result from a SQL query."""
         cursor = self.execute_query(query, params)
-        return cursor.fetchone() if cursor else None
+        return cursor.fetchone()
 
     def close_connection(self):
         """Close the database connection."""

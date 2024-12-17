@@ -4,12 +4,12 @@ class Items(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all items."""
         query = "SELECT * FROM items"
         return self.fetch_all(query)
 
-    def get_item(self, item_id):
+    def get(self, item_id):
         """Retrieve a single item by ID."""
         query = "SELECT * FROM items WHERE uid = ?"
         return self.fetch_one(query, (item_id,))

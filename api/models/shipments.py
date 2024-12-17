@@ -4,12 +4,12 @@ class Shipments(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all shipments."""
         query = "SELECT * FROM shipments"
         return self.fetch_all(query)
 
-    def get_shipment(self, shipment_id):
+    def get(self, shipment_id):
         """Retrieve a single shipment by ID."""
         query = "SELECT * FROM shipments WHERE id = ?"
         return self.fetch_one(query, (shipment_id,))

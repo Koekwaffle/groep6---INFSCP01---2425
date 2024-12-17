@@ -4,12 +4,12 @@ class ItemTypes(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all item types."""
         query = "SELECT * FROM item_types"
         return self.fetch_all(query)
 
-    def get_item_type(self, type_id):
+    def get(self, type_id):
         """Retrieve a single item type by ID."""
         query = "SELECT * FROM item_types WHERE id = ?"
         return self.fetch_one(query, (type_id,))
