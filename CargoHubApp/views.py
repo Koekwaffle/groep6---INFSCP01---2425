@@ -37,29 +37,12 @@ class GenericView(APIView):
         # Fetch the model's ID from kwargs if it exists
         model_instance = self.model_instance()  # Create an instance of the model
 
-        if 'client_id' in kwargs and 'commit' not in kwargs:
+        if 'client_id' in kwargs:
             client_id = kwargs.get('client_id')
             client = model_instance.get(client_id)  # Call the specific model's method
             if client is None:
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
             return JsonResponse(client, status=status.HTTP_200_OK)
-        
-        if 'client_id' in kwargs and 'commit' in kwargs:
-            client_id = kwargs.get('client_id')
-            client = model_instance.get(client_id)
-            for x in client['items']:
-                inventories = model_instance.get_inventories_for_item(x['item_id'])
-                for y in inventories:
-                    if y["location_id"] == client["transfer_from"]:
-                        y["total_on_hand"] -= x["amount"]
-                        y["total_expected"] = y["total_on_hand"] + y["total_ordered"]
-                        y["total_available"] = y["total_on_hand"] - y["total_allocated"]
-                        model_instance.update_inventory(y["id"], y)
-                    elif y["location_id"] == client["transfer_to"]:
-                        y["total_on_hand"] += x["amount"]
-                        y["total_expected"] = y["total_on_hand"] + y["total_ordered"]
-                        y["total_available"] = y["total_on_hand"] - y["total_allocated"]
-                        model_instance.update_inventory(y["id"], y)
 
         # For the general case (e.g., fetch all clients)
         clients = model_instance.gets()  # Fetch all clients
