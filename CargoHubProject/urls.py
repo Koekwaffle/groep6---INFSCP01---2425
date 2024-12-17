@@ -20,5 +20,5 @@ from django.urls import path, include
 # 'playground/hello/' URL wordt nu 'hello/' URL
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('gh/', include('CargoHubApp.urls')),   # include the urls from CargoHubApp
+    path('api/v1/', include('CargoHubApp.urls')),   # include the urls from CargoHubApp
 ]
