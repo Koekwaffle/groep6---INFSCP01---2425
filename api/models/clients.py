@@ -7,14 +7,47 @@ class Clients(Base):
     def gets(self):
         """Retrieve all clients."""
         query = "SELECT * FROM clients"
-        return self.fetch_all(query)
+        results = self.fetch_all(query)
+        clients = []
+        for result in results:
+            clients.append({
+                "id": result[0],
+                "name": result[1],
+                "address": result[2],
+                "city": result[3],
+                "zip_code": result[4],
+                "province": result[5],
+                "country": result[6],
+                "contact_name": result[7],
+                "contact_phone": result[8],
+                "contact_email": result[9],
+                "created_at": result[10],
+                "updated_at": result[11],
+            })
+        return clients
 
     def get_client(self, client_id):
         """Retrieve a single client by ID."""
         query = "SELECT * FROM clients WHERE id = ?"
-        return self.fetch_one(query, (client_id,))
+        result = self.fetch_one(query, (client_id,))
+        if result:
+            return {
+                "id": result[0],
+                "name": result[1],
+                "address": result[2],
+                "city": result[3],
+                "zip_code": result[4],
+                "province": result[5],
+                "country": result[6],
+                "contact_name": result[7],
+                "contact_phone": result[8],
+                "contact_email": result[9],
+                "created_at": result[10],
+                "updated_at": result[11],
+            }
+        return None
 
-    def add_client(self, client):
+    def add(self, client):
         """Add a new client."""
         query = """
         INSERT INTO clients (name, address, city, zip_code, province, country, contact_name, contact_phone, contact_email, created_at, updated_at)
@@ -36,7 +69,7 @@ class Clients(Base):
         )
         self.execute_query(query, params)
 
-    def update_client(self, client_id, client):
+    def update(self, client_id, client):
         """Update an existing client."""
         query = """
         UPDATE clients
@@ -59,7 +92,7 @@ class Clients(Base):
         )
         self.execute_query(query, params)
 
-    def remove_client(self, client_id):
+    def remove(self, client_id):
         """Remove a client by ID."""
         query = "DELETE FROM clients WHERE id = ?"
         self.execute_query(query, (client_id,))

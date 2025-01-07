@@ -39,7 +39,7 @@ class GenericView(APIView):
 
         if 'client_id' in kwargs:
             client_id = kwargs.get('client_id')
-            client = model_instance.get(client_id)  # Call the specific model's method
+            client = model_instance.get_client(client_id)  # Call the specific model's method
             if client is None:
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
             return JsonResponse(client, status=status.HTTP_200_OK)
@@ -78,9 +78,23 @@ class GenericView(APIView):
     
     
 class ClientView(GenericView):
-    model_class = Clients  # Set the model class here
-    model_instance = Clients  # Set the model instance class here
-    serializer_class = ClientSerializer  # If you want to serialize data, use the serializer here
+    model_class = Clients
+    model_instance = Clients
+    serializer_class = ClientSerializer
+
+    def get(self, request, *args, **kwargs):
+        client_id = kwargs.get('client_id')
+        if client_id:
+            client = self.model_instance().get_client(client_id)
+            if client:
+                serializer = self.serializer_class(client)
+                return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+            else:
+                return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            clients = self.model_instance().gets()
+            serializer = self.serializer_class(clients, many=True)
+            return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
 
 
 class WarehouseView(GenericView):

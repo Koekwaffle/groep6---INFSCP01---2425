@@ -1,6 +1,8 @@
 import sys
 import os
 
+from api.processors.notification_processor import start
+
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
