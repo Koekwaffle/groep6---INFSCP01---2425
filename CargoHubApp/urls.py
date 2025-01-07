@@ -3,8 +3,26 @@ from .views import (ClientView, InventoryView, ItemGroupView, ItemTypeView, Item
                     OrderView, ShipmentView, SupplierView, TransferView, WarehouseView)
 from .views import baseurl_view
 
+from django.conf.urls.static import static
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework import permissions
+from django.conf import settings
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="My Project API",
+        default_version='v1',
+        description="API documentation for My Project",
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
+
 urlpatterns = [
     path('', baseurl_view, name='baseurl'),
+    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('clients/', ClientView.as_view(), name='client-list'),
     path('clients/<int:client_id>/', ClientView.as_view(), name='client-detail'),   
     path('inventories/', InventoryView.as_view(), name='inventories-list'),

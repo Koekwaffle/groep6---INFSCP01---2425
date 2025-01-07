@@ -12,6 +12,9 @@ from django.http import JsonResponse
 from django.http import HttpResponse
 from django.urls import path
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
 from api.models.clients import Clients
 from api.models.inventories import Inventories
 from api.models.item_groups import ItemGroups
@@ -24,6 +27,8 @@ from api.models.shipments import Shipments
 from api.models.suppliers import Suppliers
 from api.models.transfers import Transfers
 from api.models.warehouses import Warehouses
+
+
 
 def baseurl_view(request):
     return HttpResponse("Welcome to the Cargohub API! :)", status=200)
