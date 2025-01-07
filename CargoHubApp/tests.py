@@ -1,17 +1,10 @@
 import requests
 import pytest
-from dotenv import load_dotenv
-import os
-
-
-load_dotenv()  # Load environment variables from .env file
-
-API_KEY = os.getenv("API_KEY")
 
 # TODO: replace with test server url   'http://localhost:8080'
 TEST_SERVER_URL = 'http://localhost:8080'
 BASE_URL = 'http://145.24.223.218:8080'
-
+API_KEY = "a1b2c3d4e5"
 
 ########################## 
 ### Client endpoint tests 
