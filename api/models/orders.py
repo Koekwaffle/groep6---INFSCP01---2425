@@ -4,12 +4,12 @@ class Orders(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all orders."""
         query = "SELECT * FROM orders"
         return self.fetch_all(query)
 
-    def get_order(self, order_id):
+    def get(self, order_id):
         """Retrieve a single order by ID."""
         query = "SELECT * FROM orders WHERE id = ?"
         return self.fetch_one(query, (order_id,))

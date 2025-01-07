@@ -9,8 +9,18 @@ from .serializers import (ClientSerializer, InventorySerializer, ItemGroupSerial
                           SupplierSerializer, TransferSerializer, WarehouseSerializer)
 from rest_framework.exceptions import NotFound, ValidationError
 from django.http import JsonResponse
+
+def get_user(api_key):
+    # Implement your logic to retrieve the user based on the API key
+    # For example:
+    if api_key == "valid_api_key":
+        return {"username": "valid_user"}
+    return None
 from django.http import HttpResponse
 from django.urls import path
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 from api.models.clients import Clients
 from api.models.inventories import Inventories
@@ -25,10 +35,28 @@ from api.models.suppliers import Suppliers
 from api.models.transfers import Transfers
 from api.models.warehouses import Warehouses
 
+
+
 def baseurl_view(request):
     return HttpResponse("Welcome to the Cargohub API! :)", status=200)
 
 class GenericView(APIView):
+    def check_api_key(self, request):
+        print("Checking API Key...")
+        print(f"Request Headers: {request.headers}")
+        api_key = request.headers.get('API_KEY')
+        print(f"API Key from headers: {api_key}")
+        api_key = request.headers.get('API_KEY')
+        user = get_user(api_key)
+        if user is None:
+            return None
+        return user
+
+    def dispatch(self, request, *args, **kwargs):
+        user = self.check_api_key(request)
+        if user is None:
+            return JsonResponse({"error": "Invalid API Key"}, status=status.HTTP_403_FORBIDDEN)
+        return super().dispatch(request, *args, **kwargs)
     model_class = None  # Will be set dynamically in child views
     model_instance = None  # Instance of the model used for DB operations
     serializer_class = None  # Used for serialization
@@ -37,15 +65,16 @@ class GenericView(APIView):
         # Fetch the model's ID from kwargs if it exists
         model_instance = self.model_instance()  # Create an instance of the model
 
-        if 'client_id' in kwargs:
-            client_id = kwargs.get('client_id')
-            client = model_instance.get_client(client_id)  # Call the specific model's method
+        if 'client_id' in request.query_params:
+            client_id = request.query_params.get('client_id')
+            print(client_id)
+            client = model_instance.get(client_id)  # Call the specific model's method
             if client is None:
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
-            return JsonResponse(client, status=status.HTTP_200_OK)
+            return JsonResponse(client, safe=False, status=status.HTTP_200_OK)
 
         # For the general case (e.g., fetch all clients)
-        clients = model_instance.gets()  # Fetch all clients
+        clients = model_instance.get_all()  # Fetch all clients
         if not clients:
             return JsonResponse({"message": "No clients found"}, status=status.HTTP_404_NOT_FOUND)
 
@@ -155,3 +184,4 @@ class TransferView(GenericView):
     model = Transfers
     model_instance = Transfers
     serializer_class = TransferSerializer
+

@@ -4,12 +4,12 @@ class Warehouses(Base):
     def __init__(self):
         super().__init__()
 
-    def gets(self):
+    def get_all(self):
         """Retrieve all warehouses."""
         query = "SELECT * FROM warehouses"
         return self.fetch_all(query)
 
-    def get_warehouse(self, warehouse_id):
+    def get(self, warehouse_id):
         """Retrieve a single warehouse by ID."""
         query = "SELECT * FROM warehouses WHERE id = ?"
         return self.fetch_one(query, (warehouse_id,))

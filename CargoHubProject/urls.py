@@ -21,7 +21,5 @@ from CargoHubApp.views import ClientView  # Importing ClientView
 # 'playground/hello/' URL wordt nu 'hello/' URL
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ch/', include('CargoHubApp.urls')),   # include the urls from CargoHubApp
-    path('api/v1/clients/', ClientView.as_view(), name='api-client-list'),  # New endpoint for clients
-    path('api/v1/clients/<int:client_id>/', ClientView.as_view(), name='api-client-detail'),  # Endpoint for client details
+    path('api/v1/', include('CargoHubApp.urls')),   # include the urls from CargoHubApp
 ]
