@@ -14,13 +14,15 @@ class Inventories_processor(GenericFunctionsSQLite):
 
     def create(self, inventory):
         """Add a new inventory."""
-        query = "INSERT INTO inventories (item_id, quantity) VALUES (?, ?)"
-        return self.execute(query, (inventory['item_id'], inventory['quantity']))
+        query = "INSERT INTO inventories (item_id, description, item_reference, location_id, total_on_hand, total_expected, total_ordered, total_allocated, total_available) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        params = (inventory['item_id'], inventory['description'], inventory['item_reference'], inventory['location_id'], inventory['total_on_hand'], inventory['total_expected'], inventory['total_ordered'], inventory['total_allocated'], inventory['total_available'])
+        return self.execute(query, params)
 
     def update(self, inventory_id, inventory):
         """Update an existing inventory."""
-        query = "UPDATE inventories SET item_id = ?, quantity = ? WHERE id = ?"
-        return self.execute(query, (inventory['item_id'], inventory['quantity'], inventory_id))
+        query = "UPDATE inventories SET item_id = ?, description = ?, item_reference = ?, location_id = ?, total_on_hand = ?, total_expected = ?, total_ordered = ?, total_allocated = ?, total_available = ? WHERE id = ?"
+        params = (inventory['item_id'], inventory['description'], inventory['item_reference'], inventory['location_id'], inventory['total_on_hand'], inventory['total_expected'], inventory['total_ordered'], inventory['total_allocated'], inventory['total_available'], inventory_id)
+        return self.execute(query, params)
 
     def delete(self, inventory_id):
         """Delete an inventory by ID."""

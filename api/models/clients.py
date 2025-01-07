@@ -17,15 +17,15 @@ class Clients(Base):
 
     def create(self, client):
         """Add a new client."""
-        query = "INSERT INTO clients (name, contact) VALUES (?, ?)"
-        return self.execute(query, (client['name'], client['contact']))
+        query = "INSERT INTO clients (name, address, city, zip_code, province, country, contact_name, contact_phone, contact_email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        return self.execute_query(query, (client['name'], client['address'], client['city'], client['zip_code'], client['province'], client['country'], client['contact_name'], client['contact_phone'], client['contact_email']))
 
     def update(self, client_id, client):
         """Update an existing client."""
-        query = "UPDATE clients SET name = ?, contact = ? WHERE id = ?"
-        return self.execute(query, (client['name'], client['contact'], client_id))
+        query = "UPDATE clients SET name = ?, address = ?, city = ?, zip_code = ?, province = ?, country = ?, contact_name = ?, contact_phone = ?, contact_email = ? WHERE id = ?"
+        return self.execute_query(query, (client['name'], client['address'], client['city'], client['zip_code'], client['province'], client['country'], client['contact_name'], client['contact_phone'], client['contact_email'], client_id))
 
     def delete(self, client_id):
         """Delete a client by ID."""
         query = "DELETE FROM clients WHERE id = ?"
-        return self.execute(query, (client_id,))
+        return self.execute_query(query, (client_id,))

@@ -1,0 +1,43 @@
+
+### Test GET all clients
+GET http://localhost:8080/clients
+Accept: application/json
+
+### Test POST new client
+POST http://localhost:8080/clients
+Content-Type: application/json
+
+{
+  "name": "Test Client",
+  "address": "123 Test Street",
+  "city": "Test City",
+  "zip_code": "12345",
+  "province": "Test Province",
+  "country": "Test Country",
+  "contact_name": "John Doe",
+  "contact_phone": "123-456-7890",
+  "contact_email": "johndoe@test.com"
+}
+
+### Test GET client by ID
+GET http://localhost:8080/clients/1
+Accept: application/json
+
+### Test PUT update client by ID
+PUT http://localhost:8080/clients/1
+Content-Type: application/json
+
+{
+  "name": "Updated Client",
+  "address": "456 Updated Street",
+  "city": "Updated City",
+  "zip_code": "67890",
+  "province": "Updated Province",
+  "country": "Updated Country",
+  "contact_name": "Jane Doe",
+  "contact_phone": "098-765-4321",
+  "contact_email": "janedoe@test.com"
+}
+
+### Test DELETE client by ID
+DELETE http://localhost:8080/clients/1
