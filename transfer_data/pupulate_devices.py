@@ -3,6 +3,7 @@ import random
 import string
 from datetime import datetime
 from dbconn import get_db_connection
+
 # Function to generate a random API key
 def generate_api_key(length=32):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length)) 

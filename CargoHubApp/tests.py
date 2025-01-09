@@ -2,7 +2,7 @@ import requests
 import pytest
 
 # TODO: replace with test server url   'http://localhost:8080'
-TEST_SERVER_URL = 'http://localhost:8080'
+TEST_SERVER_URL = 'http://localhost:5000'
 BASE_URL = 'http://145.24.223.218:8080'
 API_KEY = "a1b2c3d4e5"
 

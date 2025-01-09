@@ -1,3 +1,4 @@
+
 USERS = [
     {
         "api_key": "a1b2c3d4e5",
@@ -7,9 +8,10 @@ USERS = [
         }
     },
     {
-        "api_key": "f6g7h8i9j0",
-        "app": "CargoHUB Dashboard 2",
+        "api_key": "KPtxcRZgO1fPYCp6iqqjciG8ER8QoqRd",
+        "app": "Device_1_1",
         "endpoint_access": {
+            # Example of restricting access to certain endpoints graag gedaan Tim
             "full": False,
             "warehouses": {
                 "full": False,
@@ -89,7 +91,11 @@ USERS = [
                 "delete": False
             }
         }
-    }
+    },
+#Hier moet je de api key van de andere devices invullen 
+# LET OP AI pakt maakt vaak eigen api keys aan. Gebruik degenen die in de db staan
+#ALs je de api key van een device niet weet, kan je deze vinden in de database onder de tabel devices of 
+# in de terminal als je transfer_data/API_keys.py runt. dat is makkelijker
 ]
 
 _users = None
