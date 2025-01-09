@@ -1,36 +1,50 @@
-from django.db import models
-import secrets
-from django.http import JsonResponse
+import json
 
-class Device(models.Model):
-    name = models.CharField(max_length=255)
-    api_key = models.CharField(max_length=50, unique=True, editable=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+from api.models.base import Base
 
-    def save(self, *args, **kwargs):
-        if not self.api_key:
-            self.api_key = secrets.token_urlsafe(32)  
-        super().save(*args, **kwargs)
+DEVICES = []
 
-class DeviceAuthenticationMiddleware:
-    def __init__(self, get_response):
-        self.get_response = get_response
+class Device(Base):
 
-    def __call__(self, request):
-        api_key = request.headers.get("Authorization")
-        if not api_key or not api_key.startswith("Bearer "):
-            return JsonResponse({"error": "Unauthorized"}, status=401)
+    def __init__(self, root_path, is_debug=False):
+        self.data_path = root_path + "devices.json"
+        self.load(is_debug)
 
-        api_key_value = api_key.split("Bearer ")[1]
-        try:
-            device = Device.objects.get(api_key=api_key_value)
-            request.device = device  # Attach device info to the request
-        except Device.DoesNotExist:
-            return JsonResponse({"error": "Invalid API key"}, status=403)
-
-        return self.get_response(request)
+    def get_devices(self):
+        return self.data
     
-#TODO 
-# MAKE DEVICES HAVE UNIQUE ENDPOINTS
-# MAKE DEVICES HAVE UNIQUE API KEYS
-# MAKE DEVICES HAVE LIMITED DATA ACCESS
+    def get_device(self, device_id):
+        for x in self.data:
+            if x["id"] == device_id:
+                return x
+        return None
+    
+    def add_device(self, device):
+        device["created_at"] = self.get_timestamp()
+        device["updated_at"] = self.get_timestamp()
+        self.data.append(device)
+        self.save()
+     
+    def update_device(self, device_id, device):
+        device = self.get_device(device_id)
+        device["updated_at"] = self.get_timestamp()
+        device.update(device)
+        self.save()
+    
+    def remove_device(self, device_id):
+        device = self.get_device(device_id)
+        self.data.remove(device)
+        self.save()
+    
+    def load(self, is_debug):
+        if is_debug:
+            self.data = DEVICES
+        else:
+            f = open(self.data_path, "r")
+            self.data = json.load(f)
+            f.close()
+    
+    def save(self):
+        f = open(self.data_path, "w")
+        json.dump(self.data, f)
+        f.close()

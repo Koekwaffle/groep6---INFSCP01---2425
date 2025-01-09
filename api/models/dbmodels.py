@@ -341,6 +341,23 @@ def create_warehouses_table():
     conn.commit()
     conn.close()
 
+def create_devices_table():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    # Create the devices table
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS devices (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        Wharehouse_id INTEGER,
+        device_type TEXT,
+        permissions TEXT,
+        created_at TEXT,
+        updated_at TEXT
+        );
+    ''')            
+
 
 if __name__ == "__main__":
     create_clients_table()
@@ -355,3 +372,4 @@ if __name__ == "__main__":
     create_suppliers_table()
     create_transfers_table()
     create_warehouses_table()
+    create_devices_table()
