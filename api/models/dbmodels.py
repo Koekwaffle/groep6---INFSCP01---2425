@@ -349,10 +349,11 @@ def create_devices_table():
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS devices (
         id INTEGER PRIMARY KEY,
-        name TEXT,
-        Wharehouse_id INTEGER,
-        device_type TEXT,
-        permissions TEXT,
+        name TEXT NOT NULL,
+        Wharehouse_id INTEGER NOT NULL,
+        API_key TEXT NOT NULL,
+        device_type TEXT NOT NULL,
+        permissions JSON NOT NULL,
         created_at TEXT,
         updated_at TEXT
         );

@@ -12,13 +12,13 @@ class Device(Base):
 
     def get_devices(self):
         return self.data
-    
+
     def get_device(self, device_id):
         for x in self.data:
             if x["id"] == device_id:
                 return x
         return None
-    
+
     def add_device(self, device):
         device["created_at"] = self.get_timestamp()
         device["updated_at"] = self.get_timestamp()
@@ -48,3 +48,5 @@ class Device(Base):
         f = open(self.data_path, "w")
         json.dump(self.data, f)
         f.close()
+
+    
