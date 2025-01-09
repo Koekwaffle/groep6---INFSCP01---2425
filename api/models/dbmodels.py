@@ -59,12 +59,6 @@ def add_created_at_to_clients():
     conn.commit()
     conn.close()
 
-# Execute the functions
-if __name__ == '__main__':
-    create_clients_table()
-    add_created_at_to_clients()
-
-
 def create_inventories_table():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -346,21 +340,27 @@ def create_devices_table():
     cursor = conn.cursor()
 
     # Create the devices table
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS devices (
-        id INTEGER PRIMARY KEY,
-        name TEXT NOT NULL,
-        Wharehouse_id INTEGER NOT NULL,
-        API_key TEXT NOT NULL,
-        device_type TEXT NOT NULL,
-        permissions JSON NOT NULL,
-        created_at TEXT,
-        updated_at TEXT
+    try:
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS devices (
+            id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL,
+            warehouse_id INTEGER NOT NULL,
+            api_key TEXT NOT NULL,
+            permissions TEXT NOT NULL,
+            created_at TEXT,
+            updated_at TEXT
         );
-    ''')            
-
+        ''')
+        print("Devices table created successfully.")
+    except Exception as e:
+        print(f"Error creating devices table: {e}")
+    
+    conn.commit()
+    conn.close()
 
 if __name__ == "__main__":
+    create_devices_table()
     create_clients_table()
     create_inventories_table()
     create_item_groups_table()
@@ -373,4 +373,4 @@ if __name__ == "__main__":
     create_suppliers_table()
     create_transfers_table()
     create_warehouses_table()
-    create_devices_table()
+
