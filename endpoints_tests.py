@@ -1,3 +1,8 @@
+import os
+
+# Set the environment variable before importing any other modules
+os.environ['NODE_ENV'] = 'test'
+
 import requests
 import pytest
 
@@ -5,7 +10,7 @@ BASE_URL = 'http://127.0.0.1:8000'
 API_KEY = "a1b2c3d4e5"
 
 # Use a very large ID that won't conflict with existing records
-TEST_ID = 9999999999
+TEST_ID = 1
 
 ########################## 
 ### Client endpoint tests 
@@ -116,7 +121,7 @@ def test_7_get_all_clients():
 
 ############################## 
 ### Inventory endpoint tests 
-##############################
+############################## 
 def test_0_unauthorized_inventory_access():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/")
     assert response.status_code == 401
