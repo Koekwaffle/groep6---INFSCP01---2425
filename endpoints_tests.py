@@ -225,3 +225,112 @@ def test_post_new_location():
 def test_delete_location(): 
     response = requests.delete(f"{BASE_URL}/api/v1/locations/2/", headers={"Authorization": f"Bearer {API_KEY}"}) 
     assert response.status_code == 204  # No Content
+
+############################### 
+### Orders endpoint tests 
+############################### 
+def test_get_all_orders():
+    response = requests.get(f"{BASE_URL}/api/v1/orders/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 200
+
+def test_get_specific_order():
+    response = requests.get(f"{BASE_URL}/api/v1/orders/1/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 200
+
+def test_post_new_order():
+    data = {
+        "client_id": 1,
+        "reference": "ORDER123",
+        "date_required": "2024-02-01",
+        "status": "new"
+    }
+    response = requests.post(f"{BASE_URL}/api/v1/orders/", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
+    assert response.status_code == 201
+
+def test_put_update_order():
+    data = {
+        "client_id": 1,
+        "reference": "UPDATED-ORDER123",
+        "date_required": "2024-02-02",
+        "status": "processing"
+    }
+    response = requests.put(f"{BASE_URL}/api/v1/orders/1/", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
+    assert response.status_code == 200
+
+def test_delete_order():
+    response = requests.delete(f"{BASE_URL}/api/v1/orders/1/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 204
+
+############################### 
+### Items endpoint tests 
+############################### 
+def test_get_all_items():
+    response = requests.get(f"{BASE_URL}/api/v1/items/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 200
+
+def test_get_specific_item():
+    response = requests.get(f"{BASE_URL}/api/v1/items/1/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 200
+
+def test_post_new_item():
+    data = {
+        "uid": "P000001",
+        "code": "ITEM123",
+        "description": "New test item",
+        "item_group": 1,
+        "item_line": 1
+    }
+    response = requests.post(f"{BASE_URL}/api/v1/items/", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
+    assert response.status_code == 201
+
+def test_put_update_item():
+    data = {
+        "uid": "P000001",
+        "code": "UPDATED-ITEM123",
+        "description": "Updated test item",
+        "item_group": 1,
+        "item_line": 1
+    }
+    response = requests.put(f"{BASE_URL}/api/v1/items/1/", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
+    assert response.status_code == 200
+
+def test_delete_item():
+    response = requests.delete(f"{BASE_URL}/api/v1/items/1/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 204
+
+############################### 
+### Warehouses endpoint tests 
+############################### 
+def test_get_all_warehouses():
+    response = requests.get(f"{BASE_URL}/api/v1/warehouses/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 200
+
+def test_get_specific_warehouse():
+    response = requests.get(f"{BASE_URL}/api/v1/warehouses/1/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 200
+
+def test_post_new_warehouse():
+    data = {
+        "name": "New Warehouse",
+        "address": "123 Warehouse St",
+        "city": "Warehouse City",
+        "province": "WH",
+        "country": "Netherlands"
+    }
+    response = requests.post(f"{BASE_URL}/api/v1/warehouses/", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
+    assert response.status_code == 201
+
+def test_put_update_warehouse():
+    data = {
+        "name": "Updated Warehouse",
+        "address": "456 Updated St",
+        "city": "Updated City",
+        "province": "UP",
+        "country": "Netherlands"
+    }
+    response = requests.put(f"{BASE_URL}/api/v1/warehouses/1/", headers={"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}, json=data)
+    assert response.status_code == 200
+
+def test_delete_warehouse():
+    response = requests.delete(f"{BASE_URL}/api/v1/warehouses/1/", headers={"Authorization": f"Bearer {API_KEY}"})
+    assert response.status_code == 204
