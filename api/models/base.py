@@ -1,7 +1,8 @@
+import sqlite3
 from datetime import datetime
 
 class Base:
-    def __init__():
+    def __init__(self, *args, **kwargs):
         pass
 
     def get_timestamp(self):

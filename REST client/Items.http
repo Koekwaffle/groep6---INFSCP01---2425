@@ -1,25 +1,26 @@
-@host = http://localhost:3000
+# @host = http://localhost:8080
+@host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
 
 ### Get all items BEETJE BROKEN DUURT LANG  
-GET {{host}}/api/v1/items 
-API_KEY: {{api_key}}
+GET {{host}}/api/v1/items/ 
+Authorization: Bearer {{api_key}}
 
 ### Get specific item BROKEN!!!!! RETURNED "NULL" 
-GET {{host}}/api/v1/items/40
-API_KEY: {{api_key}}
+GET {{host}}/api/v1/items/40/
+Authorization: Bearer {{api_key}}
 
 ### Get specific item BROKEN!!!!! RETURNED "[ ]" 
-GET {{host}}/api/v1/items/9/inventory
-API_KEY: {{api_key}}
+GET {{host}}/api/v1/items/9/inventory/
+Authorization: Bearer {{api_key}}
 
 ### Get specific item BROKEN!!!!! RETURNED Alles 0 
-GET {{host}}/api/v1/items/9/inventory/totals
-API_KEY: {{api_key}}
+GET {{host}}/api/v1/items/9/inventory/totals/
+Authorization: Bearer {{api_key}}
 
 ### Put new info in Items BROKEN returned HTTP/1.0 404 Not Found
-PUT http://localhost:3000/api/v1/items/40
-API_KEY: a1b2c3d4e5
+PUT {{host}}/api/v1/items/40/
+Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
 {
@@ -31,7 +32,7 @@ Content-Type: application/json
 }
 
 ### Create new Item
-POST {{host}}/api/v1/items
+POST {{host}}/api/v1/items/
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
 

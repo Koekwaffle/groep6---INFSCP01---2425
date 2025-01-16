@@ -1,8 +1,11 @@
 from api.models.base import Base
+from api.providers import data_provider
 
 class Shipments(Base):
     def __init__(self):
         super().__init__()
+        self.conn = data_provider.get_connection()
+        self.cursor = self.conn.cursor()
 
     def get_all(self):
         """Retrieve all shipments."""
@@ -19,35 +22,37 @@ class Shipments(Base):
         query = "SELECT * FROM shipment_items WHERE shipment_id = ?"
         return self.fetch_all(query, (shipment_id,))
 
-    def add_shipment(self, shipment):
+    def add(self, shipment):
         """Add a new shipment."""
         query = """
-        INSERT INTO shipments (name, created_at, updated_at)
-        VALUES (?, ?, ?)
+        INSERT INTO shipments (name, description, created_at, updated_at)
+        VALUES (?, ?, ?, ?)
         """
         timestamp = self.get_timestamp()
         params = (
             shipment['name'],
+            shipment['description'],
             timestamp,
             timestamp
         )
         self.execute_query(query, params)
 
-    def update_shipment(self, shipment_id, shipment):
+    def update(self, shipment_id, shipment):
         """Update an existing shipment."""
         query = """
         UPDATE shipments
-        SET name = ?, updated_at = ?
+        SET name = ?, description = ?, updated_at = ?
         WHERE id = ?
         """
         params = (
             shipment['name'],
+            shipment['description'],
             self.get_timestamp(),
             shipment_id
         )
         self.execute_query(query, params)
 
-    def remove_shipment(self, shipment_id):
+    def remove(self, shipment_id):
         """Remove a shipment by ID."""
         query = "DELETE FROM shipments WHERE id = ?"
         self.execute_query(query, (shipment_id,))

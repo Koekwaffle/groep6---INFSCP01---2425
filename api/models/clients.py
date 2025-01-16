@@ -1,51 +1,23 @@
 from api.models.base import Base
+from api.providers import data_provider
 
 class Clients(Base):
     def __init__(self):
         super().__init__()
+        self.conn = data_provider.get_connection()
+        self.cursor = self.conn.cursor()
 
     def get_all(self):
         """Retrieve all clients."""
         query = "SELECT * FROM clients"
-        results = self.fetch_all(query)
-        clients = []
-        for result in results:
-            clients.append({
-                "id": result[0],
-                "name": result[1],
-                "address": result[2],
-                "city": result[3],
-                "zip_code": result[4],
-                "province": result[5],
-                "country": result[6],
-                "contact_name": result[7],
-                "contact_phone": result[8],
-                "contact_email": result[9],
-                "created_at": result[10],
-                "updated_at": result[11],
-            })
-        return clients
+        rows = self.fetch_all(query)
+        return [self.format_client(row) for row in rows]
 
     def get(self, client_id):
         """Retrieve a single client by ID."""
         query = "SELECT * FROM clients WHERE id = ?"
-        result = self.fetch_one(query, (client_id,))
-        if result:
-            return {
-                "id": result[0],
-                "name": result[1],
-                "address": result[2],
-                "city": result[3],
-                "zip_code": result[4],
-                "province": result[5],
-                "country": result[6],
-                "contact_name": result[7],
-                "contact_phone": result[8],
-                "contact_email": result[9],
-                "created_at": result[10],
-                "updated_at": result[11],
-            }
-        return None
+        row = self.fetch_one(query, (client_id,))
+        return self.format_client(row) if row else None
 
     def add(self, client):
         """Add a new client."""
@@ -73,8 +45,7 @@ class Clients(Base):
         """Update an existing client."""
         query = """
         UPDATE clients
-        SET name = ?, address = ?, city = ?, zip_code = ?, province = ?, country = ?,
-            contact_name = ?, contact_phone = ?, contact_email = ?, updated_at = ?
+        SET name = ?, address = ?, city = ?, zip_code = ?, province = ?, country = ?, contact_name = ?, contact_phone = ?, contact_email = ?, updated_at = ?
         WHERE id = ?
         """
         params = (
@@ -96,3 +67,20 @@ class Clients(Base):
         """Remove a client by ID."""
         query = "DELETE FROM clients WHERE id = ?"
         self.execute_query(query, (client_id,))
+
+    def format_client(self, row):
+        """Format a client row into a dictionary."""
+        return {
+            'id': row[0],
+            'name': row[1],
+            'address': row[2],
+            'city': row[3],
+            'zip_code': row[4],
+            'province': row[5],
+            'country': row[6],
+            'contact_name': row[7],
+            'contact_phone': row[8],
+            'contact_email': row[9],
+            'created_at': row[10],
+            'updated_at': row[11]
+        }

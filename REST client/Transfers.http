@@ -1,17 +1,18 @@
-@host = http://localhost:3000
+# @host = http://localhost:8080
+@host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
 
 ### Get all transfers BROKEN!!!!!! Duurt Lang
 GET {{host}}/api/v1/transfers       
-API_KEY: {{api_key}}
+Authorization: Bearer {{api_key}}
 
 ### Get specific transfer
 GET {{host}}/api/v1/transfers/1     
-API_KEY: {{api_key}}
+Authorization: Bearer {{api_key}}
 
 ### Get items from specific transfer
 GET {{host}}/api/v1/transfers/1/items  
-API_KEY: {{api_key}}
+Authorization: Bearer {{api_key}}
 
 ### Put Transfer
 PUT {{host}}/api/v1/transfers/1

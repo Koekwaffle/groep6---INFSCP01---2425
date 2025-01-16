@@ -1,8 +1,11 @@
 from api.models.base import Base
+from api.providers import data_provider
 
 class Items(Base):
     def __init__(self):
         super().__init__()
+        self.conn = data_provider.get_connection()
+        self.cursor = self.conn.cursor()
 
     def get_all(self):
         """Retrieve all items."""
@@ -11,7 +14,7 @@ class Items(Base):
 
     def get(self, item_id):
         """Retrieve a single item by ID."""
-        query = "SELECT * FROM items WHERE uid = ?"
+        query = "SELECT * FROM items WHERE id = ?"
         return self.fetch_one(query, (item_id,))
 
     def get_items_for_item_line(self, item_line_id):

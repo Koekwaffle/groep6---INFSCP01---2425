@@ -6,21 +6,20 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import (ClientSerializer, InventorySerializer, ItemGroupSerializer, ItemTypeSerializer, 
                           ItemSerializer, LocationSerializer, OrderSerializer, ShipmentSerializer, 
-                          SupplierSerializer, TransferSerializer, WarehouseSerializer)
+                          SupplierSerializer, TransferSerializer, WarehouseSerializer, ItemLineSerializer)  # Import ItemLineSerializer
 from rest_framework.exceptions import NotFound, ValidationError
 from django.http import JsonResponse
 
+from api.providers import auth_provider  # Import the auth_provider module
+
+# Initialize the auth_provider
+auth_provider.init()
+
 def get_user(api_key):
-    # Implement your logic to retrieve the user based on the API key
-    # For example:
-    if api_key == "valid_api_key":
-        return {"username": "valid_user"}
-    return None
+    return auth_provider.get_user(api_key)  # Use the auth_provider to get the user
+
 from django.http import HttpResponse
 from django.urls import path
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
 
 from api.models.clients import Clients
 from api.models.inventories import Inventories
@@ -35,8 +34,6 @@ from api.models.suppliers import Suppliers
 from api.models.transfers import Transfers
 from api.models.warehouses import Warehouses
 
-
-
 def baseurl_view(request):
     return HttpResponse("Welcome to the Cargohub API! :)", status=200)
 
@@ -44,13 +41,15 @@ class GenericView(APIView):
     def check_api_key(self, request):
         print("Checking API Key...")
         print(f"Request Headers: {request.headers}")
-        api_key = request.headers.get('API_KEY')
-        print(f"API Key from headers: {api_key}")
-        api_key = request.headers.get('API_KEY')
-        user = get_user(api_key)
-        if user is None:
-            return None
-        return user
+        authorization_header = request.headers.get('Authorization')
+        if authorization_header and authorization_header.startswith("Bearer "):
+            api_key = authorization_header.split(" ")[1]
+            print(f"API Key from headers: {api_key}")
+            user = get_user(api_key)
+            if user is None:
+                return None
+            return user
+        return None
 
     def dispatch(self, request, *args, **kwargs):
         user = self.check_api_key(request)
@@ -114,14 +113,14 @@ class ClientView(GenericView):
     def get(self, request, *args, **kwargs):
         client_id = kwargs.get('client_id')
         if client_id:
-            client = self.model_instance().get_client(client_id)
+            client = self.model_instance().get(client_id)  # Use the correct method name
             if client:
                 serializer = self.serializer_class(client)
                 return JsonResponse(serializer.data, status=status.HTTP_200_OK)
             else:
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
         else:
-            clients = self.model_instance().gets()
+            clients = self.model_instance().get_all()  # Use the correct method name
             serializer = self.serializer_class(clients, many=True)
             return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
 
@@ -184,4 +183,10 @@ class TransferView(GenericView):
     model = Transfers
     model_instance = Transfers
     serializer_class = TransferSerializer
+
+
+class ItemLineView(GenericView):
+    model = ItemLines
+    model_instance = ItemLines
+    serializer_class = ItemLineSerializer
 

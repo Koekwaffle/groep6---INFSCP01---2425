@@ -1,8 +1,11 @@
 from api.models.base import Base
+from api.providers import data_provider
 
 class Inventories(Base):
     def __init__(self):
         super().__init__()
+        self.conn = data_provider.get_connection()
+        self.cursor = self.conn.cursor()
 
     def get_all(self):
         """Retrieve all inventories."""
@@ -32,7 +35,7 @@ class Inventories(Base):
         """
         return self.fetch_one(query, (item_id,))
 
-    def add_inventory(self, inventory):
+    def add(self, inventory):
         """Add a new inventory record."""
         query = """
         INSERT INTO inventories (item_id, location_id, total_expected, total_ordered, total_allocated, total_available, created_at, updated_at)
@@ -41,7 +44,7 @@ class Inventories(Base):
         timestamp = self.get_timestamp()
         params = (
             inventory['item_id'],
-            inventory['location_id'],
+            inventory.get('location_id', None),
             inventory['total_expected'],
             inventory['total_ordered'],
             inventory['total_allocated'],
@@ -51,7 +54,7 @@ class Inventories(Base):
         )
         self.execute_query(query, params)
 
-    def update_inventory(self, inventory_id, inventory):
+    def update(self, inventory_id, inventory):
         """Update an existing inventory record."""
         query = """
         UPDATE inventories
@@ -61,7 +64,7 @@ class Inventories(Base):
         """
         params = (
             inventory['item_id'],
-            inventory['location_id'],
+            inventory.get('location_id', None),
             inventory['total_expected'],
             inventory['total_ordered'],
             inventory['total_allocated'],
@@ -71,7 +74,7 @@ class Inventories(Base):
         )
         self.execute_query(query, params)
 
-    def remove_inventory(self, inventory_id):
+    def remove(self, inventory_id):
         """Remove an inventory record by ID."""
         query = "DELETE FROM inventories WHERE id = ?"
         self.execute_query(query, (inventory_id,))

@@ -52,7 +52,20 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
         logging.debug(f"Parsed path: {parsed_path}")
         return parsed_path
 
+    def get_user(self):
+        """Retrieve the user based on the Authorization header."""
+        authorization_header = self.headers.get("Authorization")
+        if authorization_header:
+            api_key = authorization_header.split(" ")[1]
+            return auth_provider.get_user(api_key)
+        return None
+
     def do_GET(self):
+        user = self.get_user()
+        if user is None:
+            self.send_json_response({"error": "Invalid API Key"}, status=403)
+            return
+
         path = self.parse_path()
         if len(path) < 1:
             self.send_json_response({"error": "Invalid path"}, status=400)
@@ -102,6 +115,11 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_json_response({"error": "Resource not found"}, status=404)
 
     def do_POST(self):
+        user = self.get_user()
+        if user is None:
+            self.send_json_response({"error": "Invalid API Key"}, status=403)
+            return
+
         path = self.parse_path()
         if len(path) < 1:
             self.send_json_response({"error": "Invalid path"}, status=400)
@@ -144,6 +162,11 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_json_response({"error": "Resource not found"}, status=404)
 
     def do_PUT(self):
+        user = self.get_user()
+        if user is None:
+            self.send_json_response({"error": "Invalid API Key"}, status=403)
+            return
+
         path = self.parse_path()
         if len(path) < 2:
             self.send_json_response({"error": "Invalid path"}, status=400)
@@ -187,6 +210,11 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_json_response({"error": "Resource not found"}, status=404)
 
     def do_DELETE(self):
+        user = self.get_user()
+        if user is None:
+            self.send_json_response({"error": "Invalid API Key"}, status=403)
+            return
+
         path = self.parse_path()
         if len(path) < 2:
             self.send_json_response({"error": "Invalid path"}, status=400)

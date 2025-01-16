@@ -1,8 +1,11 @@
 from api.models.base import Base
+from api.providers import data_provider
 
 class Orders(Base):
     def __init__(self):
         super().__init__()
+        self.conn = data_provider.get_connection()
+        self.cursor = self.conn.cursor()
 
     def get_all(self):
         """Retrieve all orders."""
