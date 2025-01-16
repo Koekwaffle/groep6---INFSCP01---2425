@@ -1,35 +1,39 @@
 # @host = http://localhost:8080
 @host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
+@test_id = 9999999999
 
-### Get locations BROKEN!!!!!! Duurt Lang
-GET {{host}}/api/v1/locations/            
+### Get all locations
+GET {{host}}/api/v1/locations/
 Authorization: Bearer {{api_key}}
 
-### Get specific location 
-GET {{host}}/api/v1/locations/2/        
+### Get specific location
+GET {{host}}/api/v1/locations/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
-### Put new info in Location BROKEN returned HTTP/1.0 404 Not Found
-PUT {{host}}/api/v1/locations/2/
+### Put update location
+PUT {{host}}/api/v1/locations/{{test_id}}/
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
 {
-  "name": "Updated Location Name",
-  "address": "123 Updated Street",
-  "city": "Updated City",
-  "province": "Updated Province",
-  "country": "Updated Country"
+    "id": {{test_id}},
+    "warehouse_id": 1,
+    "code": "UPDATED-A.1.1",
+    "name": "Updated Row: A, Rack: 1, Shelf: 1"
 }
 
-### Create new Location
+### Post new location
 POST {{host}}/api/v1/locations/
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
 {
-  "warehouse_id": 1,
-  "code": "A.1.1",
-  "name": "Row: A, Rack: 1, Shelf: 1"
+    "warehouse_id": 1,
+    "code": "A.1.1",
+    "name": "Row: A, Rack: 1, Shelf: 1"
 }
+
+### Delete location
+DELETE {{host}}/api/v1/locations/{{test_id}}/
+Authorization: Bearer {{api_key}}

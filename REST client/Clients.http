@@ -1,26 +1,26 @@
-# @host = http://localhost:8080
 @host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
+@test_id = 9823
 
 ### Get all clients BEETJE BROKEN TRAAG
 GET {{host}}/api/v1/clients/
 Authorization: Bearer {{api_key}}
 
 ### Get specific client
-GET {{host}}/api/v1/clients/1/
+GET {{host}}/api/v1/clients/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
 ### Get orders of specific client
-GET {{host}}/api/v1/clients/5/orders/
+GET {{host}}/api/v1/clients/{{test_id}}/orders/
 Authorization: Bearer {{api_key}}
 
 ### put new information in clients
-PUT {{host}}/api/v1/clients/1/
+PUT {{host}}/api/v1/clients/{{test_id}}/
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
 {
-  "id": 1,
+  "id": {{test_id}},
   "name": "Updated Client Name",
   "address": "789 Updated Street",
   "city": "Updated City",
@@ -39,6 +39,7 @@ Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
 {
+    "id": {{test_id}},
     "name": "Nieuwe Klant",
     "address": "1234 Nieuwe Straat",
     "city": "Amsterdam",
@@ -50,7 +51,6 @@ Content-Type: application/json
     "contact_email": "nieuwe.klant@example.com"
 }
 
-
 ### Delete Client
-DELETE {{host}}/api/v1/clients/9822/
+DELETE {{host}}/api/v1/clients/{{test_id}}/
 Authorization: Bearer {{api_key}}
