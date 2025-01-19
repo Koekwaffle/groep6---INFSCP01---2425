@@ -3,6 +3,8 @@ import os
 import http.server
 import json
 
+from api.providers import auth_provider
+
 # Add the parent directory to the system path to access models and processors
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
