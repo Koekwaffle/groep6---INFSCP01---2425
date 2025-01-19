@@ -1,6 +1,6 @@
 @host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
-@test_id = 9823
+@test_id = 1
 
 ### Get all clients BEETJE BROKEN TRAAG
 GET {{host}}/api/v1/clients/
@@ -10,9 +10,22 @@ Authorization: Bearer {{api_key}}
 GET {{host}}/api/v1/clients/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
-### Get orders of specific client
-GET {{host}}/api/v1/clients/{{test_id}}/orders/
+### Post new client
+POST {{host}}/api/v1/clients/
 Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "name": "Nieuwe Klant",
+    "address": "1234 Nieuwe Straat",
+    "city": "Amsterdam",
+    "zip_code": "1234AB",
+    "province": "Noord-Holland",
+    "country": "Nederland",
+    "contact_name": "Jan Janssen",
+    "contact_phone": "06-12345678",
+    "contact_email": "nieuwe.klant@example.com"
+}
 
 ### put new information in clients
 PUT {{host}}/api/v1/clients/{{test_id}}/
@@ -20,7 +33,6 @@ Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
 {
-  "id": {{test_id}},
   "name": "Updated Client Name",
   "address": "789 Updated Street",
   "city": "Updated City",
@@ -31,24 +43,6 @@ Content-Type: application/json
   "contact_phone": "555-999-8888",
   "contact_email": "updated.contact@example.com",
   "updated_at": "2024-09-30T14:21:34.248255Z"
-}
-
-### Post new client
-POST {{host}}/api/v1/clients/
-Authorization: Bearer {{api_key}}
-Content-Type: application/json
-
-{
-    "id": {{test_id}},
-    "name": "Nieuwe Klant",
-    "address": "1234 Nieuwe Straat",
-    "city": "Amsterdam",
-    "zip_code": "1234AB",
-    "province": "Noord-Holland",
-    "country": "Nederland",
-    "contact_name": "Jan Janssen",
-    "contact_phone": "06-12345678",
-    "contact_email": "nieuwe.klant@example.com"
 }
 
 ### Delete Client

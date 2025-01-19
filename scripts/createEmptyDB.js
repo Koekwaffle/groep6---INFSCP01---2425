@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Path to your original database
-const sourceDB = path.join(__dirname, '..', 'ILY.db');
+const sourceDB = path.join(__dirname, '..', 'ILY_TEST.db');
 // Path for the new empty database
 const newDB = path.join(__dirname, '..', 'ILY_TEST.db');
 

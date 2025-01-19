@@ -1,6 +1,6 @@
 @host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
-@test_id = 9999999999
+@test_id = 1
 
 ### Get all transfers
 GET {{host}}/api/v1/transfers/
@@ -9,24 +9,6 @@ Authorization: Bearer {{api_key}}
 ### Get specific transfer
 GET {{host}}/api/v1/transfers/{{test_id}}/
 Authorization: Bearer {{api_key}}
-
-### Get items from specific transfer
-GET {{host}}/api/v1/transfers/1/items  
-Authorization: Bearer {{api_key}}
-
-### Put update transfer
-PUT {{host}}/api/v1/transfers/{{test_id}}/
-Authorization: Bearer {{api_key}}
-Content-Type: application/json
-
-{
-    "id": {{test_id}},
-    "from_location": 1,
-    "to_location": 2,
-    "item_id": 1,
-    "quantity": 50,
-    "status": "updated"
-}
 
 ### Post new transfer
 POST {{host}}/api/v1/transfers/
@@ -39,6 +21,19 @@ Content-Type: application/json
     "item_id": 1,
     "quantity": 25,
     "status": "pending"
+}
+
+### Put update transfer
+PUT {{host}}/api/v1/transfers/{{test_id}}/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "from_location": 1,
+    "to_location": 2,
+    "item_id": 1,
+    "quantity": 50,
+    "status": "updated"
 }
 
 ### Delete transfer

@@ -1,6 +1,6 @@
 @host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
-@test_id = 9999999999
+@test_id = P000001
 
 ### Get all items
 GET {{host}}/api/v1/items/
@@ -9,28 +9,6 @@ Authorization: Bearer {{api_key}}
 ### Get specific item
 GET {{host}}/api/v1/items/{{test_id}}/
 Authorization: Bearer {{api_key}}
-
-### Get specific item BROKEN!!!!! RETURNED "[ ]" 
-GET {{host}}/api/v1/items/9/inventory/
-Authorization: Bearer {{api_key}}
-
-### Get specific item BROKEN!!!!! RETURNED Alles 0 
-GET {{host}}/api/v1/items/9/inventory/totals/
-Authorization: Bearer {{api_key}}
-
-### Put update item
-PUT {{host}}/api/v1/items/{{test_id}}/
-Authorization: Bearer {{api_key}}
-Content-Type: application/json
-
-{
-    "id": {{test_id}},
-    "uid": "P000001",
-    "code": "UPDATED-ITEM123",
-    "description": "Updated test item",
-    "item_group": 1,
-    "item_line": 1
-}
 
 ### Post new item
 POST {{host}}/api/v1/items/
@@ -41,6 +19,18 @@ Content-Type: application/json
     "uid": "P000001",
     "code": "ITEM123",
     "description": "New test item",
+    "item_group": 1,
+    "item_line": 1
+}
+
+### Put update item
+PUT {{host}}/api/v1/items/{{test_id}}/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "code": "UPDATED-ITEM123",
+    "description": "Updated test item",
     "item_group": 1,
     "item_line": 1
 }

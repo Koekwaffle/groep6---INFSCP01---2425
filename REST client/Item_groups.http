@@ -1,6 +1,6 @@
 @host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
-@test_id = 9999999999
+@test_id = 1
 
 ### Get all item groups
 GET {{host}}/api/v1/item_groups/
@@ -10,26 +10,24 @@ Authorization: Bearer {{api_key}}
 GET {{host}}/api/v1/item_groups/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
-### Put update item group
-PUT {{host}}/api/v1/item_groups/{{test_id}}/
-Authorization: Bearer {{api_key}}
-Content-Type: application/json
-
-{
-    "id": {{test_id}},
-    "name": "Updated Electronics",
-    "description": "Updated group for electronic items"
-}
-
 ### Post new item group
 POST {{host}}/api/v1/item_groups/
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
 {
-    "id": {{test_id}},
     "name": "Electronics",
     "description": "Group for electronic items"
+}
+
+### Put update item group
+PUT {{host}}/api/v1/item_groups/{{test_id}}/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "name": "Updated Electronics",
+    "description": "Updated group for electronic items"
 }
 
 ### Delete item group

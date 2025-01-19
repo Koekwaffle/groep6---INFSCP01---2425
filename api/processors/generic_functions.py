@@ -1,8 +1,8 @@
 from providers.generic_functions_sqlite import GenericFunctionsSQLite
-DB_PATH = './ILY.db'
+DB_PATH = './ILY_TEST.db'
 
 from providers.generic_functions_sqlite import GenericFunctionsSQLite
-DB_PATH = './ILY.db'
+DB_PATH = './ILY_TEST.db'
 
 import json
 from datetime import datetime

@@ -1,7 +1,7 @@
 # @host = http://localhost:8080
 @host = http://127.0.0.1:8000
 @api_key = a1b2c3d4e5
-@test_id = 9999999999
+@test_id = 1
 
 ### Get all item types
 GET {{host}}/api/v1/item_types/
@@ -11,21 +11,6 @@ Authorization: Bearer {{api_key}}
 GET {{host}}/api/v1/item_types/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
-### Get all items of specific item type
-GET {{host}}/api/v1/item_types/2/items
-Authorization: Bearer {{api_key}}
-
-### Put update item type
-PUT {{host}}/api/v1/item_types/{{test_id}}/
-Authorization: Bearer {{api_key}}
-Content-Type: application/json
-
-{
-    "id": {{test_id}},
-    "name": "Updated Type",
-    "description": "Updated description"
-}
-
 ### Post new item type
 POST {{host}}/api/v1/item_types/
 Authorization: Bearer {{api_key}}
@@ -34,6 +19,16 @@ Content-Type: application/json
 {
     "name": "New Type",
     "description": "New type description"
+}
+
+### Put update item type
+PUT {{host}}/api/v1/item_types/{{test_id}}/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "name": "Updated Type",
+    "description": "Updated description"
 }
 
 ### Delete item type
