@@ -11,6 +11,7 @@ from rest_framework.exceptions import NotFound, ValidationError
 from django.http import JsonResponse
 
 from api.providers import auth_provider  # Import the auth_provider module
+from audit_log import log_audit_event  # Correct the import path
 
 # Initialize the auth_provider
 auth_provider.init()
@@ -45,6 +46,7 @@ class GenericView(APIView):
         if authorization_header and authorization_header.startswith("Bearer "):
             api_key = authorization_header.split(" ")[1]
             print(f"API Key from headers: {api_key}")
+            log_audit_event(api_key, f"{request.method} {request.path}")  # Log the API key usage
             user = get_user(api_key)
             if user is None:
                 return None
