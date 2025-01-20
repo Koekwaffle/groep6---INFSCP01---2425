@@ -25,13 +25,26 @@ class Shipments(Base):
     def add(self, shipment):
         """Add a new shipment."""
         query = """
-        INSERT INTO shipments (name, description, created_at, updated_at)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO shipments (order_id, source_id, order_date, request_date, shipment_date, shipment_type, shipment_status, notes, carrier_code, carrier_description, service_code, payment_type, transfer_mode, total_package_count, total_package_weight, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
         timestamp = self.get_timestamp()
         params = (
-            shipment['name'],
-            shipment['description'],
+            shipment['order_id'],
+            shipment['source_id'],
+            shipment['order_date'],
+            shipment['request_date'],
+            shipment['shipment_date'],
+            shipment['shipment_type'],
+            shipment['shipment_status'],
+            shipment['notes'],
+            shipment['carrier_code'],
+            shipment['carrier_description'],
+            shipment['service_code'],
+            shipment['payment_type'],
+            shipment['transfer_mode'],
+            shipment['total_package_count'],
+            shipment['total_package_weight'],
             timestamp,
             timestamp
         )
@@ -41,12 +54,25 @@ class Shipments(Base):
         """Update an existing shipment."""
         query = """
         UPDATE shipments
-        SET name = ?, description = ?, updated_at = ?
+        SET order_id = ?, source_id = ?, order_date = ?, request_date = ?, shipment_date = ?, shipment_type = ?, shipment_status = ?, notes = ?, carrier_code = ?, carrier_description = ?, service_code = ?, payment_type = ?, transfer_mode = ?, total_package_count = ?, total_package_weight = ?, updated_at = ?
         WHERE id = ?
         """
         params = (
-            shipment['name'],
-            shipment['description'],
+            shipment['order_id'],
+            shipment['source_id'],
+            shipment['order_date'],
+            shipment['request_date'],
+            shipment['shipment_date'],
+            shipment['shipment_type'],
+            shipment['shipment_status'],
+            shipment['notes'],
+            shipment['carrier_code'],
+            shipment['carrier_description'],
+            shipment['service_code'],
+            shipment['payment_type'],
+            shipment['transfer_mode'],
+            shipment['total_package_count'],
+            shipment['total_package_weight'],
             self.get_timestamp(),
             shipment_id
         )

@@ -53,5 +53,65 @@
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "event": "DELETE /api/v1/suppliers/1/",
         "timestamp": "2025-01-20T20:18:54.450340"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/shipments/",
+        "timestamp": "2025-01-20T20:20:15.538765"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/shipments/1/",
+        "timestamp": "2025-01-20T20:20:17.029268"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/shipments/",
+        "timestamp": "2025-01-20T20:20:18.568698"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/shipments/1/",
+        "timestamp": "2025-01-20T20:20:20.472209"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/shipments/1/",
+        "timestamp": "2025-01-20T20:20:22.161860"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/shipments/",
+        "timestamp": "2025-01-20T20:20:29.651131"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/shipments/1/",
+        "timestamp": "2025-01-20T20:20:30.618064"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/shipments/",
+        "timestamp": "2025-01-20T20:21:42.624633"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/shipments/1/",
+        "timestamp": "2025-01-20T20:21:44.333429"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/shipments/1/",
+        "timestamp": "2025-01-20T20:21:45.622749"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/shipments/",
+        "timestamp": "2025-01-20T20:21:47.508065"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/shipments/1/",
+        "timestamp": "2025-01-20T20:21:48.615866"
     }
 ]
