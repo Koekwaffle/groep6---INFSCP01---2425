@@ -1,13 +1,6 @@
 
 USERS = [
     {
-        "api_key": "a1b2c3d4e5",
-        "app": "Admin",
-        "endpoint_access": {
-            "full": True
-        }
-    },
-    {
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "app": "Device_1_Terminal",
         "endpoint_access": {
