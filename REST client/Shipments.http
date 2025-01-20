@@ -60,4 +60,14 @@ Content-Type: application/json
 DELETE {{host}}/api/v1/shipments/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
-### Commit requests
+### get orders in shipment(shipment_id)
+GET {{host}}/api/v1/shipments/{{test_id}}/orders/
+
+### get items in shipment(shipment_id)
+GET {{host}}/api/v1/shipments/{{test_id}}/items/
+
+### post update orders in shipment(shipment_id, updated_orders)
+POST {{host}}/api/v1/shipments/{{test_id}}/orders/
+
+### post update items in shipment(shipment_id, updated_items)
+POST {{host}}/api/v1/shipments/{{test_id}}/items/

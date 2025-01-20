@@ -56,3 +56,6 @@ Content-Type: application/json
 ### Delete Client
 DELETE {{host}}/api/v1/clients/{{test_id}}/
 Authorization: Bearer {{api_key}}
+
+### get orders for client(client_id)
+GET {{host}}/api/v1/clients/{{test_id}}/orders/

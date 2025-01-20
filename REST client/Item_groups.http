@@ -33,3 +33,6 @@ Content-Type: application/json
 ### Delete item group
 DELETE {{host}}/api/v1/item_groups/{{test_id}}/
 Authorization: Bearer {{api_key}}
+
+### get items for item group(item_group_id)
+GET {{host}}/api/v1/item_groups/{{test_id}}/items/

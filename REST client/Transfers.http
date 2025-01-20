@@ -43,3 +43,33 @@ Authorization: Bearer {{api_key}}
 
 
 ### Commit requests
+// GET {{host}}/api/v1/transfers/
+
+### get items in transfer(transfer_id)
+GET {{host}}/api/v1/transfers/{{test_id}}/items/
+
+### post commit
+# case 3:
+#                     if path[2] == "commit":
+#                         transfer_id = int(path[1])
+#                         transfer = data_provider.fetch_transfer_pool().get_transfer(transfer_id)
+#                         for x in transfer["items"]:
+#                             inventories = data_provider.fetch_inventory_pool().get_inventories_for_item(x["item_id"])
+#                             for y in inventories:
+#                                 if y["location_id"] == transfer["transfer_from"]:
+#                                     y["total_on_hand"] -= x["amount"]
+#                                     y["total_expected"] = y["total_on_hand"] + y["total_ordered"]
+#                                     y["total_available"] = y["total_on_hand"] - y["total_allocated"]
+#                                     data_provider.fetch_inventory_pool().update_inventory(y["id"], y)
+#                                 elif y["location_id"] == transfer["transfer_to"]:
+#                                     y["total_on_hand"] += x["amount"]
+#                                     y["total_expected"] = y["total_on_hand"] + y["total_ordered"]
+#                                     y["total_available"] = y["total_on_hand"] - y["total_allocated"]
+#                                     data_provider.fetch_inventory_pool().update_inventory(y["id"], y)
+#                         transfer["transfer_status"] = "Processed"
+#                         data_provider.fetch_transfer_pool().update_transfer(transfer_id, transfer)
+#                         notification_processor.push(f"Processed batch transfer with id:{transfer['id']}")
+#                         data_provider.fetch_transfer_pool().save()
+#                         data_provider.fetch_inventory_pool().save()
+#                         self.send_response(200)
+#                         self.end_headers()

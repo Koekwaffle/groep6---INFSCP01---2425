@@ -34,3 +34,7 @@ Content-Type: application/json
 ### Delete item type
 DELETE {{host}}/api/v1/item_types/{{test_id}}/
 Authorization: Bearer {{api_key}}
+
+
+### get items for item type(item_type_id)
+GET {{host}}/api/v1/item_types/{{test_id}}/items/

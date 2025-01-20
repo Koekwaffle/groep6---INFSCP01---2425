@@ -61,3 +61,9 @@ Content-Type: application/json
 ### Delete item
 DELETE {{host}}/api/v1/items/{{test_id}}/
 Authorization: Bearer {{api_key}}
+
+### get inventories for item(item_id)
+GET {{host}}/api/v1/items/{{test_id}}/inventories/
+
+### get inventory totals for item(item_id)
+GET {{host}}/api/v1/items/{{test_id}}/inventory/totals/

@@ -33,3 +33,6 @@ Content-Type: application/json
 ### Delete item line
 DELETE {{host}}/api/v1/item_lines/{{test_id}}/
 Authorization: Bearer {{api_key}}
+
+### get items for item line(item_line_id)
+GET {{host}}/api/v1/item_lines/{{test_id}}/items/

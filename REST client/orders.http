@@ -36,3 +36,9 @@ Content-Type: application/json
 ### Delete an Order
 DELETE {{host}}/api/v1/orders/{{test_id}}/
 Authorization: Bearer {{api_key}}
+
+### get items in order(order_id)
+GET {{host}}/api/v1/orders/{{test_id}}/items/
+
+### post update items in order(order_id, updated_items)
+POST {{host}}/api/v1/orders/{{test_id}}/items/
