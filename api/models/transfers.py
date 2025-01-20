@@ -22,37 +22,35 @@ class Transfers(Base):
         query = "SELECT * FROM transfer_items WHERE transfer_id = ?"
         return self.fetch_all(query, (transfer_id,))
 
-    def add_transfer(self, transfer):
+    def add(self, transfer):
         """Add a new transfer."""
         query = """
-        INSERT INTO transfers (name, transfer_status, created_at, updated_at)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO transfers (transfer_status, created_at, updated_at)
+        VALUES (?, ?, ?)
         """
         timestamp = self.get_timestamp()
         params = (
-            transfer['name'],
             "Scheduled",
             timestamp,
             timestamp
         )
         self.execute_query(query, params)
 
-    def update_transfer(self, transfer_id, transfer):
+    def update(self, transfer_id, transfer):
         """Update an existing transfer."""
         query = """
         UPDATE transfers
-        SET name = ?, transfer_status = ?, updated_at = ?
+        SET transfer_status = ?, updated_at = ?
         WHERE id = ?
         """
         params = (
-            transfer['name'],
             transfer['transfer_status'],
             self.get_timestamp(),
             transfer_id
         )
         self.execute_query(query, params)
 
-    def remove_transfer(self, transfer_id):
+    def remove(self, transfer_id):
         """Remove a transfer by ID."""
         query = "DELETE FROM transfers WHERE id = ?"
         self.execute_query(query, (transfer_id,))

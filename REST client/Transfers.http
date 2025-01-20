@@ -33,7 +33,8 @@ Content-Type: application/json
     "to_location": 2,
     "item_id": 1,
     "quantity": 50,
-    "status": "updated"
+    "status": "updated",
+    "transfer_status": "pending"
 }
 
 ### Delete transfer
