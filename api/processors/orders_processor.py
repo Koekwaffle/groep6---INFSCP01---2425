@@ -1,5 +1,5 @@
 from providers.generic_functions_sqlite import GenericFunctionsSQLite
-DB_PATH = './ILY_TEST.db'
+DB_PATH = './ILY.db'
 
 from processors.generic_functions import GenericFunctionsSQLite
 from providers import data_provider

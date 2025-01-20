@@ -5,7 +5,7 @@ import os
 class Base:
     def __init__(self):
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        db_path = os.path.join(base_dir, '../../ILY_TEST.db')
+        db_path = os.path.join(base_dir, '../../ILY.db')
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
 

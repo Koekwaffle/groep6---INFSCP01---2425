@@ -59,3 +59,5 @@ Content-Type: application/json
 ### Delete a Shipment
 DELETE {{host}}/api/v1/shipments/{{test_id}}/
 Authorization: Bearer {{api_key}}
+
+### Commit requests

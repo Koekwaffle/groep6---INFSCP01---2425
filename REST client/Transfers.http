@@ -40,3 +40,6 @@ Content-Type: application/json
 ### Delete transfer
 DELETE {{host}}/api/v1/transfers/{{test_id}}/
 Authorization: Bearer {{api_key}}
+
+
+### Commit requests
