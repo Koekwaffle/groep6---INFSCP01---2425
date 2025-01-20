@@ -1,14 +1,15 @@
+
 USERS = [
     {
-        "api_key": "a1b2c3d4e5",
-        "app": "CargoHUB Dashboard 1",
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "app": "Device_1_Terminal",
         "endpoint_access": {
             "full": True
         }
     },
     {
-        "api_key": "f6g7h8i9j0",
-        "app": "CargoHUB Dashboard 2",
+        "api_key": "ZK5YxQaXKMzGJL7QkdwMJjaaN35o2YlD",
+        "app": "Device_1_Computer",
         "endpoint_access": {
             "full": False,
             "warehouses": {
@@ -18,79 +19,18611 @@ USERS = [
                 "put": False,
                 "delete": False
             },
-            "locations":  {
+            "locations": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "transfers":  {
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "items":  {
+            "orders": {
+                "full": True
+            },
+            "clients": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "item_lines":  {
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "ep4dybk20PWij5SL45y5kdnncExtZMhi",
+        "app": "Device_1_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "item_groups":  {
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "item_types":  {
+            "item_lines": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "suppliers":  {
+            "item_groups": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "orders":  {
+            "item_types": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "clients":  {
+            "suppliers": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
             },
-            "shipments":  {
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
                 "full": False,
                 "get": True,
                 "post": False,
                 "put": False,
                 "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "FJhMm0Ce9lwSdpHSPs90er8enTgAAvQK",
+        "app": "Device_1_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "Gc9YHaq3AL39H6pDgMCimlVNvPYPSXBZ",
+        "app": "Device_1_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "WkO3UXv4mhyKw0N61PoL54KQ498orsri",
+        "app": "Device_2_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "SLSv42wvJk7RI27AbGhsVvEoEBk001NH",
+        "app": "Device_2_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "wEJVyAaPD6WdAwRvvgx0ESQurH3JDneV",
+        "app": "Device_2_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "sJhFA000cV4jTYVnVOBL6DuaWPzB4kd0",
+        "app": "Device_2_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "zGgXut7AnIG8Z7c8d9K6DfWtca8fncdK",
+        "app": "Device_2_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "e7bFmzK3WkSJDvfebD5vRujNP8whgcWe",
+        "app": "Device_3_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "u3nEyUbp4lZyEkLvvcsiFaL35r2fyL3v",
+        "app": "Device_3_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "kHp7e0efWoLn965CEv4ddYBZQYnBiiYe",
+        "app": "Device_3_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "vqSaMLy6sEx4bELO6HIMoFta4XOxuUBY",
+        "app": "Device_3_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "W9dx9fQXaLRnFPfsA6jKBuQ53LOEv4A7",
+        "app": "Device_3_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "TUygVC6DqTH37QCobIIzfXllK9ztDRSN",
+        "app": "Device_4_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "gHU3R8TOBn1TNlcuumMvrfVfaENPTmAB",
+        "app": "Device_4_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "LsyxkJqbk3LW7Syzin4jQxkKcFr7mt5W",
+        "app": "Device_4_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "tyIJnBbooIbfNcb1jeq6LCBpi8aolSWx",
+        "app": "Device_4_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "R3XaR4nV082kV4237uphjs3wTUMqR4Ev",
+        "app": "Device_4_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "lrkw0OxpH3AS2QCNFGYJ6j2GTnVqdxhr",
+        "app": "Device_5_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "jXruCbp87cI4MLzfqWpIjRciOAAeQkHa",
+        "app": "Device_5_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "CqXUVc0EML6wXkEKUOneLXYHURp0isxH",
+        "app": "Device_5_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "IoNemRRFlHcSW635Ou1lcw15MKgeRlWl",
+        "app": "Device_5_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "xBgI7fJYPeno4P8EAkPraMrCngwI1qQG",
+        "app": "Device_5_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "6tD6SZTHdwB9jDgK5tXJLwemVMITqz5V",
+        "app": "Device_6_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "RN59OxIzuM4pPZvSKf9heggVLvBvB2Px",
+        "app": "Device_6_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "IA5vhFbOrXtPNkrzy4NGsnTaCDJOp2mP",
+        "app": "Device_6_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "saKzEuLmbSvHpCYRVslWTa5tTarUhA5Z",
+        "app": "Device_6_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "RBPazge1f3aocdfHBsbwFFWgUS6niCrw",
+        "app": "Device_6_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "riAJpQO3bNcEMbzhYPAtGWhneqore1pi",
+        "app": "Device_7_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "zriMaGNYQ2nVmH6r2oXc2zzV6MfGM1z5",
+        "app": "Device_7_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "eOTebyzpFcYlxgRcLMhRApg8OlKKLbTg",
+        "app": "Device_7_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "crncNqOaJlMfNRdNl326TxP9RGlp5ISs",
+        "app": "Device_7_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "2lGJ0CVHkgQ5FBzREMTNlcDPGJ30ZAuR",
+        "app": "Device_7_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "OrcoQpY5cIf83CL7HQFP55IzYkNGBm76",
+        "app": "Device_8_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "fMOyLdnNZIjqvwcDsZSymsxPfKYgBOPh",
+        "app": "Device_8_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "s4vUzFaJrF2arDLHQh2ttPlIfoJBOFkh",
+        "app": "Device_8_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "tcO6GwCvm65YHEZMNSBuzVJb9HpBa1A5",
+        "app": "Device_8_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "erojlIYFmgJocmcMb3N2U3CgZGUo7wJr",
+        "app": "Device_8_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "Q04ogfeY9ObMKR48E5AT3MM6x0RRFFrx",
+        "app": "Device_9_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "taCIWcqMFQ56c8CftcIButbtWmYRaW8x",
+        "app": "Device_9_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "ggcfL0KVv5g8RDVxIVP7OnDRn5Z91C16",
+        "app": "Device_9_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "Teupbf19KNefnyBMOevOyOxWqnOH3476",
+        "app": "Device_9_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "gZ0U4iUYeg2VHUTzzLZ9qgRYQy2K24F1",
+        "app": "Device_9_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "12QUqYZggnyWmbSmeXjswxy4GeQzV4bK",
+        "app": "Device_10_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "c1tDiNCfqzpYEPEWt9AYsUaj8nECIbTs",
+        "app": "Device_10_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "5QRxbUJABaaEqUAkl99iqWspu8HF9vaR",
+        "app": "Device_10_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "9GSvchEJCuhMU5Lls1q22inIYLDrOLsE",
+        "app": "Device_10_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "toE6oYdU2XvYKyxqow88Z1pA49vXbKvL",
+        "app": "Device_10_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "NN3sVguw6F1K8bZmgKxLPv5SMdQwCCQQ",
+        "app": "Device_11_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "CsTAphwwyZK5zuqBCAMLoT420HymBOfF",
+        "app": "Device_11_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "kR1bjyYTp0nOz0aw6iETlFN6IKVbHYrf",
+        "app": "Device_11_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "oOkyAuDZjsvtslQJL4MpCAbJ8sofddgT",
+        "app": "Device_11_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "nWXiunSSpkH6BpQSrNqyraXwnW4ZJKVN",
+        "app": "Device_11_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "H6hETqDWaXIiZ13ThiZ0sC69TAMhbDq5",
+        "app": "Device_12_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "Nm6csJwwDfZs2BqTEhZ1du4bdbirHKrB",
+        "app": "Device_12_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "DgbulEFWZXKUxgUiK2hJHORVQ2IppOoz",
+        "app": "Device_12_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "BOboyvXsVciRvKtsWUq2BDeWFVr6jgsZ",
+        "app": "Device_12_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "S9FpiBYCKqecXPLRWgI3CVabYNqu9gBm",
+        "app": "Device_12_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "HRzFZoHUY04GGmkfjiq9uRYfjr0Mh3lz",
+        "app": "Device_13_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "AwhH3cowqI2oei9cgqMP2kV5KdmHMhJ9",
+        "app": "Device_13_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "KYhtSdVXkUJlXUbwgnPa4eSX3AOSB8Ow",
+        "app": "Device_13_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "thyVsndhUCe5weaY9cU03K9mlygPN9Ms",
+        "app": "Device_13_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "iEwwuzqsFp3BfZiH3dkrjR61fWQZVJKU",
+        "app": "Device_13_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "x2CL5hw1PfOrQOuTNXeh5cMsqR4eT7WB",
+        "app": "Device_14_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "emggVftR0WjOWwjuy8oazoyJGUYjO294",
+        "app": "Device_14_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "YmCxqC3R7iicFHPicfXpQMmungsS6C7Q",
+        "app": "Device_14_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "4uKxXvQCMVhFfAKUa9J2zYoYRPQI92hz",
+        "app": "Device_14_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "eEhPxckP3FA14u0dySOAgAnwTLPt3qFa",
+        "app": "Device_14_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "QabHkq2fbX8CgmNHS6O2Rgtrw4SNLnzI",
+        "app": "Device_15_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "KweLFHefkb3jaT9iPV1UhPmCIb9d2ynu",
+        "app": "Device_15_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "XV53OeUrmRh6dBYMTet8v8NX4ZmI3Bdc",
+        "app": "Device_15_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "b2bMP5xSNVZvpZ2WsVHo6ja8di1ih3OD",
+        "app": "Device_15_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "nXSQrzp1NpboBIRWdzCZnnTMgNQVJqrJ",
+        "app": "Device_15_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "1hsnwh30fznEoKA0aVltGLdYB3SeSMwU",
+        "app": "Device_16_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "3t7SuS9PSSiHSXbVUo7TCVCBtIZVnW08",
+        "app": "Device_16_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "DIPVZxb7vrhLmWXvsArqppWpCVhjcilk",
+        "app": "Device_16_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "A9R9zSGmJu57EQokuzm7Qr7Z8tk0iic0",
+        "app": "Device_16_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "kdoiKKEtTO2tfZd3R5soRvqMrLnjtXnb",
+        "app": "Device_16_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "u0NV4H11LTBKOlH2cHXIi5okHrUy7R0u",
+        "app": "Device_17_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "ngRqfo7k7Nzo2dlpeMWDiSqASsmv60I6",
+        "app": "Device_17_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "KbdoTr3jLCwaZsYUVYP8KHPHptSsmRx7",
+        "app": "Device_17_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "vGYjsJAvdvwseXAR2Y2RzGheZ6cyD6tj",
+        "app": "Device_17_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "6g1qISptSuyIXppZYEhO5AnesXVAmqva",
+        "app": "Device_17_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "kHDLrRrlhth6TG6rO83I0YMDpKMLnhhH",
+        "app": "Device_18_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "njo6nQgUPIwUhMkiKdiwvXw3Gw1ALC0m",
+        "app": "Device_18_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "0mCNL4AzMZImpToTv0apsC3CIKbfT0qt",
+        "app": "Device_18_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "jmdO2pzJ2oZJ2UmsDEPkCYCEwfPPU89M",
+        "app": "Device_18_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "VvTCGpy5aIMmR6fxUyDPgCU5wkXBDQ0T",
+        "app": "Device_18_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "1kniZu56YrCrFr4MbbMp6lSgheSOFmYu",
+        "app": "Device_19_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "hkShhMPjt1RC7aPB9f03wbZj5x1RJmZz",
+        "app": "Device_19_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "jADnsLf2A7DlB2i6DADDWNYURB5Mckb8",
+        "app": "Device_19_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "F99Wjp136P0hjLeHwztRcPnbV5q5nZU4",
+        "app": "Device_19_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "KYqxh6BcrmFHTUwob0Oa4w9dPw1fhyqC",
+        "app": "Device_19_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "FKlhvEGG6MO9lD8ljIMcTikUknvQYCi1",
+        "app": "Device_20_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "KYCKdnWafWSWVJIK4RdIdcOmknC9k4U2",
+        "app": "Device_20_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "LjMK0Nw1vKCiQRfwC3MBr2ix1JjLMUTB",
+        "app": "Device_20_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "mocTZJIsrq5sesIL9OyUMxjdi3eivzN6",
+        "app": "Device_20_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "AZC4WCFm8ImjIvswgxt0Pt8OGdKlXdp8",
+        "app": "Device_20_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "NGyBsKYQrwAioroJeK69hXH2jADjbsUU",
+        "app": "Device_21_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "HcTGXCjBJZ3knePoPDAYfQ15CM3QslON",
+        "app": "Device_21_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "31wEh7yNgUiQ5WxFv3l6ac3X1AkGXm5l",
+        "app": "Device_21_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "FWYhzc29KTh1fHAAsk3hfnLJAL6NSRPS",
+        "app": "Device_21_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "jjBoObF2fKMry5Qa4xeMJcdtZ4gXSmVZ",
+        "app": "Device_21_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "YtFNIHyeMVBCTu0rgYJgNinXGCSwLpaW",
+        "app": "Device_22_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "ehvw80b3psSJgW933DY2Jhp5rqvtY4Eo",
+        "app": "Device_22_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "L7cFpsmzXvyCaY49kjOd5978vzwM6qe3",
+        "app": "Device_22_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "ZmHmVouVgPjGSzzlqQXrAdmtF397BBD5",
+        "app": "Device_22_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "nX2ciq54dygt9W1N2WNfJwWP0h26ro8k",
+        "app": "Device_22_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "tpc72zlotqqeDMOfcu6bRMdG5nMhO06M",
+        "app": "Device_23_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "4VXbYCUDn4Uh80s6v99KDDSsr1eaVsjW",
+        "app": "Device_23_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "o0pSNzjb6tvvJR7wz7vRFqlIN6BpynvU",
+        "app": "Device_23_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "ogTvjz2nm1ezdIRixm7dxSELVaeE2dXr",
+        "app": "Device_23_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "jUsxzsfikXtUbORkYMgg79JZdRcbls7x",
+        "app": "Device_23_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "PIbkhMgoGdUuUGaC9u0SDKdjZhu2dySx",
+        "app": "Device_24_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "cht1wqBGoyzsQm2XcoNPISqkTUvWUkIi",
+        "app": "Device_24_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "eyAsPtnWHEJs495WGjPR1DBeMyLwTDtk",
+        "app": "Device_24_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "dZbMs3x1ZkEOr38UpA8SZ40C75aa2jGP",
+        "app": "Device_24_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "UZLwYoo338ACGkZN4xWJHWQKwu7STGZa",
+        "app": "Device_24_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "DIq36KWMkBX4byktMQLMRISzCo3cSW0K",
+        "app": "Device_25_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "1ftZR8rkj6dSGpCOkyIOUycU8SsSgfUn",
+        "app": "Device_25_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "dPXelQ4AapTNAotmxyG9k9jw8GhiRGHo",
+        "app": "Device_25_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "2AKbaV9rS1Iyw0QAvo8Ib8ePCRWBQyd1",
+        "app": "Device_25_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "v4xzgnHIDZOSF9xC8KtMUyxhrZTcaZc2",
+        "app": "Device_25_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "OQFNaFeUjlWHSjHTEsNqEQdfv3Fxr4vl",
+        "app": "Device_26_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "iDkic1rY6r1C0WyY8SmdVW6psPQ3a25e",
+        "app": "Device_26_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "JPKDS57wYylYSBKWxeK5n7jvk81a72yV",
+        "app": "Device_26_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "wr44lh7Ed9rGkJ05vcQHBwkzZv3kgPiW",
+        "app": "Device_26_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "PtGuGjieoOlKDByhWpyX3Z7rEjISLxNE",
+        "app": "Device_26_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "rnNPd9Co3C9RAvFEbhQDRrHqcxk1IWhc",
+        "app": "Device_27_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "x1EH0bbWQMt2zZDhiZQXiglW9BqfUZzr",
+        "app": "Device_27_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "5pWZyZUfCsEkwLMLq6Am1lIKRkB3lblk",
+        "app": "Device_27_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "LSj44LKONOswA6QliuJzusDKmNPlsCFy",
+        "app": "Device_27_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "QEDA2xbCd6ezI3Dn2wuSY6hovmU1BLQc",
+        "app": "Device_27_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "80zJBIgrN9KNIgswjnhVc5Kd1lEex404",
+        "app": "Device_28_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "FmaGxvmiZar9sC2mthYjqj3GwuWJjhZC",
+        "app": "Device_28_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "ktPUDcoKYH2Pd8dA3uIv0reb8ba6YYpP",
+        "app": "Device_28_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "0I487dO6n6HTIEp54lnzCh1tJkkhPzkw",
+        "app": "Device_28_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "5oEMAw5vMTeFtYl5N9l2Nd6TZd0xNNdN",
+        "app": "Device_28_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "p2SSN21ZHX40uPUykQZgmhypG25XJOGl",
+        "app": "Device_29_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "UyS3ncJZDJy85cDXF1eK8JvHTltwnaqM",
+        "app": "Device_29_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "kQfjR2LdwEa9NDHRD6wR9GQ2SePLmJ8f",
+        "app": "Device_29_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "DmvRFqbBwwsrbtduCunXBzGY4RzWj0KF",
+        "app": "Device_29_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "2FVRG201Isxo1NtuQ7CLXutB1uTkQgoI",
+        "app": "Device_29_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "jKbNQ3WNN6UoF0g8JsUfE1i2HXHTLABT",
+        "app": "Device_30_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "ZPURdD4lkQPAIEmibtGxxx7utMxyELPW",
+        "app": "Device_30_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "7hATZnuyFFApWws8Yp5tW0C9qqahO81k",
+        "app": "Device_30_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "ZKLzD7eaTgCXL4T7LohC0XLnB3E66Uc0",
+        "app": "Device_30_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "A1DHV40RK9YRUdCGRuI6TKuwz9KktQTq",
+        "app": "Device_30_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "AJ7DlqxS4U2LnWu4ocqnAacNup8ZAQjV",
+        "app": "Device_31_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "BVDh5PlqTlDQXlIjqYclDQiDnQpQ1wyT",
+        "app": "Device_31_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "nUiPezamusl32hECtSZGDvVN7U5KGYI1",
+        "app": "Device_31_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "Gk9Tc6gNtLg2UTYrQnqKJToiauWd3AIm",
+        "app": "Device_31_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "EtFZuHT9reP3iUD3OjcMWZwtBLtTLXAr",
+        "app": "Device_31_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "XQCEUSkrwICuQJItLabAJL7pDZnR3lTv",
+        "app": "Device_32_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "yjtjCt64ppC81ZELTPISBargqTZBZ1pk",
+        "app": "Device_32_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "uQynHVGnWtvTXG4BIdJXlJmfZJl4mfPX",
+        "app": "Device_32_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "n2rrNFHZzzJ8jrSLuklNIrnbQ8pZ0b5E",
+        "app": "Device_32_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "27i5MrDGPDYp7WafVZH4CrQp7Xpi9aox",
+        "app": "Device_32_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "xOKlrg203Kf2QCL0uGzcqojIcmOdmG9V",
+        "app": "Device_33_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "aEzZhRluv24ytKmSvAHeTtcw5bAGTpdX",
+        "app": "Device_33_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "Wz4VqAfcHsa7ojxBbF5XjaYUg5WSsfBo",
+        "app": "Device_33_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "kcGPFkpH2HOyKDwlkfnZXof98hcAy0mm",
+        "app": "Device_33_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "5w5xhKk7VcaQg4oRUHTufrIVHqL9vlIY",
+        "app": "Device_33_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "DASmgg1fZ9XkI2Jt8gnLmfBcZHXVrDPb",
+        "app": "Device_34_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "1zWysJTVlQRgzrfR0JchnTR3SYtMaRem",
+        "app": "Device_34_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "W9WEDtWGxYbxrQwHTjiMZyDRTMxkeZ3y",
+        "app": "Device_34_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "IQt3k48AaIPd03H5v8wAyB31QxZQbOaJ",
+        "app": "Device_34_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "e7R7dWvPmyiMtYRwYoop4HYVzIjnOoZZ",
+        "app": "Device_34_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "nlZGVm8kLShtoAXXIO4VmnxenUpQBJWl",
+        "app": "Device_35_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "9e7qQBSQX47mNh0ksCEArzSTpEAfxWzB",
+        "app": "Device_35_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "IXZfyR5uYgXL5RbZr2Qt45Qwkm7rzmWB",
+        "app": "Device_35_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "4Sd1S6upv2kbeAJe6tUPD171C6Y3saJ0",
+        "app": "Device_35_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "RWodE37BkQ2rkZ0tzdT3FMYuNd37oHyO",
+        "app": "Device_35_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "y7u0rjzNuzZ8PV6b5GjJl7CF5JbLWskq",
+        "app": "Device_36_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "Aoz423onwDdxLYXIKXi5d4PFcZfbvGwq",
+        "app": "Device_36_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "JKUzPmcWqEyVbqTdgqIbJ7vCLGnVD5nN",
+        "app": "Device_36_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "G05RnTsMImddtoq2UOlkD5Uw8pGJwiTw",
+        "app": "Device_36_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "SjKThXlFj4cFItZsFqBUkfU9RPu84qYx",
+        "app": "Device_36_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "5Sq9GhGbAY6690pP6KhUPcUMSWCEIwEJ",
+        "app": "Device_37_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "rVmSOAR6M5HVvn8jhvObHr05CF4sk5dD",
+        "app": "Device_37_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "VJq4PZ47eelldhfHJhSQHOegJBV7n0GC",
+        "app": "Device_37_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "gZXIF11k8Q1ryzLBVgr2yRjwk1kQHF8W",
+        "app": "Device_37_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "jhyp7qrMdmFSTGEn8Uji0c63VEhYsiry",
+        "app": "Device_37_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "lIvPJiK424jbiaVDlIrjDxgr3rVKadfZ",
+        "app": "Device_38_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "0nKdAXRy3ShTO1le8xl63UpcOQPIybip",
+        "app": "Device_38_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "HcSnPz2COaPvGjxZT83F5WBFanv9Np42",
+        "app": "Device_38_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "FSEohVJGKFA1WRJAukHcInikLlrDx6RZ",
+        "app": "Device_38_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "yAMVnjDSWxRbhKJYSEPt480KmQLBKGkS",
+        "app": "Device_38_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "0WSBmGKvNrhx5MWWHJjAn9BN7pxUUcaq",
+        "app": "Device_39_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "IiYmKL0ebEWfrhBCbnYcVayxsvW7cE7B",
+        "app": "Device_39_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "kV28Lb9Szppz3dYIGBNvGWIJGk0jeW8D",
+        "app": "Device_39_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "sO3JMZTXGhBViAwUcE2bl5I8qVWbstV3",
+        "app": "Device_39_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "B18ogAiRjxLAMtWsGFFow3M0U3nA8Ajy",
+        "app": "Device_39_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "OEBE2N2Jysj7Pq1MsOkoUdPQ0MSwsOIE",
+        "app": "Device_40_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "BDfLrnAaRrRiQ1C3eNqMT0oRoJ82xU9R",
+        "app": "Device_40_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "QQDe4zOQfU3FzHgdA3UNoNFJn6SZ7wcV",
+        "app": "Device_40_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "C7n53p2hP7tCfRPmTdVJhnKv9sJjxr6f",
+        "app": "Device_40_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "FYZdXorhpDfZm3vx67e8Ts4UpcPiTICO",
+        "app": "Device_40_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "wPOPdftSksIUdmcDfpSIr6vqjW8WU6bc",
+        "app": "Device_41_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "5e3AbwEmsqTnWusP89Qbg5OWwhOj9zAO",
+        "app": "Device_41_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "yeYKAnxp9FgFVDTvvFjmRdkKVNQ3n1TS",
+        "app": "Device_41_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "fRxPgD76Uw8eO2Mvk2mr95pz8OGNJfrH",
+        "app": "Device_41_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "VhbrSEpYwVSbvCY3BEqDogh707xZt7tv",
+        "app": "Device_41_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "m7dQTYbevNevxWrtPRBopwBGWatvnGes",
+        "app": "Device_42_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "Jdnz5NrfTq04phVog6Q19CGzEScEFu3G",
+        "app": "Device_42_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "SCdhgTxp7CIsOekMESH0s3POrsJ18DOy",
+        "app": "Device_42_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "mFMqVx5TsekFYLtcEQhYtyFuBx7hgg93",
+        "app": "Device_42_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "kv6YUKuGXwM6fQpuuIEy7Uob5Yy1H1h5",
+        "app": "Device_42_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "r94OMb3v0vGO3hxXTZ8gvj2wKM8rZOTN",
+        "app": "Device_43_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "icD36mpI9RQXWaAytEmZWvu0cvIkCwMA",
+        "app": "Device_43_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "a0A9IJXes56dM8KUqu9ysBDShznupqfD",
+        "app": "Device_43_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "Nzbq17L2WO5gFEQJhh2GZ1xESrdQENEw",
+        "app": "Device_43_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "Cgf88mXBKGzp2Srb6g6OQwZUN70rRkLB",
+        "app": "Device_43_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "tSD1F2XHkDveNxD3EwSDOG3rJ3xFyQSE",
+        "app": "Device_44_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "pXvrc2cQitgiAWtukbWrfx786RliWobW",
+        "app": "Device_44_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "6dID4l7DzaQgadK0q977TIC42GIfudnp",
+        "app": "Device_44_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "c4FihLnmqLHbolMflZM9eop2j2tG45Gj",
+        "app": "Device_44_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "4GOhrAc8amCXTBNmUiqAjeIZSmsxSRht",
+        "app": "Device_44_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "VoDLjfwETUM74DSgSAqeOEGY4XJEgXc1",
+        "app": "Device_45_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "XQUFQA3aegNGgcJmDDdmJWAx2XGp3fsm",
+        "app": "Device_45_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "AkgC0oTIUVR6BFo9uFgY4ApzXO52BjQi",
+        "app": "Device_45_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "4fObEPIWwjZuz3CPkLyc71YA3BMr9aJ4",
+        "app": "Device_45_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "vVzQHnn4uw3GF2pANgJejhvA9pMc8lrH",
+        "app": "Device_45_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "rUmLqeUyBAG5ZZDMn64HNewq0OSPHIvx",
+        "app": "Device_46_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "hVFTYrVHYzYO0uHdoqgMcshKpjW5AqYC",
+        "app": "Device_46_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "MHYe9kX8Rg5wCZA1Q0O3wAG62Z8xvKjC",
+        "app": "Device_46_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "6FL3aukHjwkE8LxWHuB51nR7R72eoPn9",
+        "app": "Device_46_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "7Pu3xGmlvrh1MM4wvvakPGkIQW9FLCEd",
+        "app": "Device_46_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "qxUWPczigLiJmqkYSMcRz75hGOEHIXXa",
+        "app": "Device_47_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "Ebi1vcB4WYTiQtyVl3hXEMqFnSfZu4nM",
+        "app": "Device_47_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "r4NcKIaB5FgWtv6AlxFlaSwBMnDOJn51",
+        "app": "Device_47_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "fwkYLbyk4ib3yuJuHA4UZRGjlsWTfVFN",
+        "app": "Device_47_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "gQCAIbupsVQwEI8UnQ84AI19Q6Pyz8H5",
+        "app": "Device_47_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "Gd9LIJvLAa8PeLPSnXasumULguAwXd2R",
+        "app": "Device_48_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "JvhCOBWzj2uC1k2N6ZWgYugdEaqJgOGb",
+        "app": "Device_48_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "uY7iniUXkumRWO4bMg1GQ0p8ZKdnsVR4",
+        "app": "Device_48_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "IFyt0ZLXLvTIF1u57pDuXQgFEHOm9uer",
+        "app": "Device_48_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "Ey0mG85nbcUxuNu6nzRqTkkjDWJftBuE",
+        "app": "Device_48_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "nS3S31kBgGtN1UvSdUdtxMBMDM6T6mOd",
+        "app": "Device_49_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "rpjop175bHcKNZ0hT1VLBbPePo63EIQH",
+        "app": "Device_49_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "9O7YTsy76JdnYU2Wz4tapQ4FItoToB9J",
+        "app": "Device_49_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "WP0fDXXL32LcQIVLAsTrAylacqJp14th",
+        "app": "Device_49_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "FoBrqIR4SVd63fhUXXPDdAFAU68RijXG",
+        "app": "Device_49_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "p6rdhTQLrQAmkcrkO5FYBPRBr9r8udoE",
+        "app": "Device_50_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "xqwMdOGddQETUzu35CCqmIR9FjqF5DWT",
+        "app": "Device_50_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "bZK63mU2ZddG52d4apm1wS2shronj7IZ",
+        "app": "Device_50_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "SO2OqNFVhdxvKprAZGxE7sV3nccfdD5E",
+        "app": "Device_50_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "qX5WDnkAQ2jAZxgL8o35SLSKbY04vtPl",
+        "app": "Device_50_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "0e4RvnRtQGn9WUGN5CtyL0lQ2l5VmIaZ",
+        "app": "Device_51_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "wwmVqoVjQotBDhmErODzsobIA1kfs7VD",
+        "app": "Device_51_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "rLeHPykhJBkW3ZgMOcJLoWCiEYS45xpi",
+        "app": "Device_51_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "sExIX10adaH7SKe9LSgqHYZi7amaLkdV",
+        "app": "Device_51_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "SpDHfbraTYbYH4vtxac5mK0vpaNIGbg4",
+        "app": "Device_51_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "uErBP9c70kb61V38kxyK7C7gJfCrZ6J9",
+        "app": "Device_52_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "CjOco2Pfj0JyF6Sxewr3HGz5rnhy4KjL",
+        "app": "Device_52_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "zGEq0z9yyNnSFyOJ9CwvT76mnk2yuMNv",
+        "app": "Device_52_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "AZZyn2C66kiAtNX1m9YgT64BZOSezTpH",
+        "app": "Device_52_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "58zOuhgnEloUB54M5LEjBKtoBZBS8ePJ",
+        "app": "Device_52_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "plcoKhqjTy4e8oq94NJ0fBiDMXP4XMHD",
+        "app": "Device_53_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "YslmuDZqtWxIqk3IbaMdRNJ8DV8Z1CGS",
+        "app": "Device_53_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "cRdwu6lSDBiFpSzZzGlb7M8zF9GkB0W0",
+        "app": "Device_53_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "XKRH7uIiLmXsM5Ux3nQLvqbmqdTaqitx",
+        "app": "Device_53_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "go8UcCkJ0Ke4JL0w8NIb5crjkexD8gqe",
+        "app": "Device_53_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "34RAUbwqxqGKADwRI1dI2FUgkMOd86Ff",
+        "app": "Device_54_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "4h0fiwZtQCc42VDtPyOKuBR2glmA535b",
+        "app": "Device_54_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "8G4UKgZPwayjAbhM123I8IMMWmaSJFaw",
+        "app": "Device_54_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "hbKuWqYeDigxHjzcVkMGFGDmaXNbmtDF",
+        "app": "Device_54_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "LqMHycSKm0GZeti3RTdjZSq5UcE6XoRp",
+        "app": "Device_54_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "Y3WeMVOQLU4rm722RcuKKxQleSjNh84x",
+        "app": "Device_55_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "jrPZNrbzPhRVPMLnqxUWuKouAyJXRRlO",
+        "app": "Device_55_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "iIP1uQCX5niYc9On1aoe0pMJvmfEEevQ",
+        "app": "Device_55_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "TG6G9ziRHtRmrb1hH3UEnJ2ocorGymNA",
+        "app": "Device_55_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "fjuDhjziLcqASqviDLWaKzOcAuGNa5dP",
+        "app": "Device_55_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "ekkhx2Jb0HkJspbyRpYSouiFIX2w33LC",
+        "app": "Device_56_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "XhY5KdBRlVo1i4EQtOWznBSnyCEgBy72",
+        "app": "Device_56_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "dzZvYfOE0pgHRw6vPOcbFSYstEQbMw1a",
+        "app": "Device_56_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "OumQifsM7ovawWlu3GKl8MeBguINa0oV",
+        "app": "Device_56_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "Zu7fhRJJCftjIa36LCJFdicMdZGqdQoM",
+        "app": "Device_56_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "sp7GPjI4PJXSdpzG4jXvSctjU33zzUMf",
+        "app": "Device_57_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "vUkMa1BQHcP0AGeK1EqtA41zVDIMsOjI",
+        "app": "Device_57_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "rVw4ZsOsDkVwwKzSwsdETEV9Yv0g5Of6",
+        "app": "Device_57_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "BjCZJHMnRpVM1xYZWLuCEDLf3uCuFY6c",
+        "app": "Device_57_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "C5JWLr35OXfZdGs6quEbu7rlVaEtWCzY",
+        "app": "Device_57_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "hY6f7I5CRThTIbCY9242uCHfq6qaF0XP",
+        "app": "Device_58_Terminal",
+        "endpoint_access": {
+            "full": True
+        }
+    },
+    {
+        "api_key": "zefu92aEzcp2aghviKS07yFuIcplGX7k",
+        "app": "Device_58_Computer",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": True
+            },
+            "items": {
+                "full": True
+            },
+            "item_lines": {
+                "full": True
+            },
+            "item_groups": {
+                "full": True
+            },
+            "item_types": {
+                "full": True
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": True
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": True
+            }
+        }
+    },
+    {
+        "api_key": "6A8VpaNCf8gl0SK68Jd0pNEuFOSny4Qs",
+        "app": "Device_58_Mobile",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": True,
+                "delete": False,
+                "commit": True
+            }
+        }
+    },
+    {
+        "api_key": "IreyGM7eRZ1xv4T9WEggf4fsWUfkEHco",
+        "app": "Device_58_Scanner_1",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
+            }
+        }
+    },
+    {
+        "api_key": "J74rcAN9bHwmXAN8Mlr6l51AJaMD13KV",
+        "app": "Device_58_Scanner_2",
+        "endpoint_access": {
+            "full": False,
+            "warehouses": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "locations": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "transfers": {
+                "full": False,
+                "get": True,
+                "post": True,
+                "put": False,
+                "delete": False,
+                "commit": True
+            },
+            "items": {
+                "full": False,
+                "get": True,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_lines": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_groups": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "item_types": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "suppliers": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "orders": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "clients": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False
+            },
+            "shipments": {
+                "full": False,
+                "get": False,
+                "post": False,
+                "put": False,
+                "delete": False,
+                "commit": False
             }
         }
     }
 ]
+#Hier moet je de api key van de andere devices invullen 
+# LET OP AI pakt maakt vaak eigen api keys aan. Gebruik degenen die in de db staan
+#ALs je de api key van een device niet weet, kan je deze vinden in de database onder de tabel devices of 
+# in de terminal als je transfer_data/API_keys.py runt. dat is makkelijker
+
 
 _users = None
 
@@ -105,8 +18638,22 @@ def get_user(api_key):
     return None
 
 def has_access(user, path, method):
-    access = user["endpoint_access"]
-    if access["full"]:
+    endpoint = path.split("/")  # The first part of the path is the endpoint name
+    permissions = user.get("endpoint_access", {})
+    
+    # print("\n\n\n")
+    # print("endpoint")
+    # print(endpoint)
+    # print("\n\n")
+    # print("permissions")
+    # print(permissions)
+    # print("\n\n\n")
+
+    if permissions.get("full"):
         return True
-    else:
-        return access[path][method]
+
+    endpoint_permissions = permissions.get(endpoint[3], {})
+    if endpoint_permissions.get("full"):
+        return True
+    
+    return endpoint_permissions.get(method, False)
