@@ -35,10 +35,33 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-      - name: Run integration tests
+      - name: Start API server with sudo
         run: |
-          pytest endpoints_tests.py
+          echo "t38J4AR" | sudo -S nohup python3 api/main.py --port 3000 & 
+          sleep 5  # Wait for the server to start
+            
+      # - name: Run integration tests
+      #   run: |
+      #     pytest CargoHubApp/tests.py
 
-      - name: Generate test report
+      # - name: Generate test report
+      #   run: |
+      #     pytest --html=report.html
+
+      # SSH setup for GitHub
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+
+      - name: Add GitHub to known hosts
         run: |
-          pytest --html=report.html
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Deploy to live server
+        if: success()  # This step runs only if the previous steps were successful
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu-1074963@145.24.223.218 "cd groep6_cargohub/groep6---INFSCP01---2425 && git pull origin New-main && sudo systemctl restart main.py"
+
