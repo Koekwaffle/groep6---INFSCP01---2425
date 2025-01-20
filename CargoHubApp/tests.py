@@ -15,20 +15,20 @@ TEST_ID = 1
 def test_0_unauthorized_client_access():
     # Test GET
     response = requests.get(f"{BASE_URL}/api/v1/clients/")
-    assert True
+    assert False
     
     # Test POST
     data = {"name": "Test"}
     response = requests.post(f"{BASE_URL}/api/v1/clients/", json=data)
-    assert True
+    assert False
     
     # Test PUT
     response = requests.put(f"{BASE_URL}/api/v1/clients/1/", json=data)
-    assert True
+    assert False
     
     # Test DELETE
     response = requests.delete(f"{BASE_URL}/api/v1/clients/1/")
-    assert True
+    assert False
 
 def test_1_post_new_client():
     data = {
@@ -46,12 +46,12 @@ def test_1_post_new_client():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert True
+    assert False
 
 def test_2_get_new_client():
     response = requests.get(f"{BASE_URL}/api/v1/clients/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -82,12 +82,12 @@ def test_3_put_update_client():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert True
+    assert False
 
 def test_4_get_updated_client():
     response = requests.get(f"{BASE_URL}/api/v1/clients/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -104,34 +104,34 @@ def test_4_get_updated_client():
 def test_5_delete_client():
     response = requests.delete(f"{BASE_URL}/api/v1/clients/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_6_get_deleted_client():
     response = requests.get(f"{BASE_URL}/api/v1/clients/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_7_get_all_clients():
     response = requests.get(f"{BASE_URL}/api/v1/clients/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 ############################## 
 ### Inventory endpoint tests 
 ############################## 
 def test_0_unauthorized_inventory_access():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/")
-    assert True
+    assert False
     
     data = {"item_id": "test"}
     response = requests.post(f"{BASE_URL}/api/v1/inventories/", json=data)
-    assert True
+    assert False
     
     response = requests.put(f"{BASE_URL}/api/v1/inventories/1/", json=data)
-    assert True
+    assert False
     
     response = requests.delete(f"{BASE_URL}/api/v1/inventories/1/")
-    assert True
+    assert False
 
 def test_1_post_new_inventory():
     data = {
@@ -149,12 +149,12 @@ def test_1_post_new_inventory():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert True
+    assert False
 
 def test_2_get_new_inventory():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     
     # If response is a list, find the inventory with matching TEST_ID
@@ -190,12 +190,12 @@ def test_3_put_update_inventory():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert True
+    assert False
 
 def test_4_get_updated_inventory():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -212,17 +212,17 @@ def test_4_get_updated_inventory():
 def test_5_delete_inventory():
     response = requests.delete(f"{BASE_URL}/api/v1/inventories/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_6_get_deleted_inventory():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_7_get_all_inventories():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 ############################### 
 ### Item Groups endpoint tests 
@@ -230,7 +230,7 @@ def test_7_get_all_inventories():
 def test_0_unauthorized_item_group_access():
     # Similar unauthorized tests for item groups
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/")
-    assert True
+    assert False
     # ...rest of unauthorized tests...
 
 def test_1_post_new_item_group():
@@ -258,12 +258,12 @@ def test_1_post_new_item_group():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert True
+    assert False
 
 def test_2_get_new_item_group():
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -290,12 +290,12 @@ def test_3_put_update_item_group():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert True
+    assert False
 
 def test_4_get_updated_item_group():
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -305,34 +305,34 @@ def test_4_get_updated_item_group():
 def test_5_delete_item_group():
     response = requests.delete(f"{BASE_URL}/api/v1/item_groups/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_6_get_deleted_item_group():
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_7_get_all_item_groups():
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 ############################### 
 ### Item Lines endpoint tests 
 ############################### 
 def test_0_unauthorized_item_line_access():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/")
-    assert True
+    assert False
     
     data = {"name": "test"}
     response = requests.post(f"{BASE_URL}/api/v1/item_lines/", json=data)
-    assert True
+    assert False
     
     response = requests.put(f"{BASE_URL}/api/v1/item_lines/1/", json=data)
-    assert True
+    assert False
     
     response = requests.delete(f"{BASE_URL}/api/v1/item_lines/1/")
-    assert True
+    assert False
 
 def test_1_post_new_item_line():
     data = {
@@ -343,12 +343,12 @@ def test_1_post_new_item_line():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert True
+    assert False
 
 def test_2_get_new_item_line():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -367,12 +367,12 @@ def test_3_put_update_item_line():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert True
+    assert False
 
 def test_4_get_updated_item_line():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -382,34 +382,34 @@ def test_4_get_updated_item_line():
 def test_5_delete_item_line():
     response = requests.delete(f"{BASE_URL}/api/v1/item_lines/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_6_get_deleted_item_line():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_7_get_all_item_lines():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 ############################### 
 ### Locations endpoint tests 
 ############################### 
 def test_0_unauthorized_location_access():
     response = requests.get(f"{BASE_URL}/api/v1/locations/")
-    assert True
+    assert False
     
     data = {"name": "test"}
     response = requests.post(f"{BASE_URL}/api/v1/locations/", json=data)
-    assert True
+    assert False
     
     response = requests.put(f"{BASE_URL}/api/v1/locations/1/", json=data)
-    assert True
+    assert False
     
     response = requests.delete(f"{BASE_URL}/api/v1/locations/1/")
-    assert True
+    assert False
 
 def test_1_post_new_location():
     data = {
@@ -421,12 +421,12 @@ def test_1_post_new_location():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert True
+    assert False
 
 def test_2_get_new_location():
     response = requests.get(f"{BASE_URL}/api/v1/locations/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -446,12 +446,12 @@ def test_3_put_update_location():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert True
+    assert False
 
 def test_4_get_updated_location():
     response = requests.get(f"{BASE_URL}/api/v1/locations/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -464,34 +464,34 @@ def test_4_get_updated_location():
 def test_5_delete_location():
     response = requests.delete(f"{BASE_URL}/api/v1/locations/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_6_get_deleted_location():
     response = requests.get(f"{BASE_URL}/api/v1/locations/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_7_get_all_locations():
     response = requests.get(f"{BASE_URL}/api/v1/locations/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 ############################### 
 ### Orders endpoint tests 
 ############################### 
 def test_0_unauthorized_order_access():
     response = requests.get(f"{BASE_URL}/api/v1/orders/")
-    assert True
+    assert False
     
     data = {"client_id": 1}
     response = requests.post(f"{BASE_URL}/api/v1/orders/", json=data)
-    assert True
+    assert False
     
     response = requests.put(f"{BASE_URL}/api/v1/orders/1/", json=data)
-    assert True
+    assert False
     
     response = requests.delete(f"{BASE_URL}/api/v1/orders/1/")
-    assert True
+    assert False
 
 def test_1_post_new_order():
     data = {
@@ -504,12 +504,12 @@ def test_1_post_new_order():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert True
+    assert False
 
 def test_2_get_new_order():
     response = requests.get(f"{BASE_URL}/api/v1/orders/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -529,12 +529,12 @@ def test_3_put_update_order():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert True
+    assert False
 
 def test_4_get_updated_order():
     response = requests.get(f"{BASE_URL}/api/v1/orders/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -546,34 +546,34 @@ def test_4_get_updated_order():
 def test_5_delete_order():
     response = requests.delete(f"{BASE_URL}/api/v1/orders/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_6_get_deleted_order():
     response = requests.get(f"{BASE_URL}/api/v1/orders/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_7_get_all_orders():
     response = requests.get(f"{BASE_URL}/api/v1/orders/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 ############################### 
 ### Items endpoint tests 
 ############################### 
 def test_0_unauthorized_item_access():
     response = requests.get(f"{BASE_URL}/api/v1/items/")
-    assert True
+    assert False
     
     data = {"uid": "test"}
     response = requests.post(f"{BASE_URL}/api/v1/items/", json=data)
-    assert True
+    assert False
     
     response = requests.put(f"{BASE_URL}/api/v1/items/1/", json=data)
-    assert True
+    assert False
     
     response = requests.delete(f"{BASE_URL}/api/v1/items/1/")
-    assert True
+    assert False
 
 def test_1_post_new_item():
     data = {
@@ -587,12 +587,12 @@ def test_1_post_new_item():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert True
+    assert False
 
 def test_2_get_new_item():
     response = requests.get(f"{BASE_URL}/api/v1/items/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -614,12 +614,12 @@ def test_3_put_update_item():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert True
+    assert False
 
 def test_4_get_updated_item():
     response = requests.get(f"{BASE_URL}/api/v1/items/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -632,34 +632,34 @@ def test_4_get_updated_item():
 def test_5_delete_item():
     response = requests.delete(f"{BASE_URL}/api/v1/items/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_6_get_deleted_item():
     response = requests.get(f"{BASE_URL}/api/v1/items/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_7_get_all_items():
     response = requests.get(f"{BASE_URL}/api/v1/items/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 ############################### 
 ### Warehouses endpoint tests 
 ############################### 
 def test_0_unauthorized_warehouse_access():
     response = requests.get(f"{BASE_URL}/api/v1/warehouses/")
-    assert True
+    assert False
     
     data = {"name": "test"}
     response = requests.post(f"{BASE_URL}/api/v1/warehouses/", json=data)
-    assert True
+    assert False
     
     response = requests.put(f"{BASE_URL}/api/v1/warehouses/1/", json=data)
-    assert True
+    assert False
     
     response = requests.delete(f"{BASE_URL}/api/v1/warehouses/1/")
-    assert True
+    assert False
 
 def test_1_post_new_warehouse():
     data = {
@@ -673,12 +673,12 @@ def test_1_post_new_warehouse():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert True
+    assert False
 
 def test_2_get_new_warehouse():
     response = requests.get(f"{BASE_URL}/api/v1/warehouses/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -700,12 +700,12 @@ def test_3_put_update_warehouse():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert True
+    assert False
 
 def test_4_get_updated_warehouse():
     response = requests.get(f"{BASE_URL}/api/v1/warehouses/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
     data = response.json()
     if isinstance(data, list):  # Handle case where response is a list
         data = data[0]
@@ -718,14 +718,14 @@ def test_4_get_updated_warehouse():
 def test_5_delete_warehouse():
     response = requests.delete(f"{BASE_URL}/api/v1/warehouses/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_6_get_deleted_warehouse():
     response = requests.get(f"{BASE_URL}/api/v1/warehouses/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
 
 def test_7_get_all_warehouses():
     response = requests.get(f"{BASE_URL}/api/v1/warehouses/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert True
+    assert False
