@@ -44,7 +44,7 @@ class Warehouses(Base):
         WHERE id = ?
         """
         params = (
-            warehouse['code'],
+            warehouse.get('code', ''),  # Ensure 'code' key exists
             warehouse['name'],
             warehouse['address'],
             warehouse.get('city', ''),
