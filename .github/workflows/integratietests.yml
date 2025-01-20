@@ -42,8 +42,7 @@ jobs:
             
       - name: Run integration tests
         run: |
-          pytest CargoHubApp/tests.py --tb=short --maxfail=1 --disable-warnings
-          pytest CargoHubApp/tests.py --tb=short --maxfail=1 --disable-warnings --continue-on-collection-errors
+          pytest CargoHubApp/tests.py
         continue-on-error: true
 
       - name: Generate test report
