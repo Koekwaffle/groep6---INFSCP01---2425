@@ -44,11 +44,13 @@ class GenericView(APIView):
         print("Checking API Key...")
         print(f"Request Headers: {request.headers}")
         authorization_header = request.headers.get('Authorization')
-        if authorization_header and authorization_header.startswith("Bearer "):
+        if (authorization_header and authorization_header.startswith("Bearer ")):
             api_key = authorization_header.split(" ")[1]
             print(f"API Key from headers: {api_key}")
             log_audit_event(api_key, f"{request.method} {request.path}")  # Log the API key usage
             user = get_user(api_key)
+            if user is None:
+                return None
             allowed = has_access(user, request.path, request.method)
             # print(f"\n\n\n\n\nAllowed: {allowed}\n\n\n\n\n\n\n")
             if not allowed:
@@ -92,23 +94,23 @@ class GenericView(APIView):
         return JsonResponse(client_data, status=status.HTTP_201_CREATED)
 
     def put(self, request, *args, **kwargs):
-        client_id = kwargs.get('client_id')
-        if not client_id:
-            return JsonResponse({"error": "client_id is required for update"}, status=status.HTTP_400_BAD_REQUEST)
+        obj_id = kwargs.get('client_id') or kwargs.get('item_line_id') or kwargs.get('id') or request.data.get('client_id') or request.data.get('item_line_id') or request.data.get('id')
+        if not obj_id:
+            return JsonResponse({"error": "ID is required for update"}, status=status.HTTP_400_BAD_REQUEST)
 
         model_instance = self.model_instance()  # Create an instance of the model
-        client_data = request.data
-        model_instance.update(client_id, client_data)  # Update client data
-        return JsonResponse(client_data, status=status.HTTP_200_OK)
+        obj_data = request.data
+        model_instance.update(obj_id, obj_data)  # Update object data
+        return JsonResponse(obj_data, status=status.HTTP_200_OK)
 
     def delete(self, request, *args, **kwargs):
-        client_id = kwargs.get('client_id')
-        if not client_id:
-            return JsonResponse({"error": "client_id is required for deletion"}, status=status.HTTP_400_BAD_REQUEST)
+        obj_id = kwargs.get('client_id') or kwargs.get('item_line_id') or kwargs.get('id') or request.data.get('client_id') or request.data.get('item_line_id') or request.data.get('id')
+        if not obj_id:
+            return JsonResponse({"error": "ID is required for deletion"}, status=status.HTTP_400_BAD_REQUEST)
 
         model_instance = self.model_instance()  # Create an instance of the model
-        model_instance.remove(client_id)  # Call the remove method to delete
-        return JsonResponse({"message": "Client deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        model_instance.remove(obj_id)  # Call the remove method to delete
+        return JsonResponse({"message": "Object deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
     
     
 class ClientView(GenericView):

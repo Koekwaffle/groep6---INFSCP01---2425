@@ -1,9 +1,13 @@
 import sqlite3
 from datetime import datetime
+import os
 
 class Base:
-    def __init__(self, *args, **kwargs):
-        pass
+    def __init__(self):
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(base_dir, '../../ILY_TEST.db')
+        self.conn = sqlite3.connect(db_path)
+        self.cursor = self.conn.cursor()
 
     def get_timestamp(self):
         """Generate a timestamp in ISO 8601 format."""
