@@ -1,6 +1,6 @@
 # @host = http://localhost:8080
 @host = http://127.0.0.1:8000
-@api_key = a1b2c3d4e5
+@api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
 @test_id = 1
 
 ### Get all locations
@@ -19,7 +19,11 @@ Content-Type: application/json
 {
     "warehouse_id": 1,
     "code": "A.1.1",
-    "name": "Row: A, Rack: 1, Shelf: 1"
+    "name": "Row: A, Rack: 1, Shelf: 1",
+    "address": "123 Warehouse St",
+    "city": "Warehouse City",
+    "province": "Warehouse Province",
+    "country": "Warehouse Country"
 }
 
 ### Put update location
@@ -30,7 +34,11 @@ Content-Type: application/json
 {
     "warehouse_id": 1,
     "code": "UPDATED-A.1.1",
-    "name": "Updated Row: A, Rack: 1, Shelf: 1"
+    "name": "Updated Row: A, Rack: 1, Shelf: 1",
+    "address": "123 Warehouse St",
+    "city": "Warehouse City",
+    "province": "Warehouse Province",
+    "country": "Warehouse Country"
 }
 
 ### Delete location

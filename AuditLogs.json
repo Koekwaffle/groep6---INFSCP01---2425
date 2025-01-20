@@ -543,5 +543,175 @@
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "event": "DELETE /api/v1/item_types/1/",
         "timestamp": "2025-01-20T16:50:51.812772"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/clients/",
+        "timestamp": "2025-01-20T19:23:13.060463"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/clients/1/",
+        "timestamp": "2025-01-20T19:23:15.961129"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/clients/",
+        "timestamp": "2025-01-20T19:23:17.315706"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/clients/1/",
+        "timestamp": "2025-01-20T19:23:18.601802"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/clients/1/",
+        "timestamp": "2025-01-20T19:23:19.879617"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/inventories/1/",
+        "timestamp": "2025-01-20T19:23:35.356292"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/inventories/1/",
+        "timestamp": "2025-01-20T19:23:37.872323"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/inventories/",
+        "timestamp": "2025-01-20T19:23:40.136619"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/inventories/1/",
+        "timestamp": "2025-01-20T19:23:41.848216"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/inventories/",
+        "timestamp": "2025-01-20T19:23:43.109219"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/inventories/1/",
+        "timestamp": "2025-01-20T19:23:46.515489"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/inventories/",
+        "timestamp": "2025-01-20T19:23:47.850354"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/item_groups/",
+        "timestamp": "2025-01-20T19:23:50.598663"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/item_groups/",
+        "timestamp": "2025-01-20T19:23:53.646584"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/item_groups/1/",
+        "timestamp": "2025-01-20T19:23:54.403430"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/item_groups/1/",
+        "timestamp": "2025-01-20T19:23:55.759521"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/item_groups/1/",
+        "timestamp": "2025-01-20T19:23:57.348942"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/item_lines/",
+        "timestamp": "2025-01-20T19:23:59.850948"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/item_lines/",
+        "timestamp": "2025-01-20T19:24:01.387010"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/item_lines/1/",
+        "timestamp": "2025-01-20T19:24:02.514260"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/item_lines/1/",
+        "timestamp": "2025-01-20T19:24:04.203918"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/item_lines/1/",
+        "timestamp": "2025-01-20T19:24:05.248171"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/locations/",
+        "timestamp": "2025-01-20T19:24:31.529970"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/locations/1/",
+        "timestamp": "2025-01-20T19:24:37.918049"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/locations/",
+        "timestamp": "2025-01-20T19:24:39.753622"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/locations/",
+        "timestamp": "2025-01-20T19:24:42.804572"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/locations/1/",
+        "timestamp": "2025-01-20T19:24:45.551433"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/locations/1/",
+        "timestamp": "2025-01-20T19:24:47.221921"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/locations/",
+        "timestamp": "2025-01-20T19:25:07.554101"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/locations/",
+        "timestamp": "2025-01-20T19:25:47.995730"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/locations/",
+        "timestamp": "2025-01-20T19:26:22.828731"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/locations/1/",
+        "timestamp": "2025-01-20T19:26:27.830321"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/locations/1/",
+        "timestamp": "2025-01-20T19:26:35.734758"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/locations/1/",
+        "timestamp": "2025-01-20T19:26:50.486959"
     }
 ]
