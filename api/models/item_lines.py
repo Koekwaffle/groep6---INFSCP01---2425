@@ -1,50 +1,54 @@
-import json
-
-from models.base import Base
-
-ITEM_LINES = []
-
+from api.models.base import Base
+from api.providers import data_provider
 
 class ItemLines(Base):
-    def __init__(self, root_path, is_debug=False):
-        self.data_path = root_path + "item_lines.json"
-        self.load(is_debug)
+    def __init__(self):
+        super().__init__()
+        self.conn = data_provider.get_connection()
+        self.cursor = self.conn.cursor()
 
-    def get_item_lines(self):
-        return self.data
+    def get_all(self):
+        """Retrieve all item lines."""
+        query = "SELECT * FROM item_line"
+        return self.fetch_all(query)
 
-    def get_item_line(self, item_line_id):
-        for x in self.data:
-            if x["id"] == item_line_id:
-                return x
-        return None
+    def get(self, item_line_id):
+        """Retrieve a single item line by ID."""
+        query = "SELECT * FROM item_line WHERE id = ?"
+        return self.fetch_one(query, (item_line_id,))
 
-    def add_item_line(self, item_line):
-        item_line["created_at"] = self.get_timestamp()
-        item_line["updated_at"] = self.get_timestamp()
-        self.data.append(item_line)
+    def add(self, item_line):
+        """Add a new item line."""
+        query = """
+        INSERT INTO item_line (name, description, created_at, updated_at)
+        VALUES (?, ?, ?, ?)
+        """
+        timestamp = self.get_timestamp()
+        params = (
+            item_line['name'],
+            item_line['description'],
+            timestamp,
+            timestamp
+        )
+        self.execute_query(query, params)
 
-    def update_item_line(self, item_line_id, item_line):
-        item_line["updated_at"] = self.get_timestamp()
-        for i in range(len(self.data)):
-            if self.data[i]["id"] == item_line_id:
-                self.data[i] = item_line
-                break
+    def update(self, item_line_id, item_line):
+        """Update an existing item line."""
+        query = """
+        UPDATE item_line
+        SET name = ?, description = ?, updated_at = ?
+        WHERE id = ?
+        """
+        params = (
+            item_line['name'],
+            item_line['description'],
+            self.get_timestamp(),
+            item_line_id
+        )
+        self.execute_query(query, params)
 
-    def remove_item_line(self, item_line_id):
-        for x in self.data:
-            if x["id"] == item_line_id:
-                self.data.remove(x)
+    def remove(self, item_line_id):
+        """Remove an item line by ID."""
+        query = "DELETE FROM item_line WHERE id = ?"
+        self.execute_query(query, (item_line_id,))
 
-    def load(self, is_debug):
-        if is_debug:
-            self.data = ITEM_LINES
-        else:
-            f = open(self.data_path, "r")
-            self.data = json.load(f)
-            f.close()
-
-    def save(self):
-        f = open(self.data_path, "w")
-        json.dump(self.data, f)
-        f.close()

@@ -1,6 +1,12 @@
-from processors.generic_functions import Generic_functions
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
 
-class Transfers_processor(Generic_functions):
+from providers.generic_functions_sqlite import GenericFunctionsSQLite
+DB_PATH = './ILY.db'
+
+from processors.generic_functions import GenericFunctionsSQLite
+
+class Transfers_processor(GenericFunctionsSQLite):
     def get_items_in_transfer(self, transfer_id):
         for x in self.data:
             if x["id"] == transfer_id:
