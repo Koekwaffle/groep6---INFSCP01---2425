@@ -2,14 +2,13 @@ import sqlite3
 import random
 import string
 from datetime import datetime
-from dbconn import get_db_connection
 
 # Function to generate a random API key
 def generate_api_key(length=32):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length)) 
 
 # Connect to the database
-conn = sqlite3.connect(get_db_connection())
+conn = sqlite3.connect('data/database.db')
 cursor = conn.cursor()
 
 # Define the range of warehouses and number of devices per warehouse
@@ -23,12 +22,23 @@ current_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 device_data = []
 for warehouse_id in warehouses:
     for device_num in range(1, devices_per_warehouse + 1):
-        device_name = f"Device_{warehouse_id}_{device_num}"
+        if device_num == 1:
+            device_identity = 'Terminal'
+        elif device_num == 2:
+            device_identity = 'Computer'
+        elif device_num == 3:
+            device_identity = 'Mobile'
+        elif device_num == 4:
+            device_identity = 'Scanner_1'
+        elif device_num == 5:
+            device_identity = 'Scanner_2'
+        device_name = f"Device_{warehouse_id}_{device_identity}"
         api_key = generate_api_key()
         device_data.append((device_name, warehouse_id, api_key, '', current_timestamp, current_timestamp))
 
 # Insert data into the devices table
 try:
+    cursor.execute("DELETE FROM devices")
     cursor.executemany("""
         INSERT INTO devices (name, warehouse_id, api_key, permissions, created_at, updated_at)
         VALUES (?, ?, ?, ?, ?, ?);
