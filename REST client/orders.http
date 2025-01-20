@@ -1,18 +1,18 @@
 # @host = http://localhost:8080
 @host = http://127.0.0.1:8000
-@api_key = a1b2c3d4e5
+@api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
 @test_id = 1
 
 ### Get All Orders
-GET {{host}}/api/v1/orders
+GET {{host}}/api/v1/orders/
 Authorization: Bearer {{api_key}}
 
 ### Get Specific Order
-GET {{host}}/api/v1/orders/{{test_id}}
+GET {{host}}/api/v1/orders/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
 ### Create a New Order
-POST {{host}}/api/v1/orders
+POST {{host}}/api/v1/orders/
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ### Update an Order
-PUT {{host}}/api/v1/orders/{{test_id}}
+PUT {{host}}/api/v1/orders/{{test_id}}/
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
@@ -34,5 +34,5 @@ Content-Type: application/json
 }
 
 ### Delete an Order
-DELETE {{host}}/api/v1/orders/{{test_id}}
+DELETE {{host}}/api/v1/orders/{{test_id}}/
 Authorization: Bearer {{api_key}}
