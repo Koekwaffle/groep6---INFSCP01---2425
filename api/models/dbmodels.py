@@ -326,13 +326,9 @@ def create_warehouses_table():
         code TEXT,
         name TEXT,
         address TEXT,
-        zip TEXT,
         city TEXT,
         province TEXT,
         country TEXT,
-        contact_name TEXT,
-        contact_phone TEXT,
-        contact_email TEXT,
         created_at TEXT,
         updated_at TEXT
     );
@@ -354,4 +350,4 @@ if __name__ == "__main__":
     create_shipments_table()
     create_suppliers_table()
     create_transfers_table()
-    create_warehouses_table()
+    create_warehouses_table()  # Ensure this function is called to create the warehouses table

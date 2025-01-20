@@ -4,15 +4,15 @@
 @test_id = 1
 
 ### Get Warehouses
-GET {{host}}/api/v1/warehouses
+GET {{host}}/api/v1/warehouses/
 Authorization: Bearer {{api_key}}
 
 ### Get specific warehouse
 GET {{host}}/api/v1/warehouses/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
-### Add a new warehouse BROKEN
-POST {{host}}/api/v1/warehouses
+### Add a new warehouse
+POST {{host}}/api/v1/warehouses/
 Content-Type: application/json
 Authorization: Bearer {{api_key}}
 

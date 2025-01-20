@@ -63,7 +63,6 @@ class GenericView(APIView):
     serializer_class = None  # Used for serialization
 
     def get(self, request, *args, **kwargs):
-        # Fetch the model's ID from kwargs if it exists
         model_instance = self.model_instance()  # Create an instance of the model
 
         if 'client_id' in request.query_params:
@@ -74,12 +73,12 @@ class GenericView(APIView):
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
             return JsonResponse(client, safe=False, status=status.HTTP_200_OK)
 
-        # For the general case (e.g., fetch all clients)
-        clients = model_instance.get_all()  # Fetch all clients
-        if not clients:
-            return JsonResponse({"message": "No clients found"}, status=status.HTTP_404_NOT_FOUND)
+        # For the general case (e.g., fetch all records)
+        records = model_instance.get_all()  # Fetch all records
+        if not records:
+            return JsonResponse({"message": "No records found"}, status=status.HTTP_404_NOT_FOUND)
 
-        return JsonResponse(clients, safe=False, status=status.HTTP_200_OK)
+        return JsonResponse(records, safe=False, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
         model_instance = self.model_instance()  # Create an instance of the model
@@ -123,12 +122,14 @@ class ClientView(GenericView):
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
         else:
             clients = self.model_instance().get_all()  # Use the correct method name
+            if not clients:
+                return JsonResponse({"message": "No clients found"}, status=status.HTTP_404_NOT_FOUND)
             serializer = self.serializer_class(clients, many=True)
             return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
 
 
 class WarehouseView(GenericView):
-    model = Warehouses
+    model_class = Warehouses
     model_instance = Warehouses  # Set the model instance class here
     serializer_class = WarehouseSerializer  # If you want to serialize data, use the serializer here
 
@@ -179,6 +180,22 @@ class ShipmentView(GenericView):
     model = Shipments
     model_instance = Shipments
     serializer_class = ShipmentSerializer
+
+    def get(self, request, *args, **kwargs):
+        shipment_id = kwargs.get('shipment_id')
+        if shipment_id:
+            shipment = self.model_instance().get(shipment_id)  # Use the correct method name
+            if shipment:
+                serializer = self.serializer_class(shipment)
+                return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+            else:
+                return JsonResponse({"error": "Shipment not found"}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            shipments = self.model_instance().get_all()  # Use the correct method name
+            if not shipments:
+                return JsonResponse({"message": "No shipments found"}, status=status.HTTP_404_NOT_FOUND)
+            serializer = self.serializer_class(shipments, many=True)
+            return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
 
 
 class TransferView(GenericView):
