@@ -33,5 +33,25 @@
         "api_key": "a1b2c3d4e5",
         "event": "DELETE /api/v1/warehouses/2/",
         "timestamp": "2025-01-20T14:58:19.307761"
+    },
+    {
+        "api_key": "ZK5YxQaXKMzGJL7QkdwMJjaaN35o2YlD",
+        "event": "GET /api/v1/clients/",
+        "timestamp": "2025-01-20T16:27:43.121851"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/clients/",
+        "timestamp": "2025-01-20T16:28:01.135613"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/clients/",
+        "timestamp": "2025-01-20T16:28:03.680542"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/clients/1/",
+        "timestamp": "2025-01-20T16:28:05.365732"
     }
 ]
