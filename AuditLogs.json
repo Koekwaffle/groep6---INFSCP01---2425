@@ -713,5 +713,165 @@
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "event": "PUT /api/v1/locations/1/",
         "timestamp": "2025-01-20T19:26:50.486959"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "GET /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:35:39.560930"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "GET /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:35:41.492393"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:35:42.571435"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:35:46.176970"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "PUT /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:35:47.735805"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "DELETE /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:35:49.551344"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "GET /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:38:54.120725"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "PUT /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:38:59.244105"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:40:31.715291"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "GET /api/v1/shipments/",
+        "timestamp": "2025-01-20T19:43:48.987484"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "GET /api/v1/shipments/1/",
+        "timestamp": "2025-01-20T19:43:51.723101"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/shipments/",
+        "timestamp": "2025-01-20T19:43:52.804780"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "GET /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:45:28.403476"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "GET /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:45:34.682575"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:45:37.623501"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:48:47.009472"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:48:52.010026"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:49:39.723974"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:50:01.526125"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:50:29.401801"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:51:31.763721"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:51:35.993430"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:51:47.130351"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:52:21.121405"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:53:50.365936"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-20T19:55:48.321242"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "PUT /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:55:56.676195"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "PUT /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:56:13.855693"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "DELETE /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:56:27.210913"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "DELETE /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:56:30.511858"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "DELETE /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:56:31.273309"
+    },
+    {
+        "api_key": "a1b2c3d4e5",
+        "event": "DELETE /api/v1/suppliers/1/",
+        "timestamp": "2025-01-20T19:56:31.859274"
     }
 ]
