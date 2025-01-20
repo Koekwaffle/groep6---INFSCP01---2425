@@ -8,11 +8,13 @@ class Warehouses(Base):
         self.cursor = self.conn.cursor()
 
     def get_all(self):
+        print("\n\n\nGetting all warehouses...\n\n\n")
         """Retrieve all warehouses."""
         query = "SELECT * FROM warehouses"
         return self.fetch_all(query)
 
     def get(self, warehouse_id):
+        print("\n\n\nGetting warehouse by ID...\n\n\n")
         """Retrieve a single warehouse by ID."""
         query = "SELECT * FROM warehouses WHERE id = ?"
         return self.fetch_one(query, (warehouse_id,))

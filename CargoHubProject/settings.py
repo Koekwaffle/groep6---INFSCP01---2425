@@ -129,14 +129,26 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SWAGGER_SETTINGS = {
+    'API Key': 'a1b2c3d4e5',
+    'X-API-KEY': 'a1b2c3d4e5',
     'SECURITY_DEFINITIONS': {
         'API Key': {
             'type': 'apiKey',
             'name': 'API_KEY',
             'in': 'header'
-        }
+        },
+        'X-API-KEY': {
+            'type': 'apiKey',
+            'name': 'X-API-KEY',
+            'in': 'header'
+        },
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        },
     },
     'DEFAULTS': {
-        'SECURITY': [{'API Key': []}],
+        'SECURITY': [{'Bearer': ['Bearer a1b2c3d4e5']}, {'API Key': ['a1b2c3d4e5']}, {'X-API-KEY': ['a1b2c3d4e5']}],
     },
 }

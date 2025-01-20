@@ -44,8 +44,12 @@ class GenericView(APIView):
         print("Checking API Key...")
         print(f"Request Headers: {request.headers}")
         authorization_header = request.headers.get('Authorization')
-        if (authorization_header and authorization_header.startswith("Bearer ")):
-            api_key = authorization_header.split(" ")[1]
+        # print(f"\n\n\nAuthorization Header: {authorization_header}\n\n\n")
+        if authorization_header:
+            if authorization_header.startswith("Bearer "):
+                api_key = authorization_header.split(" ")[1]
+            else:
+                api_key = authorization_header
             print(f"API Key from headers: {api_key}")
             log_audit_event(api_key, f"{request.method} {request.path}")  # Log the API key usage
             user = get_user(api_key)
@@ -71,8 +75,10 @@ class GenericView(APIView):
 
     def get(self, request, *args, **kwargs):
         model_instance = self.model_instance()  # Create an instance of the model
-
+        print("\n\n\n GETTING \n\n\n")
+        print(request.query_params)
         if 'client_id' in request.query_params:
+            print("\n\n\n GETTING CLIENT ID \n\n\n")
             client_id = request.query_params.get('client_id')
             print(client_id)
             client = model_instance.get(client_id)  # Call the specific model's method
@@ -119,15 +125,19 @@ class ClientView(GenericView):
     serializer_class = ClientSerializer
 
     def get(self, request, *args, **kwargs):
+        print("\n\n\n GETTING CLIENT \n\n\n")
         client_id = kwargs.get('client_id')
         if client_id:
+            # print("\n\n\n CLIENT ID GET \n\n\n")
             client = self.model_instance().get(client_id)  # Use the correct method name
             if client:
+                # print("\n\n\n CLIENT FOUND \n\n\n")
                 serializer = self.serializer_class(client)
                 return JsonResponse(serializer.data, status=status.HTTP_200_OK)
             else:
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
         else:
+            # print("\n\n\n GETTING ALL CLIENTS \n\n\n")
             clients = self.model_instance().get_all()  # Use the correct method name
             if not clients:
                 return JsonResponse({"message": "No clients found"}, status=status.HTTP_404_NOT_FOUND)
