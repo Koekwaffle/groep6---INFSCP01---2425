@@ -18638,8 +18638,22 @@ def get_user(api_key):
     return None
 
 def has_access(user, path, method):
-    access = user["endpoint_access"]
-    if access["full"]:
+    endpoint = path.split("/")  # The first part of the path is the endpoint name
+    permissions = user.get("endpoint_access", {})
+    
+    # print("\n\n\n")
+    # print("endpoint")
+    # print(endpoint)
+    # print("\n\n")
+    # print("permissions")
+    # print(permissions)
+    # print("\n\n\n")
+
+    if permissions.get("full"):
         return True
-    else:
-        return access[path][method]
+
+    endpoint_permissions = permissions.get(endpoint[3], {})
+    if endpoint_permissions.get("full"):
+        return True
+    
+    return endpoint_permissions.get(method, False)

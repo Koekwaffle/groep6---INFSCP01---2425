@@ -33,6 +33,7 @@ from api.models.shipments import Shipments
 from api.models.suppliers import Suppliers
 from api.models.transfers import Transfers
 from api.models.warehouses import Warehouses
+from api.providers.auth_provider import has_access
 
 def baseurl_view(request):
     return HttpResponse("Welcome to the Cargohub API! :)", status=200)
@@ -46,12 +47,16 @@ class GenericView(APIView):
             api_key = authorization_header.split(" ")[1]
             print(f"API Key from headers: {api_key}")
             user = get_user(api_key)
-            if user is None:
+            allowed = has_access(user, request.path, request.method)
+            # print(f"\n\n\n\n\nAllowed: {allowed}\n\n\n\n\n\n\n")
+            if not allowed:
                 return None
+            # print(f"User: {user}")
             return user
         return None
 
     def dispatch(self, request, *args, **kwargs):
+        # print("\n\n\ndispatch called\n\n\n")
         user = self.check_api_key(request)
         if user is None:
             return JsonResponse({"error": "Invalid API Key"}, status=status.HTTP_403_FORBIDDEN)
