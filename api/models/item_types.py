@@ -1,6 +1,6 @@
-from api.models.base import Base
+from .base import Base  # Ensure that the base class is imported
 
-class ItemTypes(Base):
+class ItemTypes(Base):  # Inherit from the base class
     def __init__(self):
         super().__init__()
 
@@ -14,7 +14,7 @@ class ItemTypes(Base):
         query = "SELECT * FROM item_types WHERE id = ?"
         return self.fetch_one(query, (type_id,))
 
-    def add_item_type(self, item_type):
+    def add(self, item_type):
         """Add a new item type."""
         query = """
         INSERT INTO item_types (name, description, created_at, updated_at)
@@ -29,7 +29,7 @@ class ItemTypes(Base):
         )
         self.execute_query(query, params)
 
-    def update_item_type(self, type_id, item_type):
+    def update(self, type_id, item_type):
         """Update an existing item type."""
         query = """
         UPDATE item_types
@@ -44,7 +44,7 @@ class ItemTypes(Base):
         )
         self.execute_query(query, params)
 
-    def remove_item_type(self, type_id):
+    def remove(self, type_id):
         """Remove an item type by ID."""
         query = "DELETE FROM item_types WHERE id = ?"
         self.execute_query(query, (type_id,))

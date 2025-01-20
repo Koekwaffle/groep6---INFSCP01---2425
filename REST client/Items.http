@@ -1,55 +1,69 @@
-@host = http://localhost:3000
-@api_key = a1b2c3d4e5
+@host = http://127.0.0.1:8000
+@api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
+@test_id = P000001
 
-### Get all items BEETJE BROKEN DUURT LANG  
-GET {{host}}/api/v1/items 
-API_KEY: {{api_key}}
+### Get all items
+GET {{host}}/api/v1/items/
+Authorization: Bearer {{api_key}}
 
-### Get specific item BROKEN!!!!! RETURNED "NULL" 
-GET {{host}}/api/v1/items/40
-API_KEY: {{api_key}}
+### Get specific item
+GET {{host}}/api/v1/items/{{test_id}}/
+Authorization: Bearer {{api_key}}
 
-### Get specific item BROKEN!!!!! RETURNED "[ ]" 
-GET {{host}}/api/v1/items/9/inventory
-API_KEY: {{api_key}}
-
-### Get specific item BROKEN!!!!! RETURNED Alles 0 
-GET {{host}}/api/v1/items/9/inventory/totals
-API_KEY: {{api_key}}
-
-### Put new info in Items BROKEN returned HTTP/1.0 404 Not Found
-PUT http://localhost:3000/api/v1/items/40
-API_KEY: a1b2c3d4e5
-Content-Type: application/json
-
-{
-  "name": "Updated Item Name",
-  "item_type_id": 2,
-  "description": "Updated description of the item",
-  "price": 100.00,
-  "quantity": 50
-}
-
-### Create new Item
-POST {{host}}/api/v1/items
+### Post new item
+POST {{host}}/api/v1/items/
 Authorization: Bearer {{api_key}}
 Content-Type: application/json
 
 {
     "uid": "P000001",
-    "code": "sjQ23408K",
-    "description": "Face-to-face clear-thinking complexity",
-    "short_description": "must",
-    "upc_code": "6523540947122",
-    "model_number": "63-OFFTq0T",
-    "commodity_code": "oTo304",
-    "item_line": 11,
-    "item_group": 73,
-    "item_type": 14,
-    "unit_purchase_quantity": 47,
-    "unit_order_quantity": 13,
-    "pack_order_quantity": 11,
-    "supplier_id": 34,
-    "supplier_code": "SUP423",
-    "supplier_part_number": "E-86805-uTM"
+    "code": "ITEM001",
+    "description": "Item Description",
+    "short_description": "Short Description",
+    "upc_code": "123456789012",
+    "model_number": "MODEL001",
+    "commodity_code": "COM001",
+    "item_line": 1,
+    "item_group": 1,
+    "item_type": 1,
+    "unit_purchase_quantity": 10,
+    "unit_order_quantity": 5,
+    "pack_order_quantity": 2,
+    "supplier_id": 1,
+    "supplier_code": 1001,
+    "supplier_part_number": 2001
 }
+
+### Put update item
+PUT {{host}}/api/v1/items/{{test_id}}/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "uid": "P000001",
+    "code": "UPDATED-ITEM001",
+    "description": "Updated Item Description",
+    "short_description": "Updated Short Description",
+    "upc_code": "123456789012",
+    "model_number": "MODEL001",
+    "commodity_code": "COM001",
+    "item_line": 1,
+    "item_group": 1,
+    "item_type": 1,
+    "unit_purchase_quantity": 10,
+    "unit_order_quantity": 5,
+    "pack_order_quantity": 2,
+    "supplier_id": 1,
+    "supplier_code": 1001,
+    "supplier_part_number": 2001
+}
+
+### Delete item
+DELETE {{host}}/api/v1/items/{{test_id}}/
+Authorization: Bearer {{api_key}}
+
+### get inventories for item(item_id)
+GET {{host}}/api/v1/items/{{test_id}}/inventories/
+
+### get inventory totals for item(item_id)
+GET {{host}}/api/v1/items/{{test_id}}/inventory/totals/

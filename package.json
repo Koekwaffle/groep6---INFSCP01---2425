@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

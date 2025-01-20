@@ -1,0 +1,73 @@
+@host = http://127.0.0.1:8000
+@api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
+@test_id = 1
+
+### Get All Shipments
+GET {{host}}/api/v1/shipments/
+Authorization: Bearer {{api_key}}
+
+### Get Specific Shipment
+GET {{host}}/api/v1/shipments/{{test_id}}/
+Authorization: Bearer {{api_key}}
+
+### Create a New Shipment
+POST {{host}}/api/v1/shipments/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "source_id": 1,
+    "order_date": "2025-01-15",
+    "request_date": "2025-01-16",
+    "shipment_date": "2025-01-20",
+    "shipment_type": "Standard",
+    "shipment_status": "Pending",
+    "notes": "Handle with care",
+    "carrier_code": "CARRIER001",
+    "carrier_description": "Carrier Description",
+    "service_code": "SERVICE001",
+    "payment_type": "Prepaid",
+    "transfer_mode": "Air",
+    "total_package_count": 10,
+    "total_package_weight": 100
+}
+
+### Update a Shipment
+PUT {{host}}/api/v1/shipments/{{test_id}}/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "source_id": 1,
+    "order_date": "2025-01-15",
+    "request_date": "2025-01-16",
+    "shipment_date": "2025-01-21",
+    "shipment_type": "Express",
+    "shipment_status": "Shipped",
+    "notes": "Handle with care",
+    "carrier_code": "CARRIER002",
+    "carrier_description": "Updated Carrier Description",
+    "service_code": "SERVICE002",
+    "payment_type": "Collect",
+    "transfer_mode": "Sea",
+    "total_package_count": 12,
+    "total_package_weight": 120
+}
+
+### Delete a Shipment
+DELETE {{host}}/api/v1/shipments/{{test_id}}/
+Authorization: Bearer {{api_key}}
+
+### get orders in shipment(shipment_id)
+GET {{host}}/api/v1/shipments/{{test_id}}/orders/
+
+### get items in shipment(shipment_id)
+GET {{host}}/api/v1/shipments/{{test_id}}/items/
+
+### post update orders in shipment(shipment_id, updated_orders)
+POST {{host}}/api/v1/shipments/{{test_id}}/orders/
+
+### post update items in shipment(shipment_id, updated_items)
+POST {{host}}/api/v1/shipments/{{test_id}}/items/

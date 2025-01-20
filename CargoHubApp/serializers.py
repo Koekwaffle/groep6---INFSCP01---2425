@@ -45,6 +45,12 @@ class ItemGroupSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class ItemLineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ItemLine
+        fields = '__all__'
+
+
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item

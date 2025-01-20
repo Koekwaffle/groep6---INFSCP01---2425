@@ -1,0 +1,44 @@
+# @host = http://localhost:8080
+@host = http://127.0.0.1:8000
+@api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
+@test_id = 1
+
+### Get All Orders
+GET {{host}}/api/v1/orders/
+Authorization: Bearer {{api_key}}
+
+### Get Specific Order
+GET {{host}}/api/v1/orders/{{test_id}}/
+Authorization: Bearer {{api_key}}
+
+### Create a New Order
+POST {{host}}/api/v1/orders/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "shipment_id": 1,
+    "ship_to": 2,
+    "bill_to": 3
+}
+
+### Update an Order
+PUT {{host}}/api/v1/orders/{{test_id}}/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "shipment_id": 2,
+    "ship_to": 4,
+    "bill_to": 5
+}
+
+### Delete an Order
+DELETE {{host}}/api/v1/orders/{{test_id}}/
+Authorization: Bearer {{api_key}}
+
+### get items in order(order_id)
+GET {{host}}/api/v1/orders/{{test_id}}/items/
+
+### post update items in order(order_id, updated_items)
+POST {{host}}/api/v1/orders/{{test_id}}/items/

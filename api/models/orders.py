@@ -1,8 +1,11 @@
 from api.models.base import Base
+from api.providers import data_provider
 
 class Orders(Base):
     def __init__(self):
         super().__init__()
+        self.conn = data_provider.get_connection()
+        self.cursor = self.conn.cursor()
 
     def get_all(self):
         """Retrieve all orders."""
@@ -29,7 +32,7 @@ class Orders(Base):
         query = "SELECT * FROM orders WHERE ship_to = ? OR bill_to = ?"
         return self.fetch_all(query, (client_id, client_id))
 
-    def add_order(self, order):
+    def add(self, order):
         """Add a new order."""
         query = """
         INSERT INTO orders (shipment_id, ship_to, bill_to, created_at, updated_at)
@@ -45,7 +48,7 @@ class Orders(Base):
         )
         self.execute_query(query, params)
 
-    def update_order(self, order_id, order):
+    def update(self, order_id, order):
         """Update an existing order."""
         query = """
         UPDATE orders
@@ -61,7 +64,7 @@ class Orders(Base):
         )
         self.execute_query(query, params)
 
-    def remove_order(self, order_id):
+    def remove(self, order_id):
         """Remove an order by ID."""
         query = "DELETE FROM orders WHERE id = ?"
         self.execute_query(query, (order_id,))

@@ -1,23 +1,26 @@
 from api.models.base import Base
+from api.providers import data_provider
 
 class ItemLines(Base):
     def __init__(self):
         super().__init__()
+        self.conn = data_provider.get_connection()
+        self.cursor = self.conn.cursor()
 
     def get_all(self):
         """Retrieve all item lines."""
-        query = "SELECT * FROM item_lines"
+        query = "SELECT * FROM item_line"
         return self.fetch_all(query)
 
-    def get(self, line_id):
+    def get(self, item_line_id):
         """Retrieve a single item line by ID."""
-        query = "SELECT * FROM item_lines WHERE id = ?"
-        return self.fetch_one(query, (line_id,))
+        query = "SELECT * FROM item_line WHERE id = ?"
+        return self.fetch_one(query, (item_line_id,))
 
-    def add_item_line(self, item_line):
+    def add(self, item_line):
         """Add a new item line."""
         query = """
-        INSERT INTO item_lines (name, description, created_at, updated_at)
+        INSERT INTO item_line (name, description, created_at, updated_at)
         VALUES (?, ?, ?, ?)
         """
         timestamp = self.get_timestamp()
@@ -29,10 +32,10 @@ class ItemLines(Base):
         )
         self.execute_query(query, params)
 
-    def update_item_line(self, line_id, item_line):
+    def update(self, item_line_id, item_line):
         """Update an existing item line."""
         query = """
-        UPDATE item_lines
+        UPDATE item_line
         SET name = ?, description = ?, updated_at = ?
         WHERE id = ?
         """
@@ -40,12 +43,12 @@ class ItemLines(Base):
             item_line['name'],
             item_line['description'],
             self.get_timestamp(),
-            line_id
+            item_line_id
         )
         self.execute_query(query, params)
 
-    def remove_item_line(self, line_id):
+    def remove(self, item_line_id):
         """Remove an item line by ID."""
-        query = "DELETE FROM item_lines WHERE id = ?"
-        self.execute_query(query, (line_id,))
+        query = "DELETE FROM item_line WHERE id = ?"
+        self.execute_query(query, (item_line_id,))
 

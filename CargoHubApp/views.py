@@ -6,21 +6,21 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import (ClientSerializer, InventorySerializer, ItemGroupSerializer, ItemTypeSerializer, 
                           ItemSerializer, LocationSerializer, OrderSerializer, ShipmentSerializer, 
-                          SupplierSerializer, TransferSerializer, WarehouseSerializer)
+                          SupplierSerializer, TransferSerializer, WarehouseSerializer, ItemLineSerializer)  # Import ItemLineSerializer
 from rest_framework.exceptions import NotFound, ValidationError
 from django.http import JsonResponse
 
+from api.providers import auth_provider  # Import the auth_provider module
+from audit_log import log_audit_event  # Correct the import path
+
+# Initialize the auth_provider
+auth_provider.init()
+
 def get_user(api_key):
-    # Implement your logic to retrieve the user based on the API key
-    # For example:
-    if api_key == "valid_api_key":
-        return {"username": "valid_user"}
-    return None
+    return auth_provider.get_user(api_key)  # Use the auth_provider to get the user
+
 from django.http import HttpResponse
 from django.urls import path
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
 
 from api.models.clients import Clients
 from api.models.inventories import Inventories
@@ -34,8 +34,7 @@ from api.models.shipments import Shipments
 from api.models.suppliers import Suppliers
 from api.models.transfers import Transfers
 from api.models.warehouses import Warehouses
-
-
+from api.providers.auth_provider import has_access
 
 def baseurl_view(request):
     return HttpResponse("Welcome to the Cargohub API! :)", status=200)
@@ -44,15 +43,24 @@ class GenericView(APIView):
     def check_api_key(self, request):
         print("Checking API Key...")
         print(f"Request Headers: {request.headers}")
-        api_key = request.headers.get('API_KEY')
-        print(f"API Key from headers: {api_key}")
-        api_key = request.headers.get('API_KEY')
-        user = get_user(api_key)
-        if user is None:
-            return None
-        return user
+        authorization_header = request.headers.get('Authorization')
+        if (authorization_header and authorization_header.startswith("Bearer ")):
+            api_key = authorization_header.split(" ")[1]
+            print(f"API Key from headers: {api_key}")
+            log_audit_event(api_key, f"{request.method} {request.path}")  # Log the API key usage
+            user = get_user(api_key)
+            if user is None:
+                return None
+            allowed = has_access(user, request.path, request.method)
+            # print(f"\n\n\n\n\nAllowed: {allowed}\n\n\n\n\n\n\n")
+            if not allowed:
+                return None
+            # print(f"User: {user}")
+            return user
+        return None
 
     def dispatch(self, request, *args, **kwargs):
+        # print("\n\n\ndispatch called\n\n\n")
         user = self.check_api_key(request)
         if user is None:
             return JsonResponse({"error": "Invalid API Key"}, status=status.HTTP_403_FORBIDDEN)
@@ -62,7 +70,6 @@ class GenericView(APIView):
     serializer_class = None  # Used for serialization
 
     def get(self, request, *args, **kwargs):
-        # Fetch the model's ID from kwargs if it exists
         model_instance = self.model_instance()  # Create an instance of the model
 
         if 'client_id' in request.query_params:
@@ -73,12 +80,12 @@ class GenericView(APIView):
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
             return JsonResponse(client, safe=False, status=status.HTTP_200_OK)
 
-        # For the general case (e.g., fetch all clients)
-        clients = model_instance.get_all()  # Fetch all clients
-        if not clients:
-            return JsonResponse({"message": "No clients found"}, status=status.HTTP_404_NOT_FOUND)
+        # For the general case (e.g., fetch all records)
+        records = model_instance.get_all()  # Fetch all records
+        if not records:
+            return JsonResponse({"message": "No records found"}, status=status.HTTP_404_NOT_FOUND)
 
-        return JsonResponse(clients, safe=False, status=status.HTTP_200_OK)
+        return JsonResponse(records, safe=False, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
         model_instance = self.model_instance()  # Create an instance of the model
@@ -87,23 +94,23 @@ class GenericView(APIView):
         return JsonResponse(client_data, status=status.HTTP_201_CREATED)
 
     def put(self, request, *args, **kwargs):
-        client_id = kwargs.get('client_id')
-        if not client_id:
-            return JsonResponse({"error": "client_id is required for update"}, status=status.HTTP_400_BAD_REQUEST)
+        obj_id = kwargs.get('client_id') or kwargs.get('item_line_id') or kwargs.get('id') or request.data.get('client_id') or request.data.get('item_line_id') or request.data.get('id')
+        if not obj_id:
+            return JsonResponse({"error": "ID is required for update"}, status=status.HTTP_400_BAD_REQUEST)
 
         model_instance = self.model_instance()  # Create an instance of the model
-        client_data = request.data
-        model_instance.update(client_id, client_data)  # Update client data
-        return JsonResponse(client_data, status=status.HTTP_200_OK)
+        obj_data = request.data
+        model_instance.update(obj_id, obj_data)  # Update object data
+        return JsonResponse(obj_data, status=status.HTTP_200_OK)
 
     def delete(self, request, *args, **kwargs):
-        client_id = kwargs.get('client_id')
-        if not client_id:
-            return JsonResponse({"error": "client_id is required for deletion"}, status=status.HTTP_400_BAD_REQUEST)
+        obj_id = kwargs.get('client_id') or kwargs.get('item_line_id') or kwargs.get('id') or request.data.get('client_id') or request.data.get('item_line_id') or request.data.get('id')
+        if not obj_id:
+            return JsonResponse({"error": "ID is required for deletion"}, status=status.HTTP_400_BAD_REQUEST)
 
         model_instance = self.model_instance()  # Create an instance of the model
-        model_instance.remove(client_id)  # Call the remove method to delete
-        return JsonResponse({"message": "Client deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        model_instance.remove(obj_id)  # Call the remove method to delete
+        return JsonResponse({"message": "Object deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
     
     
 class ClientView(GenericView):
@@ -114,20 +121,22 @@ class ClientView(GenericView):
     def get(self, request, *args, **kwargs):
         client_id = kwargs.get('client_id')
         if client_id:
-            client = self.model_instance().get_client(client_id)
+            client = self.model_instance().get(client_id)  # Use the correct method name
             if client:
                 serializer = self.serializer_class(client)
                 return JsonResponse(serializer.data, status=status.HTTP_200_OK)
             else:
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
         else:
-            clients = self.model_instance().gets()
+            clients = self.model_instance().get_all()  # Use the correct method name
+            if not clients:
+                return JsonResponse({"message": "No clients found"}, status=status.HTTP_404_NOT_FOUND)
             serializer = self.serializer_class(clients, many=True)
             return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
 
 
 class WarehouseView(GenericView):
-    model = Warehouses
+    model_class = Warehouses
     model_instance = Warehouses  # Set the model instance class here
     serializer_class = WarehouseSerializer  # If you want to serialize data, use the serializer here
 
@@ -179,9 +188,31 @@ class ShipmentView(GenericView):
     model_instance = Shipments
     serializer_class = ShipmentSerializer
 
+    def get(self, request, *args, **kwargs):
+        shipment_id = kwargs.get('shipment_id')
+        if shipment_id:
+            shipment = self.model_instance().get(shipment_id)  # Use the correct method name
+            if shipment:
+                serializer = self.serializer_class(shipment)
+                return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+            else:
+                return JsonResponse({"error": "Shipment not found"}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            shipments = self.model_instance().get_all()  # Use the correct method name
+            if not shipments:
+                return JsonResponse({"message": "No shipments found"}, status=status.HTTP_404_NOT_FOUND)
+            serializer = self.serializer_class(shipments, many=True)
+            return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+
 
 class TransferView(GenericView):
     model = Transfers
     model_instance = Transfers
     serializer_class = TransferSerializer
+
+
+class ItemLineView(GenericView):
+    model = ItemLines
+    model_instance = ItemLines
+    serializer_class = ItemLineSerializer
 
