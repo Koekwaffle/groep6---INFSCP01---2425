@@ -113,5 +113,60 @@
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "event": "GET /api/v1/shipments/1/",
         "timestamp": "2025-01-20T20:21:48.615866"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/",
+        "timestamp": "2025-01-20T20:23:25.618895"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/",
+        "timestamp": "2025-01-20T20:23:27.693334"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/",
+        "timestamp": "2025-01-20T20:23:28.908784"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/transfers/1/",
+        "timestamp": "2025-01-20T20:23:33.151909"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/transfers/1/",
+        "timestamp": "2025-01-20T20:23:34.116484"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/",
+        "timestamp": "2025-01-20T20:23:35.898364"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/",
+        "timestamp": "2025-01-20T20:23:42.914942"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/",
+        "timestamp": "2025-01-20T20:23:44.202979"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/warehouses/",
+        "timestamp": "2025-01-20T20:23:45.133417"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/warehouses/1/",
+        "timestamp": "2025-01-20T20:23:46.531615"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/warehouses/1/",
+        "timestamp": "2025-01-20T20:23:47.824491"
     }
 ]
