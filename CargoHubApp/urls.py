@@ -1,7 +1,5 @@
 from django.urls import path
-from .views import (ClientView, InventoryView, ItemGroupView, ItemTypeView, ItemView, LocationView, 
-                    OrderView, ShipmentView, SupplierView, TransferView, WarehouseView, ItemGroupItemsView, 
-                    ItemLineItemsView, ItemTypeItemsView, ItemInventoriesView, ItemInventoryTotalsView)  # Add ItemLineItemsView, ItemTypeItemsView, and ItemInventoryTotalsView
+from .views import *  # Add ItemLineItemsView, ItemTypeItemsView, and ItemInventoryTotalsView
 from .views import baseurl_view
 
 from django.conf.urls.static import static
