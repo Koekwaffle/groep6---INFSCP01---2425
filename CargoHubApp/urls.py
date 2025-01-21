@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (ClientView, InventoryView, ItemGroupView, ItemTypeView, ItemView, LocationView, 
-                    OrderView, ShipmentView, SupplierView, TransferView, WarehouseView, ItemGroupItemsView, TransferCommitView)
+                    OrderView, ShipmentView, SupplierView, TransferView, WarehouseView, ItemGroupItemsView, TransferCommitView, OrderItemsView)
 from .views import baseurl_view
 
 from django.conf.urls.static import static
@@ -50,4 +50,5 @@ urlpatterns = [
     path('item_groups/<int:item_group_id>/items/', ItemGroupItemsView.as_view(), name='item-group-items'),  # Fixed path
     path('warehouses/<int:warehouse_id>/locations/', WarehouseView.as_view(), name='warehouse-locations'),  # Fixed path
     path('transfers/<int:transfer_id>/commit/', TransferCommitView.as_view(), name='transfer-commit'),
+    path('orders/<int:order_id>/items/', OrderItemsView.as_view(), name='order-items'),
 ]

@@ -39,6 +39,8 @@ Authorization: Bearer {{api_key}}
 
 ### get items in order(order_id)
 GET {{host}}/api/v1/orders/{{test_id}}/items/
+Authorization: Bearer {{api_key}}
 
 ### post update items in order(order_id, updated_items)
 POST {{host}}/api/v1/orders/{{test_id}}/items/
+Authorization: Bearer {{api_key}}

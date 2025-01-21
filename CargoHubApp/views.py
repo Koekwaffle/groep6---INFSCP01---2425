@@ -291,3 +291,15 @@ class TransferCommitView(GenericView):
         Transfers().update(transfer_id, transfer)
         return JsonResponse({"message": "Batch transfer committed."}, status=200)
 
+class OrderItemsView(GenericView):
+    def get(self, request, order_id):
+        items = Orders().get_items_in_order(order_id)
+        if not items:
+            return JsonResponse({"message": "No items found for order"}, status=status.HTTP_404_NOT_FOUND)
+        return JsonResponse(items, safe=False, status=status.HTTP_200_OK)
+
+    def post(self, request, order_id):
+        updated_items = request.data.get("items", [])
+        Orders().update_items_in_order(order_id, updated_items)
+        return JsonResponse({"message": "Order items updated."}, status=200)
+
