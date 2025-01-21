@@ -88,5 +88,65 @@
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "event": "DELETE /api/v1/item_groups/1/",
         "timestamp": "2025-01-21T14:34:06.998908"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T14:45:32.835798"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T14:51:51.713372"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T14:55:12.004338"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T14:58:19.322813"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/warehouses/1/",
+        "timestamp": "2025-01-21T14:58:30.460231"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/warehouses/1/",
+        "timestamp": "2025-01-21T14:58:32.866574"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/warehouses/",
+        "timestamp": "2025-01-21T14:58:34.426773"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/",
+        "timestamp": "2025-01-21T14:58:35.871802"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/",
+        "timestamp": "2025-01-21T14:58:36.819311"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/",
+        "timestamp": "2025-01-21T14:58:38.581601"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/",
+        "timestamp": "2025-01-21T15:12:40.155665"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/",
+        "timestamp": "2025-01-21T15:13:26.116504"
     }
 ]
