@@ -6,11 +6,11 @@ os.environ['NODE_ENV'] = 'test'
 import requests
 import pytest
 
-BASE_URL = 'http://127.0.0.1:8000'
+BASE_URL = 'http://145.24.223.218:3000'
 API_KEY = "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm"
 
-# Use a very large ID that won't conflict with existing records
-TEST_ID = 999999999
+
+TEST_ID = 1
 
 ########################## 
 ### Client endpoint tests 
