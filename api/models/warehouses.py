@@ -64,10 +64,10 @@ class Warehouses(Base):
 
     def get_warehouse_locations(self, warehouse_id):
         """Retrieve all locations for a warehouse."""
-        query = "SELECT id, warehouse_id, name, address, city, province, country, created_at, updated_at FROM locations WHERE warehouse_id = ?"
+        query = "SELECT * FROM locations WHERE warehouse_id = ?"
         rows = self.fetch_all(query, (warehouse_id,))
         from CargoHubApp.models import Location
-        location_fields = ["id", "warehouse_id", "name", "address", "city", "province", "country", "created_at", "updated_at"]
+        location_fields = ["id", "warehouse_id", "name"]
         location_objects = []
         for row in rows:
             data = dict(zip(location_fields, row))

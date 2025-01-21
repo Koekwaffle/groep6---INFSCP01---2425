@@ -1,7 +1,7 @@
 # @host = http://localhost:8080
 @host = http://127.0.0.1:8000
 @api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
-@test_id = 1
+@test_id = 3
 
 ### Get All Orders
 GET {{host}}/api/v1/orders/

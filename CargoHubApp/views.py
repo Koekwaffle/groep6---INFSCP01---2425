@@ -76,20 +76,20 @@ class GenericView(APIView):
     serializer_class = None  # Used for serialization
 
     def get(self, request, *args, **kwargs):
-        model_instance = self.model_instance()  # Create an instance of the model
+        model = self.model_instance()  # Directly instantiate the model
         # print("\n\n\n GETTING \n\n\n")
         # print(request.query_params)
         if 'client_id' in request.query_params:
             # print("\n\n\n GETTING CLIENT ID \n\n\n")
             client_id = request.query_params.get('client_id')
             print(client_id)
-            client = model_instance.get(client_id)  # Call the specific model's method
+            client = model.get(client_id)  # Call the specific model's method
             if client is None:
                 return JsonResponse({"error": "Client not found"}, status=status.HTTP_404_NOT_FOUND)
             return JsonResponse(client, safe=False, status=status.HTTP_200_OK)
 
         # For the general case (e.g., fetch all records)
-        records = model_instance.get_all()  # Fetch all records
+        records = model.get_all()  # Fetch all records
         if not records:
             return JsonResponse({"message": "No records found"}, status=status.HTTP_404_NOT_FOUND)
 
@@ -482,7 +482,45 @@ class OrderItemsView(GenericView):
 class SupplierItemsView(GenericView):
     def get(self, request, supplier_id):
         items = Suppliers().get_items_for_supplier(supplier_id)
+        print(items)
         if not items:
             return JsonResponse({"message": "No items found for this supplier"}, status=status.HTTP_404_NOT_FOUND)
         return JsonResponse(items, safe=False, status=status.HTTP_200_OK)
+
+class TransferItemsView(GenericView):
+    def get(self, request, transfer_id, *args, **kwargs):
+        try:
+            transfer = Transfers().get(transfer_id)
+            if not transfer:
+                return JsonResponse({"error": "Transfer not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            items = Transfers().get_items_in_transfer(transfer_id)
+            if not items:
+                return JsonResponse({"message": "No items found for this transfer"}, status=status.HTTP_404_NOT_FOUND)
+            
+            # Serialize the items
+            serializer = ItemSerializer(items, many=True)
+            return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+        except Exception as e:
+            print(f"Error in TransferItemsView: {str(e)}")  # Add debug print
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+    def post(self, request, transfer_id, *args, **kwargs):
+        try:
+            transfer = Transfers().get(transfer_id)
+            if not transfer:
+                return JsonResponse({"error": "Transfer not found"}, status=status.HTTP_404_NOT_FOUND)
+            
+            item_id = request.data.get('item_id')
+            amount = request.data.get('amount')
+            
+            if not item_id or not amount:
+                return JsonResponse({"error": "Item ID and amount are required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            Transfers().add_item_to_transfer(transfer_id, item_id, amount)
+            
+            return JsonResponse({"message": "Item added to transfer successfully."}, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            print(f"Error in TransferItemsView POST: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

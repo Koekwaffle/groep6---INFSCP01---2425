@@ -1,6 +1,6 @@
 @host = http://127.0.0.1:8000
 @api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
-@test_id = 1
+@test_id = 2
 
 ### Get all transfers
 GET {{host}}/api/v1/transfers/
@@ -48,6 +48,16 @@ Authorization: Bearer {{api_key}}
 ### get items in transfer(transfer_id)
 GET {{host}}/api/v1/transfers/{{test_id}}/items/
 Authorization: Bearer {{api_key}}
+
+### post items in transfer(transfer_id)
+POST {{host}}/api/v1/transfers/{{test_id}}/items/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "item_id": 1,
+    "amount": 10
+}
 
 ### post commit
 # case 3:
