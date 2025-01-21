@@ -1,9 +1,8 @@
 from django.shortcuts import render
-
-# Create your views here.
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from django.db import connection  # Add this import
 from .serializers import (ClientSerializer, InventorySerializer, ItemGroupSerializer, ItemTypeSerializer, 
                           ItemSerializer, LocationSerializer, OrderSerializer, ShipmentSerializer, 
                           SupplierSerializer, TransferSerializer, WarehouseSerializer, ItemLineSerializer)  # Import ItemLineSerializer
@@ -272,6 +271,108 @@ class ItemGroupItemsView(GenericView):  # Change to inherit from GenericView
             print(f"Error in ItemGroupItemsView: {str(e)}")  # Add debug print
             return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+class ItemLineItemsView(GenericView):
+    model_instance = Items
+    serializer_class = ItemSerializer
+    
+    def get(self, request, item_line_id):
+        try:
+            items_model = self.model_instance()
+            items = items_model.get_by_line(item_line_id)
+            if items:
+                serializer = self.serializer_class(items, many=True)
+                return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "No items found for this line"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            print(f"Error in ItemLineItemsView: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class ItemTypeItemsView(GenericView):
+    model_instance = Items
+    serializer_class = ItemSerializer
+    
+    def get(self, request, item_type_id):
+        try:
+            items_model = self.model_instance()
+            items = items_model.get_by_type(item_type_id)
+            if items:
+                serializer = self.serializer_class(items, many=True)
+                return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "No items found for this type"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            print(f"Error in ItemTypeItemsView: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class ItemInventoriesView(GenericView):
+    model_instance = Inventories
+    serializer_class = InventorySerializer
+    
+    def get(self, request, item_uid):
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("""
+                    SELECT 
+                        id,
+                        item_id,
+                        description,
+                        item_reference,
+                        location_id,
+                        total_on_hand,
+                        total_expected,
+                        total_ordered,
+                        total_allocated,
+                        total_available,
+                        created_at,
+                        updated_at
+                    FROM inventories 
+                    WHERE item_id = %s
+                """, [item_uid])
+                rows = cursor.fetchall()
+                
+                if rows:
+                    inventories = [dict(zip([
+                        'id', 'item_id', 'description', 'item_reference',
+                        'location_id', 'total_on_hand', 'total_expected',
+                        'total_ordered', 'total_allocated', 'total_available',
+                        'created_at', 'updated_at'
+                    ], row)) for row in rows]
+                    return JsonResponse(inventories, safe=False, status=200)
+                return JsonResponse({"message": "No inventory found for this item"}, status=404)
+        except Exception as e:
+            print(f"Database error: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=500)
+
+class ItemInventoryTotalsView(GenericView):
+    model_instance = Inventories
+    serializer_class = InventorySerializer
+    
+    def get(self, request, item_uid):
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("""
+                    SELECT 
+                        COALESCE(SUM(total_on_hand), 0) as total_on_hand,
+                        COALESCE(SUM(total_expected), 0) as total_expected,
+                        COALESCE(SUM(total_ordered), 0) as total_ordered,
+                        COALESCE(SUM(total_allocated), 0) as total_allocated,
+                        COALESCE(SUM(total_available), 0) as total_available
+                    FROM inventories 
+                    WHERE item_id = %s
+                """, [item_uid])
+                row = cursor.fetchone()
+                
+                if row:
+                    return JsonResponse({
+                        'total_on_hand': row[0],
+                        'total_expected': row[1],
+                        'total_ordered': row[2],
+                        'total_allocated': row[3],
+                        'total_available': row[4]
+                    }, status=200)
+                return JsonResponse({"message": "No inventory found for this item"}, status=404)
+        except Exception as e:
+            print(f"Error in ItemInventoryTotalsView: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=500)
 class TransferCommitView(GenericView):
     def post(self, request, transfer_id):
         transfer = Transfers().get(transfer_id)

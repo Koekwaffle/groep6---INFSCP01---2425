@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (ClientView, InventoryView, ItemGroupView, ItemTypeView, ItemView, LocationView, 
-                    OrderView, ShipmentView, SupplierView, TransferView, WarehouseView, ItemGroupItemsView, TransferCommitView, OrderItemsView, SupplierItemsView, TransferItemsView)
+                    OrderView, ShipmentView, SupplierView, TransferView, WarehouseView, ItemGroupItemsView, 
+                    ItemLineItemsView, ItemTypeItemsView, ItemInventoriesView, ItemInventoryTotalsView)  # Add ItemLineItemsView, ItemTypeItemsView, and ItemInventoryTotalsView
 from .views import baseurl_view
 
 from django.conf.urls.static import static
@@ -48,6 +49,10 @@ urlpatterns = [
     path('warehouses/', WarehouseView.as_view(), name='warehouses-list'),
     path('warehouses/<int:client_id>/', WarehouseView.as_view(), name='warehouse-detail'),
     path('item_groups/<int:item_group_id>/items/', ItemGroupItemsView.as_view(), name='item-group-items'),  # Fixed path
+    path('item_lines/<int:item_line_id>/items/', ItemLineItemsView.as_view(), name='item-line-items'),  # Add new path
+    path('item_types/<int:item_type_id>/items/', ItemTypeItemsView.as_view(), name='item-type-items'),  # Add new path
+    path('items/<str:item_uid>/inventories/', ItemInventoriesView.as_view(), name='item-inventories'),  # Add new path
+    path('items/<str:item_uid>/inventory/totals/', ItemInventoryTotalsView.as_view(), name='item-inventory-totals'),  # Add new path
     path('warehouses/<int:warehouse_id>/locations/', WarehouseView.as_view(), name='warehouse-locations'),  # Fixed path
     path('transfers/<int:transfer_id>/commit/', TransferCommitView.as_view(), name='transfer-commit'),
     path('orders/<int:order_id>/items/', OrderItemsView.as_view(), name='order-items'),

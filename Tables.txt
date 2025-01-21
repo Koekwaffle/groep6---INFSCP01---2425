@@ -1,0 +1,60 @@
+table Clients: 
+id int, name string, address string, city string, 
+zip_code string, probince string, country string, 
+contact_name string, contact_phone string, 
+contact_email string, updated_at string, created_at string. 
+table inventories: 
+id int, item_id string (P000001, P000002, etc) 
+description string, item_reference string, location_id int, 
+total_on_hand int, total_expected int, total_ordered int, 
+total_allocated int total_available int, created_at string, 
+updated_at string. 
+table item_groups: 
+id int, name string, description string, 
+created_at string, updated_at string
+table item_line: 
+id int, name string, description string, 
+created_at, updated_at string.
+table item_types: 
+id int, name string, description string, 
+created_at string, updated_at string.
+table items: uid string(P000001, P000002, etc.), 
+code string, description string, short_description string, 
+upc_code string, model_number string, commodity_code string, 
+item_line int, item_group int, item_type int, 
+unit_purchase_quantity int, unit_order_quantity int, 
+pack_order_quantity int, supplier_id int, 
+supplier_code string, supplier_part_number string, 
+created_at string, updated_at string.
+table locations: 
+id int, warehouse_id int, code string, name string, 
+created_at, updated_at.
+table orders: id int, source_id int, order_date string, 
+request_date string, reference string, reference_extra string, 
+order_status string, notes shipping_notes string, 
+picking_notes string, warehouse_id int, ship_to string, 
+bill_to string, shipment_id int, total_amount int, 
+total_discount int, total_tax int, total_surcharge int, 
+created_at string, updated_at string.
+table shipments: 
+id int, order_id int, source_id int, order_date string, 
+requets_date string, shipment_date string, 
+shipment_type string, shipment_status string, 
+notes string, carrier_code string, carrier_description string, 
+service_code string, payment_type string, transfer_mode string, 
+total_package_count int, total_package_weight int, 
+created_at string, updated_at string.
+table suppliers: 
+id int, code string, name string, address string, 
+address_extra string, city string, zip_code string, 
+province string, country string, contact_name string, 
+phonenumber string, reference string, created_at string, 
+updated_at string.
+table transfers: 
+id int, reference string, transfer_from int, 
+transfer_to int, transfer_status string, created_at string, 
+updated_at string.
+table warehouses: 
+id int, code string, name string, address string, 
+zip string, city string, province string, country string, 
+created_at string, updated_at string

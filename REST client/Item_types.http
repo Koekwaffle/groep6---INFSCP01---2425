@@ -38,3 +38,4 @@ Authorization: Bearer {{api_key}}
 
 ### get items for item type(item_type_id)
 GET {{host}}/api/v1/item_types/{{test_id}}/items/
+Authorization: Bearer {{api_key}}
