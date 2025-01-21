@@ -88,5 +88,70 @@
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "event": "DELETE /api/v1/item_groups/1/",
         "timestamp": "2025-01-21T14:34:06.998908"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/inventory/totals/",
+        "timestamp": "2025-01-21T15:34:45.785523"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/inventory/totals/",
+        "timestamp": "2025-01-21T15:34:51.059895"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/inventory/totals/",
+        "timestamp": "2025-01-21T15:36:10.092457"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/inventory/totals/",
+        "timestamp": "2025-01-21T15:36:16.139863"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/inventory/totals/",
+        "timestamp": "2025-01-21T15:40:06.969354"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/inventories/",
+        "timestamp": "2025-01-21T15:40:10.525086"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/inventories/",
+        "timestamp": "2025-01-21T15:41:07.576820"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/inventory/totals/",
+        "timestamp": "2025-01-21T15:41:09.817576"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/",
+        "timestamp": "2025-01-21T15:41:12.661924"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/items/P000011/",
+        "timestamp": "2025-01-21T15:41:17.041657"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/items/",
+        "timestamp": "2025-01-21T15:41:19.137431"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/items/P000011/",
+        "timestamp": "2025-01-21T15:41:21.088281"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/items/P000011/",
+        "timestamp": "2025-01-21T15:41:23.157438"
     }
 ]
