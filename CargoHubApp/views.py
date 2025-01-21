@@ -199,21 +199,85 @@ class ShipmentView(GenericView):
     serializer_class = ShipmentSerializer
 
     def get(self, request, *args, **kwargs):
+        model_instance = self.model_instance()
         shipment_id = kwargs.get('shipment_id')
+        
+        # Check if we're requesting items for a shipment
+        if 'items' in request.path:
+            if shipment_id:
+                items = model_instance.get_items_in_shipment(shipment_id)
+                if items:
+                    return JsonResponse({"items": items}, status=status.HTTP_200_OK)
+                return JsonResponse({"error": "No items found for this shipment"}, status=status.HTTP_404_NOT_FOUND)
+            return JsonResponse({"error": "Shipment ID required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Check if we're requesting orders for a shipment
+        if 'orders' in request.path:
+            if shipment_id:
+                orders = model_instance.get_orders_in_shipment(shipment_id)
+                if orders:
+                    return JsonResponse({"orders": orders}, status=status.HTTP_200_OK)
+                return JsonResponse({"error": "No orders found for this shipment"}, status=status.HTTP_404_NOT_FOUND)
+            return JsonResponse({"error": "Shipment ID required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Regular shipment get logic
         if shipment_id:
-            shipment = self.model_instance().get(shipment_id)  # Use the correct method name
+            shipment = model_instance.get(shipment_id)
             if shipment:
                 serializer = self.serializer_class(shipment)
                 return JsonResponse(serializer.data, status=status.HTTP_200_OK)
             else:
                 return JsonResponse({"error": "Shipment not found"}, status=status.HTTP_404_NOT_FOUND)
-        else:
-            shipments = self.model_instance().get_all()  # Use the correct method name
-            if not shipments:
-                return JsonResponse({"message": "No shipments found"}, status=status.HTTP_404_NOT_FOUND)
-            serializer = self.serializer_class(shipments, many=True)
-            return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+        
+        shipments = model_instance.get_all()
+        if not shipments:
+            return JsonResponse({"message": "No shipments found"}, status=status.HTTP_404_NOT_FOUND)
+        serializer = self.serializer_class(shipments, many=True)
+        return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
 
+    def post(self, request, *args, **kwargs):
+        model_instance = self.model_instance()
+        shipment_id = kwargs.get('shipment_id')
+        
+        # Handle orders in shipment
+        if 'orders' in request.path and shipment_id:
+            orders = request.data.get('orders', [])
+            if not isinstance(orders, list):
+                return JsonResponse({"error": "Orders must be a list"}, status=status.HTTP_400_BAD_REQUEST)
+                
+            success = model_instance.update_orders_in_shipment(shipment_id, orders)
+            if success:
+                return JsonResponse({"message": "Orders updated successfully", "orders": orders}, status=status.HTTP_200_OK)
+            return JsonResponse({"error": "Failed to update orders"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Handle items in shipment
+        if 'items' in request.path and shipment_id:
+            items = request.data.get('items', [])
+            if not isinstance(items, list):
+                return JsonResponse({"error": "Items must be a list"}, status=status.HTTP_400_BAD_REQUEST)
+                
+            success = model_instance.update_items_in_shipment(shipment_id, items)
+            if success:
+                return JsonResponse({"message": "Items updated successfully", "items": items}, status=status.HTTP_200_OK)
+            return JsonResponse({"error": "Failed to update items"}, status=status.HTTP_400_BAD_REQUEST)
+            
+        # Regular shipment post logic
+        return super().post(request, *args, **kwargs)
+
+
+class ShipmentOrdersView(GenericView):
+    model = Shipments
+    model_instance = Shipments
+    serializer_class = ShipmentSerializer
+
+    def get(self, request, shipment_id=None):
+        model_instance = self.model_instance()
+        if shipment_id:
+            orders = model_instance.get_orders_in_shipment(shipment_id)
+            if orders:
+                return JsonResponse({"orders": orders}, status=status.HTTP_200_OK)
+            return JsonResponse({"error": "No orders found for this shipment"}, status=status.HTTP_404_NOT_FOUND)
+        return JsonResponse({"error": "Shipment ID required"}, status=status.HTTP_400_BAD_REQUEST)
 
 class TransferView(GenericView):
     model = Transfers

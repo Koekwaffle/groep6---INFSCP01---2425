@@ -19,7 +19,12 @@ class Shipments(Base):
 
     def get_items_in_shipment(self, shipment_id):
         """Retrieve all items in a specific shipment."""
-        query = "SELECT * FROM shipment_items WHERE shipment_id = ?"
+        query = """
+        SELECT si.item_id, si.amount, i.code, i.description 
+        FROM shipment_items si
+        JOIN items i ON si.item_id = i.uid
+        WHERE si.shipment_id = ?
+        """
         return self.fetch_all(query, (shipment_id,))
 
     def add(self, shipment):
@@ -82,3 +87,68 @@ class Shipments(Base):
         """Remove a shipment by ID."""
         query = "DELETE FROM shipments WHERE id = ?"
         self.execute_query(query, (shipment_id,))
+
+    def get_orders_in_shipment(self, shipment_id):
+        """Retrieve all orders for a specific shipment."""
+        query = "SELECT id FROM orders WHERE shipment_id = ?"
+        return [row[0] for row in self.fetch_all(query, (shipment_id,))]
+
+    def update_orders_in_shipment(self, shipment_id, orders):
+        """Update orders associated with a shipment."""
+        try:
+            # Begin transaction
+            self.cursor.execute("BEGIN TRANSACTION")
+            
+            # Clear existing orders
+            query = "UPDATE orders SET shipment_id = NULL WHERE shipment_id = ?"
+            self.execute_query(query, (shipment_id,))
+            
+            # Add new orders
+            for order_id in orders:
+                query = "UPDATE orders SET shipment_id = ? WHERE id = ?"
+                self.execute_query(query, (shipment_id, order_id))
+            
+            # Update shipment's updated_at timestamp
+            query = "UPDATE shipments SET updated_at = ? WHERE id = ?"
+            self.execute_query(query, (self.get_timestamp(), shipment_id))
+            
+            # Commit transaction
+            self.cursor.execute("COMMIT")
+            return True
+        except Exception as e:
+            # Rollback on error
+            self.cursor.execute("ROLLBACK")
+            print(f"Error updating orders in shipment: {e}")
+            return False
+
+    def update_items_in_shipment(self, shipment_id, items):
+        """Update items associated with a shipment."""
+        try:
+            # Begin transaction
+            self.conn.execute("BEGIN")
+            
+            # Clear existing items
+            query = "DELETE FROM shipment_items WHERE shipment_id = ?"
+            self.execute_query(query, (shipment_id,))
+            
+            # Add new items
+            for item in items:
+                if isinstance(item, dict) and 'item_id' in item and 'amount' in item:
+                    query = """
+                    INSERT INTO shipment_items (shipment_id, item_id, amount) 
+                    VALUES (?, ?, ?)
+                    """
+                    self.execute_query(query, (shipment_id, item['item_id'], item['amount']))
+            
+            # Update shipment's updated_at timestamp
+            query = "UPDATE shipments SET updated_at = ? WHERE id = ?"
+            self.execute_query(query, (self.get_timestamp(), shipment_id))
+            
+            # Commit transaction
+            self.conn.commit()
+            return True
+        except Exception as e:
+            # Rollback on error
+            self.conn.rollback()
+            print(f"Error updating items in shipment: {e}")
+            return False

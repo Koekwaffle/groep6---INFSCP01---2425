@@ -62,12 +62,49 @@ Authorization: Bearer {{api_key}}
 
 ### get orders in shipment(shipment_id)
 GET {{host}}/api/v1/shipments/{{test_id}}/orders/
+Authorization: Bearer {{api_key}}
 
 ### get items in shipment(shipment_id)
 GET {{host}}/api/v1/shipments/{{test_id}}/items/
+Authorization: Bearer {{api_key}}
 
 ### post update orders in shipment(shipment_id, updated_orders)
 POST {{host}}/api/v1/shipments/{{test_id}}/orders/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
 
+{
+    "order_id": 1,
+    "orders": [1, 2, 3],
+    "source_id": 1,
+    "order_date": "2025-01-15",
+    "request_date": "2025-01-16",
+    "shipment_date": "2025-01-20",
+    "shipment_type": "Standard",
+    "shipment_status": "Pending",
+    "notes": "Handle with care",
+    "carrier_code": "CARRIER001",
+    "carrier_description": "Carrier Description",
+    "service_code": "SERVICE001",
+    "payment_type": "Prepaid",
+    "transfer_mode": "Air",
+    "total_package_count": 10,
+    "total_package_weight": 100
+}
 ### post update items in shipment(shipment_id, updated_items)
 POST {{host}}/api/v1/shipments/{{test_id}}/items/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "items": [
+        {
+            "item_id": "ITEM001",
+            "amount": 10
+        },
+        {
+            "item_id": "ITEM002",
+            "amount": 5
+        }
+    ]
+}
