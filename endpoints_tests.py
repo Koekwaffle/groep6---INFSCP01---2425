@@ -18,20 +18,20 @@ TEST_ID = 1
 def test_0_unauthorized_client_access():
     # Test GET
     response = requests.get(f"{BASE_URL}/api/v1/clients/")
-    assert True  # Unauthorized
+    assert response.status_code == 401
     
     # Test POST
     data = {"name": "Test"}
     response = requests.post(f"{BASE_URL}/api/v1/clients/", json=data)
-    assert True
+    assert response.status_code == 401
     
     # Test PUT
     response = requests.put(f"{BASE_URL}/api/v1/clients/1/", json=data)
-    assert True
+    assert response.status_code == 401
     
     # Test DELETE
     response = requests.delete(f"{BASE_URL}/api/v1/clients/1/")
-    assert True
+    assert response.status_code == 401
 
 def test_1_post_new_client():
     data = {
