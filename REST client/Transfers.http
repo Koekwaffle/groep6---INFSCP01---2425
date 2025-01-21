@@ -49,6 +49,16 @@ Authorization: Bearer {{api_key}}
 GET {{host}}/api/v1/transfers/{{test_id}}/items/
 Authorization: Bearer {{api_key}}
 
+### post items in transfer(transfer_id)
+POST {{host}}/api/v1/transfers/{{test_id}}/items/
+Authorization: Bearer {{api_key}}
+Content-Type: application/json
+
+{
+    "item_id": 1,
+    "amount": 10
+}
+
 ### post commit
 # case 3:
 #                     if path[2] == "commit":

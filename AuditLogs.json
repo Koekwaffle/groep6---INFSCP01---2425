@@ -193,5 +193,150 @@
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "event": "GET /api/v1/suppliers/",
         "timestamp": "2025-01-21T15:34:08.625178"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/inventories/1/",
+        "timestamp": "2025-01-21T15:50:56.438644"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/item_groups/3/items/",
+        "timestamp": "2025-01-21T15:51:06.501434"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T15:51:13.798036"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T15:52:57.418789"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T15:53:28.654257"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T15:53:47.215921"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T15:54:39.082462"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/warehouses/1/locations/",
+        "timestamp": "2025-01-21T15:54:51.480846"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T15:57:07.672923"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T15:59:13.580162"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T15:59:19.135075"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T16:00:26.347178"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T16:01:46.303863"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T16:04:13.174389"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/1/commit/",
+        "timestamp": "2025-01-21T16:07:39.579075"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T16:13:16.107191"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/1/commit/",
+        "timestamp": "2025-01-21T16:13:18.430550"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/1/commit/",
+        "timestamp": "2025-01-21T16:14:19.806777"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/1/commit/",
+        "timestamp": "2025-01-21T16:14:23.651766"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/1/commit/",
+        "timestamp": "2025-01-21T16:15:41.420276"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T16:21:10.367935"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T16:21:17.744525"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/1/items/",
+        "timestamp": "2025-01-21T16:21:18.977263"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/transfers/1/",
+        "timestamp": "2025-01-21T16:21:22.153587"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/transfers/1/",
+        "timestamp": "2025-01-21T16:21:24.045954"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/transfers/",
+        "timestamp": "2025-01-21T16:21:25.177531"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/1/",
+        "timestamp": "2025-01-21T16:21:26.215653"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/",
+        "timestamp": "2025-01-21T16:21:28.746875"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/transfers/",
+        "timestamp": "2025-01-21T16:21:28.750871"
     }
 ]

@@ -54,3 +54,11 @@ class Transfers(Base):
         """Remove a transfer by ID."""
         query = "DELETE FROM transfers WHERE id = ?"
         self.execute_query(query, (transfer_id,))
+
+    def add_item_to_transfer(self, transfer_id, item_id, amount):
+        """Add an item to a specific transfer."""
+        query = """
+        INSERT INTO transfer_items (transfer_id, item_id, amount)
+        VALUES (?, ?, ?)
+        """
+        self.execute_query(query, (transfer_id, item_id, amount))
