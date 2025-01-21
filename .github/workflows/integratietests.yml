@@ -41,26 +41,23 @@ jobs:
           sleep 5  # Wait for the server to start
             
       - name: Run integration tests
+        id: run-tests
         run: |
           pytest CargoHubApp/tests.py
-        continue-on-error: true
 
-
-      # SSH setup for GitHub
       - name: Set up SSH agent
+        if: success()  # Proceed only if previous steps were successful
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        continue-on-error: true
 
       - name: Add GitHub to known hosts
+        if: success()  # Proceed only if previous steps were successful
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-        continue-on-error: true
 
       - name: Deploy to live server
+        if: success()  # Proceed only if previous steps were successful
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu-1074963@145.24.223.218 "cd groep6_cargohub/groep6---INFSCP01---2425 && git pull origin New-main && sudo systemctl restart main.py"
-        continue-on-error: true
-
