@@ -21,10 +21,31 @@ class ClientSerializer(serializers.Serializer):
         fields = '__all__'
 
 
-class WarehouseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Warehouse
-        fields = '__all__'
+class WarehouseSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    code = serializers.CharField()
+    name = serializers.CharField()
+    address = serializers.CharField()
+    city = serializers.CharField(required=False, allow_blank=True)
+    province = serializers.CharField()
+    country = serializers.CharField()
+    created_at = serializers.DateTimeField(read_only=True)
+    updated_at = serializers.DateTimeField(read_only=True)
+
+    def to_representation(self, instance):
+        if isinstance(instance, tuple):
+            return {
+                'id': instance[0],
+                'code': instance[1],
+                'name': instance[2],
+                'address': instance[3],
+                'city': instance[4] or '',
+                'province': instance[5],
+                'country': instance[6],
+                'created_at': instance[7],
+                'updated_at': instance[8]
+            }
+        return super().to_representation(instance)
 
 
 class LocationSerializer(serializers.ModelSerializer):

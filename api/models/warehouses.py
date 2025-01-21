@@ -7,17 +7,35 @@ class Warehouses(Base):
         self.conn = data_provider.get_connection()
         self.cursor = self.conn.cursor()
 
+    def _convert_to_dict(self, row):
+        """Convert a database row tuple to a dictionary."""
+        if not row:
+            return None
+        return {
+            'id': row[0],
+            'code': row[1],
+            'name': row[2],
+            'address': row[3],
+            'city': row[4],
+            'province': row[5],
+            'country': row[6],
+            'created_at': row[7],
+            'updated_at': row[8]
+        }
+
     def get_all(self):
         print("\n\n\nGetting all warehouses...\n\n\n")
         """Retrieve all warehouses."""
         query = "SELECT * FROM warehouses"
-        return self.fetch_all(query)
+        rows = self.fetch_all(query)
+        return [self._convert_to_dict(row) for row in rows] if rows else []
 
     def get(self, warehouse_id):
         print("\n\n\nGetting warehouse by ID...\n\n\n")
         """Retrieve a single warehouse by ID."""
         query = "SELECT * FROM warehouses WHERE id = ?"
-        return self.fetch_one(query, (warehouse_id,))
+        row = self.fetch_one(query, (warehouse_id,))
+        return self._convert_to_dict(row) if row else None
 
     def add(self, warehouse):
         """Add a new warehouse."""

@@ -1,6 +1,6 @@
 @host = http://127.0.0.1:8000
 @api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
-@test_id = 2
+@test_id = 3
 
 ### Get all transfers
 GET {{host}}/api/v1/transfers/

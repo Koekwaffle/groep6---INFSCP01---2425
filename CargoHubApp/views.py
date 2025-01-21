@@ -127,7 +127,7 @@ class ClientView(GenericView):
     serializer_class = ClientSerializer
 
     def get(self, request, *args, **kwargs):
-        print("\n\n\n GETTING CLIENT \n\n\n")
+        # print("\n\n\n GETTING CLIENT \n\n\n")
         client_id = kwargs.get('client_id')
         if client_id:
             # print("\n\n\n CLIENT ID GET \n\n\n")
