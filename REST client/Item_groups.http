@@ -35,4 +35,5 @@ DELETE {{host}}/api/v1/item_groups/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
 ### get items for item group(item_group_id)
-GET {{host}}/api/v1/item_groups/{{test_id}}/items/
+GET {{host}}/api/v1/item_groups/3/items/
+Authorization: Bearer {{api_key}}

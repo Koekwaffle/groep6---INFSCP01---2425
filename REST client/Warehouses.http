@@ -43,3 +43,4 @@ Authorization: Bearer {{api_key}}
 
 ### Get locations in warehouse(warehouse_id)
 GET {{host}}/api/v1/warehouses/{{test_id}}/locations/
+Authorization: Bearer {{api_key}}

@@ -45,24 +45,24 @@ def test_1_post_new_client():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert response.status_code == 401
+    assert response.status_code == 201
 
 def test_2_get_new_client():
     response = requests.get(f"{BASE_URL}/api/v1/clients/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["name"] == "Test Client"
-    # assert data["address"] == "Test Street 123"
-    # assert data["city"] == "Test City"
-    # assert data["zip_code"] == "1234AB"
-    # assert data["province"] == "Test Province"
-    # assert data["country"] == "Test Country"
-    # assert data["contact_name"] == "Test Contact"
-    # assert data["contact_phone"] == "06-12345678"
-    # assert data["contact_email"] == "test.client@example.com"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["name"] == "Test Client"
+    assert data["address"] == "Test Street 123"
+    assert data["city"] == "Test City"
+    assert data["zip_code"] == "1234AB"
+    assert data["province"] == "Test Province"
+    assert data["country"] == "Test Country"
+    assert data["contact_name"] == "Test Contact"
+    assert data["contact_phone"] == "06-12345678"
+    assert data["contact_email"] == "test.client@example.com"
 
 def test_3_put_update_client():
     data = {
@@ -81,39 +81,39 @@ def test_3_put_update_client():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 def test_4_get_updated_client():
     response = requests.get(f"{BASE_URL}/api/v1/clients/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["name"] == "Updated Test Client"
-    # assert data["address"] == "Updated Street 123"
-    # assert data["city"] == "Updated City"
-    # assert data["zip_code"] == "5678CD"
-    # assert data["province"] == "Updated Province"
-    # assert data["country"] == "Updated Country"
-    # assert data["contact_name"] == "Updated Contact"
-    # assert data["contact_phone"] == "06-87654321"
-    # assert data["contact_email"] == "updated.test.client@example.com"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):  # Handle case where response is a list
+        data = data[0]
+    assert data["name"] == "Updated Test Client"
+    assert data["address"] == "Updated Street 123"
+    assert data["city"] == "Updated City"
+    assert data["zip_code"] == "5678CD"
+    assert data["province"] == "Updated Province"
+    assert data["country"] == "Updated Country"
+    assert data["contact_name"] == "Updated Contact"
+    assert data["contact_phone"] == "06-87654321"
+    assert data["contact_email"] == "updated.test.client@example.com"
 
 def test_5_delete_client():
     response = requests.delete(f"{BASE_URL}/api/v1/clients/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 204
 
 def test_6_get_deleted_client():
     response = requests.get(f"{BASE_URL}/api/v1/clients/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 404
 
 def test_7_get_all_clients():
     response = requests.get(f"{BASE_URL}/api/v1/clients/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 ############################## 
 ### Inventory endpoint tests 
@@ -148,29 +148,28 @@ def test_1_post_new_inventory():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert response.status_code == 401
+    assert response.status_code == 201
 
 def test_2_get_new_inventory():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
+    assert response.status_code == 200
+    data = response.json()
     
-    # If response is a list, find the inventory with matching TEST_ID
-    # if isinstance(data, list):
-    #     inventory = next((item for item in data if item.get('id') == TEST_ID), None)
-    #     assert inventory is not None, f"Inventory with id {TEST_ID} not found in response"
-    #     data = inventory
+    if isinstance(data):
+        inventory = next((item for item in data if item.get('id') == TEST_ID), None)
+        assert inventory is not None, f"Inventory with id {TEST_ID} not found in response"
+        data = inventory
     
-    # assert data["item_id"] == "P990002"
-    # assert data["description"] == "Test Inventory"
-    # assert data["item_reference"] == "TEST-REF"
-    # assert data["locations"] == [12345, 67890]
-    # assert data["total_on_hand"] == 100
-    # assert data["total_expected"] == 50
-    # assert data["total_ordered"] == 20
-    # assert data["total_allocated"] == 10
-    # assert data["total_available"] == 90
+    assert data["item_id"] == "P990002"
+    assert data["description"] == "Test Inventory"
+    assert data["item_reference"] == "TEST-REF"
+    assert data["locations"] == [12345, 67890]
+    assert data["total_on_hand"] == 100
+    assert data["total_expected"] == 50
+    assert data["total_ordered"] == 20
+    assert data["total_allocated"] == 10
+    assert data["total_available"] == 90
 
 def test_3_put_update_inventory():
     data = {
@@ -189,39 +188,39 @@ def test_3_put_update_inventory():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 def test_4_get_updated_inventory():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["item_id"] == "P990002"
-    # assert data["description"] == "Updated Test Inventory"
-    # assert data["item_reference"] == "UPDATED-TEST-REF"
-    # assert data["locations"] == [12345, 67890]
-    # assert data["total_on_hand"] == 150
-    # assert data["total_expected"] == 60
-    # assert data["total_ordered"] == 30
-    # assert data["total_allocated"] == 20
-    # assert data["total_available"] == 110
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["item_id"] == "P990002"
+    assert data["description"] == "Updated Test Inventory"
+    assert data["item_reference"] == "UPDATED-TEST-REF"
+    assert data["locations"] == [12345, 67890]
+    assert data["total_on_hand"] == 150
+    assert data["total_expected"] == 60
+    assert data["total_ordered"] == 30
+    assert data["total_allocated"] == 20
+    assert data["total_available"] == 110
 
 def test_5_delete_inventory():
     response = requests.delete(f"{BASE_URL}/api/v1/inventories/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 204
 
 def test_6_get_deleted_inventory():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 404
 
 def test_7_get_all_inventories():
     response = requests.get(f"{BASE_URL}/api/v1/inventories/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 ############################### 
 ### Item Groups endpoint tests 
@@ -257,25 +256,25 @@ def test_1_post_new_item_group():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert response.status_code == 401
+    assert response.status_code == 201
 
 def test_2_get_new_item_group():
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["uid"] == "P000084"
-    # assert data["code"] == "xQk78654R"
-    # assert data["description"] == "Open-architected tertiary contingency"
-    # assert data["short_description"] == "throughout"
-    # assert data["upc_code"] == "6240362357099"
-    # assert data["model_number"] == "81-buCQA7M"
-    # assert data["commodity_code"] == "hV-9935"
-    # assert data["item_line"] == 67
-    # assert data["item_group"] == 1
-    # assert data["item_type"] == 17
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["uid"] == "P000084"
+    assert data["code"] == "xQk78654R"
+    assert data["description"] == "Open-architected tertiary contingency"
+    assert data["short_description"] == "throughout"
+    assert data["upc_code"] == "6240362357099"
+    assert data["model_number"] == "81-buCQA7M"
+    assert data["commodity_code"] == "hV-9935"
+    assert data["item_line"] == 67
+    assert data["item_group"] == 1
+    assert data["item_type"] == 17
 
 def test_3_put_update_item_group():
     data = {
@@ -289,32 +288,32 @@ def test_3_put_update_item_group():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 def test_4_get_updated_item_group():
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["name"] == "Updated Electronics"
-    # assert data["description"] == "Updated description for the electronics group"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["name"] == "Updated Electronics"
+    assert data["description"] == "Updated description for the electronics group"
 
 def test_5_delete_item_group():
     response = requests.delete(f"{BASE_URL}/api/v1/item_groups/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 204
 
 def test_6_get_deleted_item_group():
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 404
 
 def test_7_get_all_item_groups():
     response = requests.get(f"{BASE_URL}/api/v1/item_groups/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 ############################### 
 ### Item Lines endpoint tests 
@@ -342,17 +341,17 @@ def test_1_post_new_item_line():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert response.status_code == 401
+    assert response.status_code == 201
 
 def test_2_get_new_item_line():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["name"] == "New Item Line"
-    # assert data["description"] == "This is a new item line"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["name"] == "New Item Line"
+    assert data["description"] == "This is a new item line"
 
 def test_3_put_update_item_line():
     data = {
@@ -366,32 +365,32 @@ def test_3_put_update_item_line():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 def test_4_get_updated_item_line():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["name"] == "Updated Item Line Name"
-    # assert data["description"] == "Updated description for item line"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["name"] == "Updated Item Line Name"
+    assert data["description"] == "Updated description for item line"
 
 def test_5_delete_item_line():
     response = requests.delete(f"{BASE_URL}/api/v1/item_lines/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 204
 
 def test_6_get_deleted_item_line():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 404
 
 def test_7_get_all_item_lines():
     response = requests.get(f"{BASE_URL}/api/v1/item_lines/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 ############################### 
 ### Locations endpoint tests 
@@ -420,18 +419,18 @@ def test_1_post_new_location():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert response.status_code == 401
+    assert response.status_code == 201
 
 def test_2_get_new_location():
     response = requests.get(f"{BASE_URL}/api/v1/locations/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["warehouse_id"] == 1
-    # assert data["code"] == "A.1.1"
-    # assert data["name"] == "Row: A, Rack: 1, Shelf: 1"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["warehouse_id"] == 1
+    assert data["code"] == "A.1.1"
+    assert data["name"] == "Row: A, Rack: 1, Shelf: 1"
 
 def test_3_put_update_location():
     data = {
@@ -445,35 +444,35 @@ def test_3_put_update_location():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 def test_4_get_updated_location():
     response = requests.get(f"{BASE_URL}/api/v1/locations/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["name"] == "Updated Location Name"
-    # assert data["address"] == "123 Updated Street"
-    # assert data["city"] == "Updated City"
-    # assert data["province"] == "Updated Province"
-    # assert data["country"] == "Updated Country"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["name"] == "Updated Location Name"
+    assert data["address"] == "123 Updated Street"
+    assert data["city"] == "Updated City"
+    assert data["province"] == "Updated Province"
+    assert data["country"] == "Updated Country"
 
 def test_5_delete_location():
     response = requests.delete(f"{BASE_URL}/api/v1/locations/{TEST_ID}/", 
                              headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 204
 
 def test_6_get_deleted_location():
     response = requests.get(f"{BASE_URL}/api/v1/locations/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 404
 
 def test_7_get_all_locations():
     response = requests.get(f"{BASE_URL}/api/v1/locations/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 ############################### 
 ### Orders endpoint tests 
@@ -503,19 +502,19 @@ def test_1_post_new_order():
                            headers={"Authorization": f"Bearer {API_KEY}", 
                                   "Content-Type": "application/json"}, 
                            json=data)
-    assert response.status_code == 401
+    assert response.status_code == 201
 
 def test_2_get_new_order():
     response = requests.get(f"{BASE_URL}/api/v1/orders/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["client_id"] == 1
-    # assert data["reference"] == "ORDER123"
-    # assert data["date_required"] == "2024-02-01"
-    # assert data["status"] == "new"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["client_id"] == 1
+    assert data["reference"] == "ORDER123"
+    assert data["date_required"] == "2024-02-01"
+    assert data["status"] == "new"
 
 def test_3_put_update_order():
     data = {
@@ -528,19 +527,19 @@ def test_3_put_update_order():
                           headers={"Authorization": f"Bearer {API_KEY}", 
                                  "Content-Type": "application/json"}, 
                           json=data)
-    assert response.status_code == 401
+    assert response.status_code == 200
 
 def test_4_get_updated_order():
     response = requests.get(f"{BASE_URL}/api/v1/orders/{TEST_ID}/", 
                           headers={"Authorization": f"Bearer {API_KEY}"})
-    assert response.status_code == 401
-    # data = response.json()
-    # if isinstance(data, list):  # Handle case where response is a list
-    #     data = data[0]
-    # assert data["client_id"] == 1
-    # assert data["reference"] == "UPDATED-ORDER123"
-    # assert data["date_required"] == "2024-02-02"
-    # assert data["status"] == "processing"
+    assert response.status_code == 200
+    data = response.json()
+    if isinstance(data):
+        data = data[0]
+    assert data["client_id"] == 1
+    assert data["reference"] == "UPDATED-ORDER123"
+    assert data["date_required"] == "2024-02-02"
+    assert data["status"] == "processing"
 
 def test_5_delete_order():
     response = requests.delete(f"{BASE_URL}/api/v1/orders/{TEST_ID}/", 
