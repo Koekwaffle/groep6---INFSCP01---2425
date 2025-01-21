@@ -51,10 +51,25 @@ class ItemLineSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ItemSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Item
-        fields = '__all__'
+class ItemSerializer(serializers.Serializer):
+    uid = serializers.CharField(allow_null=True)
+    code = serializers.CharField(allow_null=True)
+    description = serializers.CharField(allow_null=True)
+    short_description = serializers.CharField(allow_null=True)
+    upc_code = serializers.CharField(allow_null=True)
+    model_number = serializers.CharField(allow_null=True)
+    commodity_code = serializers.CharField(allow_null=True)
+    item_line = serializers.CharField(allow_null=True)  # Changed to CharField
+    item_group = serializers.CharField(allow_null=True)  # Changed to CharField
+    item_type = serializers.CharField(allow_null=True)  # Changed to CharField
+    unit_purchase_quantity = serializers.CharField(allow_null=True)  # Changed to CharField
+    unit_order_quantity = serializers.CharField(allow_null=True)  # Changed to CharField
+    pack_order_quantity = serializers.CharField(allow_null=True)  # Changed to CharField
+    supplier_id = serializers.CharField(allow_null=True)  # Changed to CharField
+    supplier_code = serializers.CharField(allow_null=True)
+    supplier_part_number = serializers.CharField(allow_null=True)
+    created_at = serializers.CharField(allow_null=True)
+    updated_at = serializers.CharField(allow_null=True)
 
 
 class InventorySerializer(serializers.ModelSerializer):

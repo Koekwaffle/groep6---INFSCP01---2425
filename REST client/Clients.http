@@ -58,4 +58,5 @@ DELETE {{host}}/api/v1/clients/{{test_id}}/
 Authorization: Bearer {{api_key}}
 
 ### get orders for client(client_id)
-GET {{host}}/api/v1/clients/{{test_id}}/orders/
+GET {{host}}/api/v1/clients/3/orders/
+Authorization: Bearer {{api_key}}

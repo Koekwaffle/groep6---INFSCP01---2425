@@ -45,7 +45,7 @@ class GenericView(APIView):
         print(f"Request Headers: {request.headers}")
         authorization_header = request.headers.get('Authorization')
         # print(f"\n\n\nAuthorization Header: {authorization_header}\n\n\n")
-        if authorization_header:
+        if (authorization_header):
             if authorization_header.startswith("Bearer "):
                 api_key = authorization_header.split(" ")[1]
             else:
@@ -225,4 +225,33 @@ class ItemLineView(GenericView):
     model = ItemLines
     model_instance = ItemLines
     serializer_class = ItemLineSerializer
+
+from rest_framework import generics
+from .permissions import APIKeyPermission
+
+class ItemGroupItemsView(GenericView):  # Change to inherit from GenericView
+    model_instance = Items
+    serializer_class = ItemSerializer
+    
+    def get(self, request, item_group_id):
+        try:
+            items_model = self.model_instance()
+            items = items_model.get_by_group(item_group_id)
+            if items:
+                # Explicitly convert each item to a dictionary
+                item_dicts = [dict(zip([
+                    'uid', 'code', 'description', 'short_description', 
+                    'upc_code', 'model_number', 'commodity_code', 
+                    'item_line', 'item_group', 'item_type',
+                    'unit_purchase_quantity', 'unit_order_quantity', 
+                    'pack_order_quantity', 'supplier_id', 'supplier_code',
+                    'supplier_part_number', 'created_at', 'updated_at'
+                ], item)) for item in items]
+                
+                serializer = self.serializer_class(item_dicts, many=True)
+                return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "No items found for this group"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            print(f"Error in ItemGroupItemsView: {str(e)}")  # Add debug print
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
