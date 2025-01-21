@@ -55,3 +55,7 @@ class Suppliers(Base):
         """Remove a supplier by ID."""
         query = "DELETE FROM suppliers WHERE id = ?"
         self.execute_query(query, (supplier_id,))
+
+    def get_items_for_supplier(self, supplier_id):
+        query = "SELECT * FROM items WHERE supplier_id = ?"
+        return self.fetch_all(query, (supplier_id,))

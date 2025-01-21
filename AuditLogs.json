@@ -168,5 +168,30 @@
         "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
         "event": "POST /api/v1/orders/1/items/",
         "timestamp": "2025-01-21T15:26:21.941108"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/suppliers/1/items/",
+        "timestamp": "2025-01-21T15:33:58.862267"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "DELETE /api/v1/suppliers/1/",
+        "timestamp": "2025-01-21T15:34:02.364682"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "PUT /api/v1/suppliers/1/",
+        "timestamp": "2025-01-21T15:34:06.014661"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "POST /api/v1/suppliers/",
+        "timestamp": "2025-01-21T15:34:07.583880"
+    },
+    {
+        "api_key": "DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm",
+        "event": "GET /api/v1/suppliers/",
+        "timestamp": "2025-01-21T15:34:08.625178"
     }
 ]

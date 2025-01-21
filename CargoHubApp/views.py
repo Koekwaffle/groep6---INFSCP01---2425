@@ -303,3 +303,10 @@ class OrderItemsView(GenericView):
         Orders().update_items_in_order(order_id, updated_items)
         return JsonResponse({"message": "Order items updated."}, status=200)
 
+class SupplierItemsView(GenericView):
+    def get(self, request, supplier_id):
+        items = Suppliers().get_items_for_supplier(supplier_id)
+        if not items:
+            return JsonResponse({"message": "No items found for this supplier"}, status=status.HTTP_404_NOT_FOUND)
+        return JsonResponse(items, safe=False, status=status.HTTP_200_OK)
+
