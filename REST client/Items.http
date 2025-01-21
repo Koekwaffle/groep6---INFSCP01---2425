@@ -1,6 +1,6 @@
 @host = http://127.0.0.1:8000
 @api_key = DYXcU3AshPCpUC0PzM1BMDnUbcoroGZm
-@test_id = P000001
+@test_id = P000011
 
 ### Get all items
 GET {{host}}/api/v1/items/
@@ -64,6 +64,8 @@ Authorization: Bearer {{api_key}}
 
 ### get inventories for item(item_id)
 GET {{host}}/api/v1/items/{{test_id}}/inventories/
+Authorization: Bearer {{api_key}}
 
 ### get inventory totals for item(item_id)
 GET {{host}}/api/v1/items/{{test_id}}/inventory/totals/
+Authorization: Bearer {{api_key}}

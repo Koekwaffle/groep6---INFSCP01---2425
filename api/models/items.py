@@ -149,3 +149,45 @@ class Items(Base):
         except Exception as e:
             print(f"Error getting items by group: {e}")
             return None
+
+    def get_by_line(self, line_id):
+        """Get all items belonging to a specific item line"""
+        try:
+            query = """
+            SELECT uid, code, description, short_description, upc_code, 
+                   model_number, commodity_code, item_line, item_group, item_type,
+                   unit_purchase_quantity, unit_order_quantity, pack_order_quantity,
+                   supplier_id, supplier_code, supplier_part_number, 
+                   created_at, updated_at
+            FROM items 
+            WHERE item_line = ?
+            """
+            items = self.fetch_all(query, (int(line_id),))
+            if items:
+                item_dicts = [self.tuple_to_dict(item) for item in items]
+                return [item for item in item_dicts if item is not None]
+            return None
+        except Exception as e:
+            print(f"Error getting items by line: {e}")
+            return None
+
+    def get_by_type(self, type_id):
+        """Get all items belonging to a specific item type"""
+        try:
+            query = """
+            SELECT uid, code, description, short_description, upc_code, 
+                   model_number, commodity_code, item_line, item_group, item_type,
+                   unit_purchase_quantity, unit_order_quantity, pack_order_quantity,
+                   supplier_id, supplier_code, supplier_part_number, 
+                   created_at, updated_at
+            FROM items 
+            WHERE item_type = ?
+            """
+            items = self.fetch_all(query, (int(type_id),))
+            if items:
+                item_dicts = [self.tuple_to_dict(item) for item in items]
+                return [item for item in item_dicts if item is not None]
+            return None
+        except Exception as e:
+            print(f"Error getting items by type: {e}")
+            return None

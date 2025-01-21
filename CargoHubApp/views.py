@@ -255,3 +255,66 @@ class ItemGroupItemsView(GenericView):  # Change to inherit from GenericView
             print(f"Error in ItemGroupItemsView: {str(e)}")  # Add debug print
             return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+class ItemLineItemsView(GenericView):
+    model_instance = Items
+    serializer_class = ItemSerializer
+    
+    def get(self, request, item_line_id):
+        try:
+            items_model = self.model_instance()
+            items = items_model.get_by_line(item_line_id)
+            if items:
+                serializer = self.serializer_class(items, many=True)
+                return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "No items found for this line"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            print(f"Error in ItemLineItemsView: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class ItemTypeItemsView(GenericView):
+    model_instance = Items
+    serializer_class = ItemSerializer
+    
+    def get(self, request, item_type_id):
+        try:
+            items_model = self.model_instance()
+            items = items_model.get_by_type(item_type_id)
+            if items:
+                serializer = self.serializer_class(items, many=True)
+                return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "No items found for this type"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            print(f"Error in ItemTypeItemsView: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class ItemInventoriesView(GenericView):
+    model_instance = Inventories
+    serializer_class = InventorySerializer
+    
+    def get(self, request, item_uid):
+        try:
+            inventory_model = self.model_instance()
+            inventories = inventory_model.get_by_item(item_uid)
+            if inventories:
+                serializer = self.serializer_class(inventories, many=True)
+                return JsonResponse(serializer.data, safe=False, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "No inventory found for this item"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            print(f"Error in ItemInventoriesView: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class ItemInventoryTotalsView(GenericView):
+    model_instance = Inventories
+    serializer_class = InventorySerializer
+    
+    def get(self, request, item_uid):
+        try:
+            inventory_model = self.model_instance()
+            totals = inventory_model.get_inventory_totals(item_uid)
+            if totals:
+                return JsonResponse(totals, safe=False, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "No inventory totals found for this item"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            print(f"Error in ItemInventoryTotalsView: {str(e)}")
+            return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
