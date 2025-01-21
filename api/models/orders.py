@@ -69,3 +69,11 @@ class Orders(Base):
         query = "DELETE FROM orders WHERE id = ?"
         self.execute_query(query, (order_id,))
 
+    def update_items_in_order(self, order_id, items):
+        delete_query = "DELETE FROM order_items WHERE order_id = ?"
+        self.execute_query(delete_query, (order_id,))
+        insert_query = "INSERT INTO order_items (order_id, item_id, amount) VALUES (?, ?, ?)"
+        for item in items:
+            params = (order_id, item["item_id"], item["amount"])
+            self.execute_query(insert_query, params)
+

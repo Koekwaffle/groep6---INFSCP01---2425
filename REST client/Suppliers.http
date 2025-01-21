@@ -41,3 +41,4 @@ Authorization: Bearer {{api_key}}
 
 ### get items for supplier(supplier_id)
 GET {{host}}/api/v1/suppliers/{{test_id}}/items/
+Authorization: Bearer {{api_key}}

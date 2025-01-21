@@ -53,4 +53,8 @@ urlpatterns = [
     path('item_types/<int:item_type_id>/items/', ItemTypeItemsView.as_view(), name='item-type-items'),  # Add new path
     path('items/<str:item_uid>/inventories/', ItemInventoriesView.as_view(), name='item-inventories'),  # Add new path
     path('items/<str:item_uid>/inventory/totals/', ItemInventoryTotalsView.as_view(), name='item-inventory-totals'),  # Add new path
+    path('warehouses/<int:warehouse_id>/locations/', WarehouseView.as_view(), name='warehouse-locations'),  # Fixed path
+    path('transfers/<int:transfer_id>/commit/', TransferCommitView.as_view(), name='transfer-commit'),
+    path('orders/<int:order_id>/items/', OrderItemsView.as_view(), name='order-items'),
+    path('suppliers/<int:supplier_id>/items/', SupplierItemsView.as_view(), name='supplier-items'),
 ]
