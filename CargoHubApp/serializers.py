@@ -90,10 +90,49 @@ class SupplierSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ShipmentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Shipment
-        fields = '__all__'
+class ShipmentSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    order_id = serializers.IntegerField()
+    source_id = serializers.IntegerField()
+    order_date = serializers.DateTimeField()
+    request_date = serializers.DateTimeField()
+    shipment_date = serializers.DateTimeField()
+    shipment_type = serializers.CharField()
+    shipment_status = serializers.CharField()
+    notes = serializers.CharField(allow_blank=True)
+    carrier_code = serializers.CharField()
+    carrier_description = serializers.CharField()
+    service_code = serializers.CharField()
+    payment_type = serializers.CharField()
+    transfer_mode = serializers.CharField()
+    total_package_count = serializers.IntegerField()
+    total_package_weight = serializers.FloatField()
+    created_at = serializers.DateTimeField(read_only=True)
+    updated_at = serializers.DateTimeField(read_only=True)
+
+    def to_representation(self, instance):
+        if isinstance(instance, tuple):
+            return {
+                'id': instance[0],
+                'order_id': instance[1],
+                'source_id': instance[2],
+                'order_date': instance[3],
+                'request_date': instance[4],
+                'shipment_date': instance[5],
+                'shipment_type': instance[6],
+                'shipment_status': instance[7],
+                'notes': instance[8],
+                'carrier_code': instance[9],
+                'carrier_description': instance[10],
+                'service_code': instance[11],
+                'payment_type': instance[12],
+                'transfer_mode': instance[13],
+                'total_package_count': instance[14],
+                'total_package_weight': instance[15],
+                'created_at': instance[16],
+                'updated_at': instance[17]
+            }
+        return super().to_representation(instance)
 
 
 class TransferSerializer(serializers.ModelSerializer):

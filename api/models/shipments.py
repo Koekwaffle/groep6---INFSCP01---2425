@@ -7,25 +7,56 @@ class Shipments(Base):
         self.conn = data_provider.get_connection()
         self.cursor = self.conn.cursor()
 
+    def _convert_to_dict(self, row):
+        """Convert a database row tuple to a dictionary."""
+        if not row:
+            return None
+        return {
+            'id': row[0],
+            'order_id': row[1],
+            'source_id': row[2],
+            'order_date': row[3],
+            'request_date': row[4],
+            'shipment_date': row[5],
+            'shipment_type': row[6],
+            'shipment_status': row[7],
+            'notes': row[8],
+            'carrier_code': row[9],
+            'carrier_description': row[10],
+            'service_code': row[11],
+            'payment_type': row[12],
+            'transfer_mode': row[13],
+            'total_package_count': row[14],
+            'total_package_weight': row[15],
+            'created_at': row[16],
+            'updated_at': row[17]
+        }
+
     def get_all(self):
         """Retrieve all shipments."""
         query = "SELECT * FROM shipments"
-        return self.fetch_all(query)
+        rows = self.fetch_all(query)
+        return [self._convert_to_dict(row) for row in rows] if rows else []
 
     def get(self, shipment_id):
         """Retrieve a single shipment by ID."""
         query = "SELECT * FROM shipments WHERE id = ?"
-        return self.fetch_one(query, (shipment_id,))
+        row = self.fetch_one(query, (shipment_id,))
+        return self._convert_to_dict(row) if row else None
 
     def get_items_in_shipment(self, shipment_id):
         """Retrieve all items in a specific shipment."""
-        query = """
-        SELECT si.item_id, si.amount, i.code, i.description 
-        FROM shipment_items si
-        JOIN items i ON si.item_id = i.uid
-        WHERE si.shipment_id = ?
-        """
-        return self.fetch_all(query, (shipment_id,))
+        try:
+            query = """
+            SELECT si.item_id, si.amount, i.code, i.description 
+            FROM shipment_items si
+            LEFT JOIN items i ON si.item_id = i.uid
+            WHERE si.shipment_id = ?
+            """
+            return self.fetch_all(query, (shipment_id,))
+        except Exception as e:
+            print(f"Database error in get_items_in_shipment: {str(e)}")
+            return None
 
     def add(self, shipment):
         """Add a new shipment."""

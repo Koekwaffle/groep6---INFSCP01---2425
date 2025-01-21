@@ -223,10 +223,21 @@ class ShipmentView(GenericView):
         # Check if we're requesting items for a shipment
         if 'items' in request.path:
             if shipment_id:
-                items = model_instance.get_items_in_shipment(shipment_id)
-                if items:
-                    return JsonResponse({"items": items}, status=status.HTTP_200_OK)
-                return JsonResponse({"error": "No items found for this shipment"}, status=status.HTTP_404_NOT_FOUND)
+                try:
+                    items = model_instance.get_items_in_shipment(shipment_id)
+                    if items:
+                        # Convert tuple results to dictionaries
+                        item_list = [{
+                            'item_id': item[0],
+                            'amount': item[1],
+                            'code': item[2],
+                            'description': item[3]
+                        } for item in items]
+                        return JsonResponse({"items": item_list}, status=status.HTTP_200_OK)
+                    return JsonResponse({"error": "No items found for this shipment"}, status=status.HTTP_404_NOT_FOUND)
+                except Exception as e:
+                    print(f"Error fetching shipment items: {str(e)}")
+                    return JsonResponse({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
             return JsonResponse({"error": "Shipment ID required"}, status=status.HTTP_400_BAD_REQUEST)
         
         # Check if we're requesting orders for a shipment
